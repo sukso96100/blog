@@ -23,10 +23,15 @@ img{
 }
 
 blockquote, q {
-	quotes: none;
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote>:first-child {
+  margin-top: 0;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0;
 }
