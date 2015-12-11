@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="mdl-card mdl-cell mdl-cell--12-col postcard" align="start">
+<div class="mdl-card mdl-cell mdl-cell--12-col post_card" align="start">
            <div class="mdl-card__media mdl-color-text--grey-50"
            style="{% if post.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
            rgba(0, 0, 0, 0.4) ), url('{{ post.image }}')center / cover;{% endif %}
@@ -26,12 +26,12 @@ layout: default
          {% endfor %}
          </div>
 
-         <div class="mdl-card mdl-cell mdl-cell--12-col postcard" align="start">
+         <div class="mdl-card mdl-cell mdl-cell--12-col post_card" align="start">
         {% include adsense.html %}
                   </div>
 
 
-         <div class="mdl-card mdl-cell mdl-cell--12-col postcard" align="start">
+         <div class="mdl-card mdl-cell mdl-cell--12-col post_card" align="start">
            {% if page.previous.url %}
                   <h4 style="padding: 16px;"><a href="{{page.previous.url}}" style="color:white;">{{ page.previous.title }}</a></h4>
                   <table><tr><td><i class="material-icons">today</i></td><td>{{ page.previous.date | date: "%Y.%m.%d" }}</td></tr></table>
@@ -44,6 +44,6 @@ layout: default
                   {% endif %}
                   </div>
 
-                  <div class="mdl-card mdl-cell mdl-cell--12-col postcard" align="start">
+                  <div class="mdl-card mdl-cell mdl-cell--12-col post_card" align="start">
                  {% include disqus.html %}
                            </div>
