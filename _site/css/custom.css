@@ -11,3 +11,7 @@
 .postcard{
   max-width: 1000px;
 }
+
+.content{
+  padding: 16px;
+}

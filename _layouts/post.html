@@ -2,14 +2,15 @@
 layout: default
 ---
 
-<div class="mdl-card mdl-cell mdl-cell--12-col post_card" align="start">
+<div class="mdl-card mdl-cell mdl-cell--12-col postcard" align="start">
            <div class="mdl-card__media mdl-color-text--grey-50"
            style="{% if post.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
            rgba(0, 0, 0, 0.4) ), url('{{ post.image }}')center / cover;{% endif %}
            padding:16px;">
-             <a href="{{ site.baseurl }}/{{ post.url }}"><h3 style="color:white;">{{ post.title }}</h3></a>
+             <a href="{{ site.baseurl }}/{{ post.url }}"><h3 style="color:white;">{{ page.title }}</h3></a>
            </div>
-           <table><tr><td><i class="material-icons">today</i></td><td>{{ post.date | date: "%Y.%m.%d" }}</td></tr></table>
+           <section class="content">
+           <table><tr><td><i class="material-icons">today</i></td><td>{{ page.date | date: "%Y.%m.%d" }}</td></tr></table>
            <hr>
           {{ content }}
 
@@ -24,26 +25,29 @@ layout: default
          <a class="card-content" href="{{ site.baseurl }}/tags/#{{ tag }}">
              <button class="mdl-button mdl-js-button mdl-js-ripple-effect">#{{ tag }}</button> </a>
          {% endfor %}
+</section>
          </div>
 
-         <div class="mdl-card mdl-cell mdl-cell--12-col post_card" align="start">
+         <div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
         {% include adsense.html %}
                   </div>
 
 
-         <div class="mdl-card mdl-cell mdl-cell--12-col post_card" align="start">
+         <div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
            {% if page.previous.url %}
-                  <h4 style="padding: 16px;"><a href="{{page.previous.url}}" style="color:white;">{{ page.previous.title }}</a></h4>
-                  <table><tr><td><i class="material-icons">today</i></td><td>{{ page.previous.date | date: "%Y.%m.%d" }}</td></tr></table>
+
+                  <table>
+                    <a style="color:black;" href="{{ site.baseurl }}/{{page.previous.url}}" ><h4>{{ page.previous.title }}</h4></a>
+                    <tr><td><i class="material-icons">today</i></td><td>{{ page.previous.date | date: "%Y.%m.%d" }}</td></tr></table>
                   {% else %}
                   {% endif %}
                   {% if page.next.url %}
-                  <h4 style="padding: 16px;"><a href="{{page.next.url}}" style="color:white;">{{ page.next.title }}</a></h4>
+                  <a style="color:black;" href="{{ site.baseurl }}/{{page.next.url}}"><h4>{{ page.next.title }}</h4></a>
                   <table><tr><td><i class="material-icons">today</i></td><td>{{ page.next.date | date: "%Y.%m.%d" }}</td></tr></table>
                   {% else %}
                   {% endif %}
                   </div>
 
-                  <div class="mdl-card mdl-cell mdl-cell--12-col post_card" align="start">
+                  <div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
                  {% include disqus.html %}
                            </div>
