@@ -7,7 +7,7 @@ layout: default
            style="{% if page.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
            rgba(0, 0, 0, 0.4) ), url('{{ page.image }}')center / cover;{% endif %}
            padding:16px;">
-             <a href="{{ site.baseurl }}/{{ post.url }}"><h3 style="color:white;">{{ page.title }}</h3></a>
+             <a href="{{ site.baseurl }}/{{ post.url }}"><h3 style="color:white; margin-top:16px;">{{ page.title }}</h3></a>
            </div>
            <section class="content">
            <table><tr><td><i class="material-icons">today</i></td><td>{{ page.date | date: "%Y.%m.%d" }}</td></tr></table>
