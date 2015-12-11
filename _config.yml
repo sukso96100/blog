@@ -16,8 +16,8 @@ author_image: "/assets/images/author.jpg"
 
 paginate: 10
 
-url: "http://sukso96100.github.io/blog" # the base hostname & protocol for your site
-baseurl: ""
+url: "http://sukso96100.github.io/" # the base hostname & protocol for your site
+baseurl: "/blog"
 
 # social icons and sharing options
 social:

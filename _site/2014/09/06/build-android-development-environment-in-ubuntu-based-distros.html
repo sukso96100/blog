@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>우분투 계열 리눅스 베포판에서 안드로이드 개발환경 구축하기. | Youngbin Han</title>
+  <meta name="description" content="친구가 안드로이드 앱 개발을 시작해서, 글로 정리해 줄 겸 다른 분들도 보시라고 블로그에 올려봅니다.">
+<!--        Jquery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46663268-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<link rel="stylesheet" href="/blog/css/material.min.css">
+<link rel="stylesheet" href="/blog/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/blog/css/custom.css">
+  <link rel="canonical" href="http://sukso96100.github.io//blog/2014/09/06/build-android-development-environment-in-ubuntu-based-distros.html">
+  <link rel="alternate" type="application/rss+xml" title="Youngbin Han" href="http://sukso96100.github.io//blog/feed.xml" />
+
+<!--Browser Update Notification-->
+<script>
+var $buoop = {c:2};
+function $buo_f(){
+ var e = document.createElement("script");
+ e.src = "https://browser-update.org/update.js";
+ document.body.appendChild(e);
+};
+try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+catch(e){window.attachEvent("onload", $buo_f)}
+</script>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    </head>
+    <body>
+
+    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--transparent">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Youngbin Han</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">MENU</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div align="center">
+           <div class="page-content"><!-- Your content goes here -->
+ <section id="top"></section>
+      <div class="postlayout-ribbon"
+       ></div>
+
+     <main class="postlayout-main mdl-layout__content" style="width: 100%;">
+       <div class="postlayout-container mdl-grid">
+         <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+         <div class=" mdl-color--white content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+            <div class="postlayout-content mdl-shadow--4dp">
+           <table><tr><td><i class="material-icons">today</i></td><td>2014.09.06</td></tr></table>
+            <h2 id="TITLE">우분투 계열 리눅스 베포판에서 안드로이드 개발환경 구축하기.</h2>
+            <hr><br>
+            <p>친구가 안드로이드 앱 개발을 시작해서, 글로 정리해 줄 겸 다른 분들도 보시라고 블로그에 올려봅니다.</p>
+
+<p>우분투 리눅스 계열 배포판에서 안드로이드 개발환경을 구축하는 법을 말해보고자 합니다.
+이 게시물은 여러분들께서 우분투 계열 리눅스를 사용하시고 계신다고 가정하고 작성하였습니다.
+도움이 되셨스면 좋겠습니다^^</p>
+
+<hr />
+
+<h2 id="jdk-">JDK 설치하기</h2>
+
+<p>먼저 안드로이드를 개발하려면, 안드로이드 앱을 Java로 작상하기에, JDK(Java Development Kit) 을 먼저 설치해야 합니다.
+우분투에서는 기본적으로 오픈JDK 를 제공해 주는대, 그건 불안정해서 쓰기 좀 그러니. 여기서는 오라클 JDK를 설치 해 봅시다.</p>
+
+<p>오라클 JDK는 라이선스 문제로, 기본적으로 우분투 패키지 저장소에서 제공되지 않으므로. 별도의 저장소를 추가 후 설치해야 합니다.
+여기서는 <a href="https://launchpad.net/~webupd8team/+archive/ubuntu/java">WebUpd8 Team의 오라클 Java PPA 저장소</a>를 추가해 봅시다.</p>
+
+<p>터미널을 열고, 아래 명령어를 실행하여 저장소 정보를 추가하고 설치합니다.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#오라클 자바 저장소 추가</span>
+sudo add-apt-repository ppa:webupd8team/java
+<span class="c">#저장소 정보 업데이트</span>
+sudo apt-get update
+<span class="c">#오라클 자바7 설치하기</span>
+sudo apt-get install oracle-java7-installer</code></pre></figure>
+
+<hr />
+
+<h2 id="android-studio-">Android Studio 설치하기</h2>
+
+<p>JDK를 설치하였으면, 안드로이드 앱 개발에 사용할, 안드로이드 스튜디오를 설치합시다.</p>
+
+<p>안드로이드 스튜디오는, Android Developers(d.android.com) 에서 배포하는 압축 패키지 파일을 받아, 압축을 풀고 실행하거나,
+PPA 저장소를 추가하여 설치하는 법이 있습니다.</p>
+
+<h3 id="section">압축 패키지를 받아 풀고 실행하기.</h3>
+
+<p>아래 링크를 방문하여, 파란색 “Download Android Studio” 버튼을 눌러서 압축 패키지를 받으세요.
+<a href="http://developer.android.com/sdk/installing/studio.html">http://developer.android.com/sdk/installing/studio.html</a></p>
+
+<p>다운로드 받은 압축 패키지의 압축을 풀으세요. 가능한 상위 디렉터리에 풀어두시는 것을 권장합니다.
+앛축 풀린 폴더의 /bin 폴더에 들어가서, studio.sh를 실행하면, 안드로이드 스튜디오가 실행됩니다.
+파일 관리자에서 실행되지 않으면, 터미널에서 실행해보세요.
+예를 들어, 압축 풀린 안드로이드 스튜디오 파일들이, ~/다운로드/android-studio/ 에 있다면, 아래와 같은 명령어를 실행하면 됩니다.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/다운로드/android-studio/bin
+./studio.sh</code></pre></figure>
+
+<h3 id="ppa--">PPA 로부터 설치하기.</h3>
+
+<p><a href="https://launchpad.net/~paolorotolo/+archive/ubuntu/android-studio">Paolo Rotolo 의 PPA</a>로 부터 설치해 봅시다.
+아래 명령어로, PPA를 추가하고 설치를 진행하세요.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo add-apt-repository ppa:paolorotolo/android-studio
+sudo apt-get update
+sudo apt-get install android-studio</code></pre></figure>
+
+<p>설치 완료 후, 프로그램 메뉴에서 Android Studio 를 찿아 실행하세요.</p>
+
+<hr />
+
+<h2 id="sdk---">필요한 SDK 도구 다운로드 하기</h2>
+
+<p>먼저 Android SDK Manager를 실행하세요.</p>
+
+<h3 id="sdk-manager-------">처음 SDK Manager를 실행하는 경우 / 열린 프로젝트가 없는 경우</h3>
+
+<p>이 경우에는, Welcome to Android Studio 화면이 나옵니다.
+여기서, Configure &gt; SDK Manager 로 들어가면, Android SDK Manager가 실행됩니다.</p>
+
+<h3 id="section-1">열린 프로젝트가 있는경우.</h3>
+
+<p>상단 메뉴모음에서, Tools &gt; Android &gt; SDK Manager 로 진입하여 실행합니다.</p>
+
+<hr />
+
+<p>필요한 것들을 선택하시고, Install [n] Packages 를 눌러 설치하세요.</p>
+
+<p>보통 설치하는 항목들은 아래와 같습니다.</p>
+
+<ul>
+  <li>Tools 항목들</li>
+  <li>앱 테스트에 사용될 기기에 설치된 안드로이드 버전에 해당되는 항목들</li>
+  <li>Extras 항목들</li>
+</ul>
+
+<p>다운로드 및 설치에 시간이 많이 걸리니, 차 한잔 하면서 기다려 봅시다.</p>
+
+<hr />
+
+<p>환경 구축은 여기까지 입니다. 이제 본격적으로 안드로이드 앱을 개발해 보세요.</p>
+
+            <!-- 구글플러스 +1 버튼 -->
+            <!-- +1 버튼을(를) 표시하고 싶은 위치에 이 태그를 배치하세요. -->
+            <br><br><div class="g-plusone"></div><br>
+            <!-- Facebook 좋아요 버튼 -->
+            <div class="fb-like" data-href="" data-layout="button_count"
+             data-action="like" data-show-faces="true" data-share="false"></div><br>
+            <br>
+            
+           <a class="card-content" href="/blog/tags/#android">
+               <button class="mdl-button mdl-js-button mdl-js-ripple-effect">#android</button> </a>
+           
+           <a class="card-content" href="/blog/tags/#app">
+               <button class="mdl-button mdl-js-button mdl-js-ripple-effect">#app</button> </a>
+           
+           <a class="card-content" href="/blog/tags/#develop">
+               <button class="mdl-button mdl-js-button mdl-js-ripple-effect">#develop</button> </a>
+           
+           <a class="card-content" href="/blog/tags/#tutorial">
+               <button class="mdl-button mdl-js-button mdl-js-ripple-effect">#tutorial</button> </a>
+           
+           <br>
+
+</div>
+
+
+<!-- Google AdSense -->
+<div class="postlayout-last mdl-shadow--4dp"> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 블로그 포스트 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7051197638651710"
+     data-ad-slot="3015305584"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!-- Pagination links -->
+
+<div class="postlayout-content mdl-shadow--4dp"
+style="
+background-color: #5F7D8B; max-width:1300px;">
+<div class="mdl-card__title mdl-card--expand"></div>
+<div class="mdl-card__actions">
+<span class="demo-card-image__filename" style="color:white;">
+<h4 style="padding: 16px;"><a href="/2014/09/05/zionhs-android-app-update.html" style="color:white;">안드로이드용 시온고등학교 앱 0.1 버전 업데이트</a></h4>
+<table><tr><td><i class="material-icons">today</i></td><td>2014.09.05</td></tr></table>
+</span>
+</div>
+</div>
+
+
+
+
+<div class="postlayout-content mdl-shadow--4dp"
+style="
+background-color: #5F7D8B; max-width:1300px;">
+<div class="mdl-card__title mdl-card--expand"></div>
+<div class="mdl-card__actions">
+<span class="demo-card-image__filename" style="color:white;">
+<h4 style="padding: 16px;"><a href="/2014/09/14/introworkout-now-with-save-feature.html" style="color:white;">자기소개서 연습도구(IntroWorkout) 에 저장 기능을 넣었습니다.</a></h4>
+<table><tr><td><i class="material-icons">today</i></td><td>2014.09.14</td></tr></table>
+</span>
+</div>
+</div>
+
+
+
+<div class="postlayout-last mdl-shadow--4dp"> <!--COMMENT-->
+         <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'youngbinhan'; // required: replace example with your forum shortname
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div><br><br></div>
+
+
+         </div>
+
+
+       </div>
+
+  </div>
+  </main>
+
+</div>
+
+<script src="/blog/js/material.min.js"></script>
+<script src="/blog/js/common.js"></script>
+        <script>
+var $buoop = {c:2};
+function $buo_f(){
+ var e = document.createElement("script");
+ e.src = "//browser-update.org/update.js";
+ document.body.appendChild(e);
+};
+try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+catch(e){window.attachEvent("onload", $buo_f)}
+</script>
+
+    </body>
+</html>
