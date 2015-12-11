@@ -9,7 +9,7 @@ title: Recent Posts
                style="{% if post.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
                rgba(0, 0, 0, 0.4) ), url('{{ post.image }}')center / cover;{% endif %}
                padding:16px;">
-                 <a href="{{ post.url }}"><h3 style="color:white;">{{ post.title }}</h3></a>
+                 <a href="{{ site.baseurl }}/{{ post.url }}"><h3 style="color:white;">{{ post.title }}</h3></a>
                </div>
                <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
                  {{ post.content | strip_html | truncatewords:60 }}
