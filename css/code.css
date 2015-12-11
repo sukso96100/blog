@@ -1,4 +1,4 @@
-.highlight .pre { background-color: #ffffcc; font-family: 'Source Code Pro';}
+pre { background-color: #ffffcc; font-family: 'Source Code Pro';}
 .highlight .hll { background-color: #ffffcc; font-family: 'Source Code Pro';}
 .highlight .c { color: #8f5902; font-style: italic ; font-family: 'Source Code Pro';} /* Comment */
 .highlight .err { color: #a40000; border: 1px solid #ef2929 ; font-family: 'Source Code Pro';} /* Error */
