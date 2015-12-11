@@ -4,8 +4,8 @@ layout: default
 
 <div class="mdl-card mdl-cell mdl-cell--12-col postcard" align="start">
            <div class="mdl-card__media mdl-color-text--grey-50"
-           style="{% if post.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
-           rgba(0, 0, 0, 0.4) ), url('{{ post.image }}')center / cover;{% endif %}
+           style="{% if page.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
+           rgba(0, 0, 0, 0.4) ), url('{{ page.image }}')center / cover;{% endif %}
            padding:16px;">
              <a href="{{ site.baseurl }}/{{ post.url }}"><h3 style="color:white;">{{ page.title }}</h3></a>
            </div>
