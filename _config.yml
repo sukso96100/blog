@@ -1,0 +1,50 @@
+# Build settings
+markdown: kramdown
+
+# Site settings
+title: "Youngbin Han"
+description: "Youngbin Han's Personal Jekyll Based Blog!"
+email: sukso96100@gmail.com
+#blog logo
+logo: "/assets/images/df_logo.jpg"
+# blog cover
+cover: "/assets/images/background_image.jpg"
+
+name: 'Youngbin Han'
+author: 'Youngbin Han'
+author_image: "/assets/images/author.jpg"
+
+paginate: 10
+
+url: "http://sukso96100.github.io" # the base hostname & protocol for your site
+baseurl: ""
+
+# social icons and sharing options
+social:
+  - icon:	twitter
+    url:	https://twitter.com/sukso96100
+    desc: Follow me on twitter
+    share_url: http://twitter.com/share
+    share_title: ?text=
+    share_link: "&amp;url="
+
+  - icon:	facebook
+    url:	https://facebook.com/hanyoungbin
+    desc: Connect with me facebook
+    share_url: //www.facebook.com/sharer.php
+    share_title: ?t=
+    share_link: "&amp;u="
+
+  - icon:	github
+    url:	https://github.com/sukso96100
+    desc:	Fork me on github
+    share_url:
+    share_title:
+    share_link:
+
+  - icon:	google-plus
+    url:	https://google.com/+한영빈96
+    desc:	Add me on google+
+    share_url: https://plus.google.com/share?
+    share_title: ?title=
+    share_link: "&amp;url="

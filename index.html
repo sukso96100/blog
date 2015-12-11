@@ -1,0 +1,28 @@
+---
+layout: default
+title: Recent Posts
+---
+
+    {% for post in site.posts limit:10 %}
+    <div class="mdl-card mdl-cell mdl-cell--12-col postcard" align="start">
+               <div class="mdl-card__media mdl-color-text--grey-50"
+               style="{% if post.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
+               rgba(0, 0, 0, 0.4) ), url('{{ post.image }}')center / cover;{% endif %}
+               padding:16px;">
+                 <a href="{{ post.url }}"><h3 style="color:white;">{{ post.title }}</h3></a>
+               </div>
+               <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+                 {{ post.content | strip_html | truncatewords:60 }}
+                  </div>
+               <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+                 <div class="minilogo"></div>
+                 <div>
+                   <hr>
+                   <p>{{ post.date | date: "%Y.%m.%d" }}</p>
+                 </div>
+               </div>
+             </div>
+
+
+{% endfor %}
+<a href="/archive/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect">More Posts</button></a></div>
