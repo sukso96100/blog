@@ -2,8 +2,8 @@
 markdown: kramdown
 
 # Site settings
-title: "Youngbin Han"
-description: "Youngbin Han's Personal Jekyll Based Blog!"
+title: "YoungbinLab Blog"
+description: "Logs of Youngbin han's Laboratory"
 email: sukso96100@gmail.com
 #blog logo
 logo: "/assets/images/df_logo.jpg"
