@@ -29,29 +29,13 @@ layout: default
         {% include adsense.html %}
                   </div>
 
-
-         <div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
-           {% if page.previous.url %}
-
-                  <table>
-                    <a style="color:black;" href="{{ site.baseurl }}/{{page.previous.url}}" ><h4>{{ page.previous.title }}</h4></a>
-                    <tr><td><i class="material-icons">today</i></td><td>{{ page.previous.date | date: "%Y.%m.%d" }}</td></tr></table>
-                  {% else %}
-                  {% endif %}
-                  {% if page.next.url %}
-                  <a style="color:black;" href="{{ site.baseurl }}/{{page.next.url}}"><h4>{{ page.next.title }}</h4></a>
-                  <table><tr><td><i class="material-icons">today</i></td><td>{{ page.next.date | date: "%Y.%m.%d" }}</td></tr></table>
-                  {% else %}
-                  {% endif %}
-                  </div>
-
                   <div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
                  {% include disqus.html %}
                            </div>
                            <table align="center" style="padding-bottom:160px;">
                              <tr>
                                <td style="padding-right:16px;">
-                                 <a href="index.html" class="demo-nav__button">
+                                 <a href="{% if page.next.url %}{{ site.baseurl }}/{{page.next.url}}{% endif %}" class="demo-nav__button">
                                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                                      <i class="material-icons">arrow_back</i>
                                      </button>
@@ -59,7 +43,7 @@ layout: default
                                    </a>
                                  </td>
                                  <td style="padding-left:16px;">
-                                   <a href="index.html" class="demo-nav__button">
+                                   <a href="{% if page.previous.url %}{{ site.baseurl }}/{{page.previous.url}}{% endif %}" class="demo-nav__button">
                                     <p style="color:white;">Older</p>
                                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                                      <i class="material-icons">arrow_forward</i>
