@@ -3,9 +3,7 @@ layout: default
 title: Archive
 permalink: /archive/
 ---
-  <main class="mdl-layout__content">
-    <div class="page-content" style="padding:32px;" align="center">
-      <section id="top"></section>
+<div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
       {% for post in site.posts  %}
 
     {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
@@ -13,21 +11,12 @@ permalink: /archive/
 
     {% if forloop.first %}
 
+
     <h2 class="card-content" id="{{ this_year }}-ref">{{this_year}}</h2><br>
     <!-- <ul> -->
     {% endif %}
 
-        <div class="mdl-card mdl-shadow--2dp demo-card-image mdl-cell mdl-cell--12-col mdl-shadow--4dp"
-         style="{% if post.image %}background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('{{ post.image }}');{% endif %}
-         background-color: #5F7D8B; max-width:1300px;">
-          <div class="mdl-card__title mdl-card--expand"></div>
-          <div class="mdl-card__actions">
-            <span class="demo-card-image__filename" style="color:white;">
-            <h4 style="padding: 16px;"><a href="{{ post.url | prepend: site.baseurl }}" style="color:white;">{{ post.title }}</a></h4>
-            <table><tr><td><i class="material-icons">today</i></td><td>{{ post.date | date: "%Y.%m.%d" }}</td></tr></table>
-            </span>
-          </div>
-        </div>
+         <p>{{ post.date | date: "%Y.%m.%d" }} | <a href="{{ post.url }}">{{ post.title }}</a>{% if post.author %} | {{ post.author }} {% endif %}</p>
 
 
     {% if forloop.last %}
