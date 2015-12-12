@@ -3,6 +3,7 @@ layout: default
 title: Archive
 permalink: /archive/
 ---
+<div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
 
       {% for post in site.posts  %}
 
@@ -11,7 +12,6 @@ permalink: /archive/
 
     {% if forloop.first %}
 
-<div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
     <h2 class="card-content" id="{{ this_year }}-ref">{{this_year}}</h2><br>
     <!-- <ul> -->
     {% endif %}
@@ -20,7 +20,6 @@ permalink: /archive/
 
 
     {% if forloop.last %}
-</div>
     {% else %}
         {% if this_year != next_year %}
 
@@ -29,3 +28,4 @@ permalink: /archive/
     {% endif %}
 
 {% endfor %}
+</div>
