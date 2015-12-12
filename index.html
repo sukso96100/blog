@@ -26,7 +26,7 @@ title: Recent Posts
 
 {% endfor %}
 
-<h4>Page {{ paginator.page }} of {{ paginator.total_pages }}</h4>
+<h4 style="color:white;">Page {{ paginator.page }} of {{ paginator.total_pages }}</h4>
 
 <table align="center" style="padding-bottom:160px;">
   <tr>
@@ -35,12 +35,12 @@ title: Recent Posts
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
           <i class="material-icons">arrow_back</i>
           </button>
-            <b style="color:white;">Previous</b>
+            <b style="color:white;">Older</b>
         </a>
       </td>
       <td style="padding-left:16px;">
         <a href="{% if paginator.next_page %}{{ site.baseurl }}/{{ paginator.next_page_path }}{% else %}{% endif %}" class="demo-nav__button">
-         <b style="color:white;">Next</b>
+         <b style="color:white;">Newer</b>
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
           <i class="material-icons">arrow_forward</i>
         </button>
