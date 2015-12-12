@@ -4,7 +4,7 @@ title: Tags
 permalink: /tags/
 ---
 
-  <div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
+  <div class="mdl-card mdl-cell mdl-cell--12-col postcard content">
        {% for tag in site.tags %}
        <a href="#{{ tag | first }}"><button class="mdl-button mdl-js-button mdl-js-ripple-effect">#{{ tag | first }}</button></a>
        {% endfor %}
