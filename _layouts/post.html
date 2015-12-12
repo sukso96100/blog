@@ -13,11 +13,12 @@ layout: default
            <table><tr><td><i class="material-icons">today</i></td><td>{{ page.date | date: "%Y.%m.%d" }}</td></tr></table>
            <hr>
           {{ content }}
-
+          <hr>
           <!-- 구글플러스 +1 버튼 -->
            <g:plusone></g:plusone><br>
           <!-- Facebook 좋아요 버튼 -->
           <div class="fb-like" data-href="{{ site.baseurl }}/{{ page.url }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div><br>
+          <hr>
           {% for tag in page.tags %}
          <a class="card-content" href="{{ site.baseurl }}/tags/#{{ tag }}">
              <button class="mdl-button mdl-js-button mdl-js-ripple-effect">#{{ tag }}</button> </a>
