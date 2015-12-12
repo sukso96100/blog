@@ -21,7 +21,7 @@ permalink: /tags/
   {% for posts in tag %}
     {% for post in posts %}
     {% if post.title %}
-    <p>{{ post.date | date: "%Y.%m.%d" }} | <a href="{{ post.url }}">{{ post.title }}</a>{% if post.author %} | {{ post.author }} {% endif %}</p>
+    <p>{{ post.date | date: "%Y.%m.%d" }} | <a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a>{% if post.author %} | {{ post.author }} {% endif %}</p>
     {% endif %}
     {% endfor %}
   {% endfor %}
