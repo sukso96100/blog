@@ -4,10 +4,7 @@ title: Tags
 permalink: /tags/
 ---
 
-    <div class="page-content" style="padding:32px;" align="center">
-      <section id="top"></section>
-      <div class="mdl-card mdl-shadow--2dp mdl-layout__content mdl-cell mdl-cell--12-col mdl-shadow--4dp"
-       style=" max-width:1300px; padding:16px;">
+  <div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
        {% for tag in site.tags %}
        <a href="#{{ tag | first }}"><button class="mdl-button mdl-js-button mdl-js-ripple-effect">#{{ tag | first }}</button></a>
        {% endfor %}
