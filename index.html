@@ -26,12 +26,12 @@ title: Recent Posts
 
 {% endfor %}
 
-<h3>Page {{ paginator.page }} of {{ paginator.total_pages }}
+<h4>Page {{ paginator.page }} of {{ paginator.total_pages }}</h4>
 
 <table align="center" style="padding-bottom:160px;">
   <tr>
     <td style="padding-right:16px;">
-      <a href="{% if paginator.previous_page %}{{ paginator.previous_page_path }}{% else %}{% endif %}" class="demo-nav__button">
+      <a href="{% if paginator.previous_page %}{{ site.baseurl }}/{{ paginator.previous_page_path }}{% else %}{% endif %}" class="demo-nav__button">
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
           <i class="material-icons">arrow_back</i>
           </button>
@@ -39,7 +39,7 @@ title: Recent Posts
         </a>
       </td>
       <td style="padding-left:16px;">
-        <a href="{% if paginator.next_page %}{{ paginator.next_page_path }}{% else %}{% endif %}" class="demo-nav__button">
+        <a href="{% if paginator.next_page %}{{ site.baseurl }}/{{ paginator.next_page_path }}{% else %}{% endif %}" class="demo-nav__button">
          <b style="color:white;">Next</b>
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
           <i class="material-icons">arrow_forward</i>
