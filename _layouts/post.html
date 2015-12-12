@@ -35,7 +35,7 @@ layout: default
                            <table align="center" style="padding-bottom:160px;">
                              <tr>
                                <td style="padding-right:16px;">
-                                 <a href="{% if page.next.url %}{{ site.baseurl }}/{{page.next.url}}{% endif %}" class="demo-nav__button">
+                                 <a href="{% if page.next.url %}{{ site.baseurl }}/{{page.next.url}}{% else %}{% endif %}" class="demo-nav__button">
                                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                                      <i class="material-icons">arrow_back</i>
                                      </button>
@@ -43,7 +43,7 @@ layout: default
                                    </a>
                                  </td>
                                  <td style="padding-left:16px;">
-                                   <a href="{% if page.previous.url %}{{ site.baseurl }}/{{page.previous.url}}{% endif %}" class="demo-nav__button">
+                                   <a href="{% if page.previous.url %}{{ site.baseurl }}/{{page.previous.url}}{% else %}{% endif %}" class="demo-nav__button">
                                     <b style="color:white;">Older</b>
                                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                                      <i class="material-icons">arrow_forward</i>
