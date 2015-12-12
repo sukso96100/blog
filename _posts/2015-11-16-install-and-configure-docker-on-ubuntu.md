@@ -81,7 +81,7 @@ sudo usermod -aG docker ubuntu
 sudo systemctl enable docker
  {% endhighlight %}
 
-우분투 14.10 이하는, upstart 로 서비스를 관리하는데, 위의 과정에서 설치중 자동으로 설정되므로, 따로 설정하실 필요가 없습니다.
+우분투 14.10 이하는, `upstart` 로 서비스를 관리하는데, 위의 과정에서 설치중 자동으로 설정되므로, 따로 설정하실 필요가 없습니다.
 
 ---
 
