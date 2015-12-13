@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2015-11-16
+date: 2015-12-12
 title: "상하이 여행 - 준비(1)"
 tags: trip shanghai china update tip tips
 ---
