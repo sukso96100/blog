@@ -23,18 +23,18 @@ Windows 의 경우 7 부터 기본적으로 이 기능이 켜져 있고, 리눅�
 `fstrim`을 이용하여 TRIM 합니다.
 {% highlight bash %}
 sudo fstrim <TRIM할 리눅스 파티션> -v
-{% endhightlight %}
+{% endhighlight %}
 예를들어 `/` 파티션을 TRIM 하는경우 아래와 같이 실행합니다.
 {% highlight bash %}
 sudo fstrim / -v
-{% endhightlight %}
+{% endhighlight %}
 
 ## 마운트 옵션 변경하기
 대부분의 리눅스 배포판에서 사용되는 방법입니다. `/etc/fstab`을 수정합니다.
 먼저 TRIM 할 파티션의 UUID 를 알아야 합니다. 아래 명령으로 UUID 를 알아냅니다.
 {% highlight bash %}
 lsblk -f
-{% endhightlight %}
+{% endhighlight %}
 {% highlight bash %}
 youngbin@youngbin-ultrabook ~> lsblk -f
 NAME   FSTYPE LABEL        UUID                                 MOUNTPOINT
@@ -46,17 +46,18 @@ sda
 ├─sda5 vfat                59C9-02ED                            /boot/efi
 └─sda6 ext4                f50f4abf-fdcc-4263-9a5a-9ce0f9e080d8 /
 sdb  
-{% endhightlight %}
+{% endhighlight %}
 
 텍스트 에디터로 `/etc/fstab` 을 엽니다.
 
 {% highlight bash %}
 sudo gedit /etc/fstab
-{% endhightlight %}
+{% endhighlight %}
 
 원하는 파티션에, `discard` 옵션을 추가합니다. `discard` 옵션은 파일이 지워질 때마다 TRIM 이 실행되도록 해 주는 옵션입니다.
 
 > 수정 전 예시
+
 {% highlight bash %}
 # /etc/fstab: static file system information.
 #
@@ -68,9 +69,10 @@ sudo gedit /etc/fstab
 #
 UUID=f50f4abf-fdcc-4263-9a5a-9ce0f9e080d8 / ext4 defaults,rw,noatime 0 1
 UUID=59C9-02ED /boot/efi vfat defaults,rw,noatime 0 0
-{% endhightlight %}
+{% endhighlight %}
 
 > 수정 후 예시
+
 {% highlight bash %}
 # /etc/fstab: static file system information.
 #
@@ -82,7 +84,7 @@ UUID=59C9-02ED /boot/efi vfat defaults,rw,noatime 0 0
 #
 UUID=f50f4abf-fdcc-4263-9a5a-9ce0f9e080d8 / ext4 defaults,rw,noatime,discard 0 1
 UUID=59C9-02ED /boot/efi vfat defaults,rw,noatime 0 0
-{% endhightlight %}
+{% endhighlight %}
 
 저장 후 재부팅 합니다.
 
@@ -93,12 +95,12 @@ UUID=59C9-02ED /boot/efi vfat defaults,rw,noatime 0 0
 부팅할 때 마다 TRIM 하려면, `fstrim.service` 를 켭니다.
 {% highlight bash %}
 suso systemctl enable fstrim.service
-{% endhightlight %}
+{% endhighlight %}
 
 1주일에 한번씩 TRIM 하려면, `fstrim.timer` 를 켭니다.
 {% highlight bash %}
 suso systemctl enable fstrim.timer
-{% endhightlight %}
+{% endhighlight %}
 
 ---
 
