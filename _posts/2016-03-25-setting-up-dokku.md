@@ -114,6 +114,7 @@ git push dokku master
 ```
 
 앱 배포가 성공적으로 된 경우, 아래와 같은 것을 보실 수 있게 됩니다.
+
 ```
 =====> Application deployed:
        http://<배포된-앱-이름>.example.com
