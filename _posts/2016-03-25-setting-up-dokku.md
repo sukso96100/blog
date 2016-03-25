@@ -5,21 +5,21 @@ title: "Dokku 설치 및 설정하기"
 tags: linux note update tip tips docker dokku
 ---
 
-개인적으로 AWS EC2 인스턴스에 Dokku 라는 것을 설치해서 사용하는 중인데요. 
+개인적으로 AWS EC2 인스턴스에 Dokku 라는 것을 설치해서 사용하는 중인데요.
 Heroku 같이은 PaaS 를 개인 서버에 설치해 사용해 줄 주 있게 해 주는 도구 입니다.
 이 포스트에서 Dokku 가 무엇이고, 설치와 설정은 어떻게 하는지 알아봅시다.
 
 ## Dokku?
-Heroku 와 같은 일종의 PaaS(Platform as a Service) 들 중 하나 입니다. 
+Heroku 와 같은 일종의 PaaS(Platform as a Service) 들 중 하나 입니다.
 Docker를 활용하며, 약 200줄 짜리의 셸 스크립트 등으로 구성되어 있습니다.
 대부분의 PaaS 와 다른 점이 있다면, Dokku 는 서비스를 제공하는 업체나 회사의 서버가 아닌, 사용자의 서버에서 돌아갑니다.
 
 ## 설치
-
 먼저 Dokku 를 설치할 서버의 셸에 접속합니다.
 
 ### Debian GNU/Linux 계열 배포판
 Dokku 팀 쪽에서 제공하는 스크립트를 이용하여 설치합니다.
+
 ```bash
 $ wget https://raw.githubusercontent.com/dokku/dokku/v0.4.14/bootstrap.sh
 $ sudo DOKKU_TAG=v0.4.14 bash bootstrap.sh
@@ -27,9 +27,10 @@ $ sudo DOKKU_TAG=v0.4.14 bash bootstrap.sh
 
 ### Arch Linux
 AUR 로부터 [dokku](https://aur.archlinux.org/packages/dokku/) 패키지를 빌드하여 설치합니다.
+
 ```bash
 yaourt -S dokku
-``` 
+```
 
 ## 초기 설정
 
@@ -38,11 +39,11 @@ yaourt -S dokku
 필요한 경우, Dokku 가 설치된 서버에 도메인을 연결해 줍시다. 연결된 도메인은 Dokku 를 통해 배포된 앱의 주소로 사용됩니다.
 아래와 같은 방법으로, DNS 를 설정합니다. 설정에 문제가 없는 경우, ssh 로 연결시 해당 도메인으로 연결 할 수 있어야 합니다.
 
-```text
+```
 (레코드 타입 / 이름 / 값(또는 서버 IP))
 A / example.com / <서버 IP 주소>
 A / *.example.com / <서버 IP 주소>
-``` 
+```
 
 ### 웹 브라우저에서 Dokku 초기 설정 하기
 
@@ -57,10 +58,11 @@ DNS 설정을 통해, 도메인을 서버와 연결할 경우 다음과 같이 �
 - Hostname 에 본인이 서버와 연결한 도메인을 입력합니다. (예시 : example.com)
 - "Use virtualhost naming for apps" 항목을 체크 합니다.
  - 이렇게 하면, Dokku 를 통해 배포된 앱 들을 <앱-이름>.example.com 을 통해 이용할 수 있습니다.
- 
+
 ## Dokku 를 통해 앱 배포하기
 
 이제 Dokku 를 통해 앱을 배포해 봅시다. 먼저, 서버에 접속해서 앱을 하나 생성합시다.
+
 ```bash
 dokku apps:create <원하는-앱-이름>
 ```
@@ -70,8 +72,9 @@ dokku apps:create <원하는-앱-이름>
 
 먼저 Dokku 에서 사용 가능한 데이터베이스 플러그인을 설치합니다.
  [여기](http://dokku.viewdocs.io/dokku/plugins/#official-plugins-beta) 에서 어떤 플러그인이 있는지 확인 할 수 있습니다.
- 
+
 이 포스트에서는 PostgreSQL 플러그인을 예로 들어 설치합니다.
+
 ```bash
 #### PostgreSQL 플러그인 설치
 sudo dokku plugin:install https://github.com/dokku/dokku-postgres.git
@@ -81,6 +84,7 @@ dokku postgres:create <원하는-DB-서비스-이름>
 ```
 
 이제 DB 서비스와 앱을 연결합시다.
+
 ```bash
 dokku postgres:link <앱과-연결할-DB-서비스> <DB-서비스를-연결할-앱>
 ```
@@ -88,6 +92,7 @@ dokku postgres:link <앱과-연결할-DB-서비스> <DB-서비스를-연결할-�
 ### 앱 배포하기
 배포는 git 을 이용해 이뤄집니다. 먼저 배포할 앱의 디렉터리에 접근합니다.
 그 다음, git 저장소를 초기화 하지 않은 경우, 초기화 하고, 리모트를 추가합니다.
+
 ```bash
 cd <배포할-앱의-디렉터리>
 
