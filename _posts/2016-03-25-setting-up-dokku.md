@@ -104,6 +104,7 @@ git remote add dokku dokku@example.com:<배포할-앱의-이름>
 ```
 
 수정 사항을 커밋하고, 푸시하여 앱을 배포합니다.
+
 ```bash
 git add .
 git commit -m "Update"
