@@ -40,43 +40,43 @@ Ubuntu, Arch Linux 계열 리눅스를 사용하시면, 이 부분을 건너 뛰
 
 ### Linux - RPM 패키지 사용 하는경우
  * 다운로드 받은 RPM 파일을 아래 명령어를 사용하여 설치하거나, GUI 기반의 패키지 설치 프로그램이 있다면, 그냥 클릭해서 설치합니다.
-{% highlight bash %}
+```bash
 # "<파일이름>" 은 다운로드 받은 파일의 이름으로 합니다
 sudo rpm -i <파일이름>
 # 명령어 예시 : sudo rpm -i jdk-8u25-linux-x64.rpm
-{% endhighlight %}
+```
 
 ### Linux - Ubuntu 계열
 터미널에서 다음 명령어로, WebUpd8 JDK 저장소를 추가하고, 설치를 진행합니다.(아래 명령어는 JDK8을 설치합니다)
-{% highlight bash %}
+```bash
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java8-installer
-{% endhighlight %}
+```
 
 ### Linux - Arch Linux 계열
 간단히 AUR에서 받아다 설치합니다. 아래 명령어를 실행하세요.
-{% highlight bash %}
+```bash
 yaourt -S jdk
-{% endhighlight %}
+```
 
 ### Linux - 그 외 배포판
  * 먼저 루트 권한이 필요합니다. 루트로 전환하거나. 매번 명령어 앞에 sudo 를 붙여서 실행하세요. 여기에서를 루트로 전환하여 하는 방법을 소개합니다. 아래 명령어로, 루트로 전환합니다.
-{% highlight bash %}
+```bash
 sudo -i
-{% endhighlight %}
+```
  * JDK를 설치할 디렉터리에 접근합니다. 예를들어, /usr/java/ 라면. 아래 명령어를 실행하여 접근합니다
-{% highlight bash %}
+```bash
 cd /usr/java/
-{% endhighlight %}
+```
  * 다운로드한 *.tar.gz 파일을 지금 접근중인 경로로 옮기거나 복사합니다. 여기에서는 복사합니다.
-{% highlight bash %}
+```bash
 cp (*.tar.gz 파일의 상위 경로)/(해당 파일 이름).tar.gz (해당 파일 이름).tar.gz 
-{% endhighlight %}
+```
  * 압축을 해제합니다.
-{% highlight bash %}
+```bash
 tar zxvf (해당 파일 이름).tar.gz
-{% endhighlight %}
+```
 
 ## JAVA_HOME, Path 변수 설정하기.
 Java 로 작성된 프로그램을 실행하기 위해, JAVA_HOME 변수와, Path 변수를 설정해 주어야 합니다.
@@ -92,7 +92,7 @@ Java 로 작성된 프로그램을 실행하기 위해, JAVA_HOME 변수와, Pat
 
 ### Linux
 먼저 프로필 파일을 텍스트 에디터로 열어주세요. 
-{% highlight bash %}
+```bash
 # "gedit" 은 텍스트 에디터 이름 입니다. 
 # 다른 텍스트 에디터 사용시 gedit 대신 해당 에디터 이름을 입력하세요.
 
@@ -101,30 +101,30 @@ gedit ~/.bash_profile
 # 시스템 전체적으로 설정 할 경우
 # (시스템 영역에 접근하여 파일 수정시, 루트 권한이 필요하므로, 앞에 sudo를 붙입니다.)
 sudo gedit /etc/profile
-{% endhighlight %}
+```
 
 에디터로 열었으면, 가장 아래에 다음을 추가 하세요.
-{% highlight bash %}
+```bash
 # <JDK경로>는 여러분의 시스템에 JDK 가 설치된 경로로 하시면 됩니다.
 export JAVA_HOME=<JDK경로>
 # 예시 : export JAVA_HOME=/usr/java/jdk1.8.0_25
 export PATH=$JAVA_HOME/bin:$PATH
-{% endhighlight %}
+```
 
 다 했으면, 저장하고 에디터를 닫습니다. 그리고 아래 명령어로 설정한 것을 적용 시키세요.
 
-{% highlight bash %}
+```bash
 # 사용중인 계정에 대해서만 설정 한 경우
 source ~/.bash_profile
 # 시스템 전체적으로 설정 한 경우
 source /etc/profile
-{% endhighlight %}
+```
 
 ### JDK 작동여부 확인
 아래 명령어를 실행하여 확인합니다.
-{% highlight bash %}
+```bash
 java -version
-{% endhighlight %}
+```
 
 ## Android Studio 설치
 http://developer.android.com/sdk/index.html
@@ -191,7 +191,7 @@ http://developer.android.com/sdk/index.html
 
 코드의 상단에는 아래와 같은 내용이 있습니다.
 MainActivity 클래스가 정의 되어 있는 것을 보실 수 있습니다.
-{% highlight java %}
+```java
 //ActionBarActivity 를 상속 하는 MainActivity 클래스가 정의되어 있습니다.
 public class MainActivity extends ActionBarActivity {
 
@@ -200,10 +200,10 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ...
-{% endhighlight %}
+```
 
 그리고 스크롤을 하다 보면 다음과 같이 PlaceholderFragment 클래스가 MainActivity 클래스 내부에 정의 되어 있습니다.
-{% highlight java %}
+```java
 /**
      * A placeholder fragment containing a simple view.
      */
@@ -220,7 +220,7 @@ public class MainActivity extends ActionBarActivity {
         }
     }
     ...
-{% endhighlight %}
+```
 
 Activity 는 뭐고, Fragment 는 뭘까요?
 
@@ -266,7 +266,7 @@ View 도 상당히 그 종류가 다양합니다. 나눠보자면 대략 이렇�
 fragment_main.xml 파일을 수정하여, Layout 을 변경해 봅시다. 우리는 화면을 ListView로 가득 체울 것이므로. FrameLayout 을 사용하고 그 내부에 RelativeLayout 을 배치 할 것입니다.
 
 먼저 fragment_main.xml 을 열고, 하단에 탭을 Design 에서 Text 로 변경하여, 텍스트 편집 화면으로 바꾸세요. 아래와 같은 코드가 보이나요?
-{% highlight xml %}
+```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -279,10 +279,10 @@ fragment_main.xml 파일을 수정하여, Layout 을 변경해 봅시다. 우리
         android:layout_height="wrap_content" />
 
 </RelativeLayout>
-{% endhighlight %}
+```
 
 이 코드에서, RelativeLayout을 FramgLayout 으로 변경하고. 기존에 내부에 있던 TextView 를 지운다음, ListView 를 넣읍시다. 그러면 아래와 같이 코드가 바뀝니다.
-{% highlight xml %}
+```xml
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -297,11 +297,11 @@ fragment_main.xml 파일을 수정하여, Layout 을 변경해 봅시다. 우리
        android:id="@+id/listView"/>
 
 </FrameLayout>
-{% endhighlight %}
+```
 
 ### Java 코드 작성하기
 MainActivity.java 를 열어 동작을 구현해 봅시다. 우리는 Fragment 에 동작을 구현할 것이므로, Framgnet 코드를 먼저 찾으세요. 아래와 같은 코드를 찾았나요?
-{% highlight java %}
+```java
 /**
      * A placeholder fragment containing a simple view.
      */
@@ -318,11 +318,11 @@ MainActivity.java 를 열어 동작을 구현해 봅시다. 우리는 Fragment �
         }
     }
     ...
-{% endhighlight %}
+```
 
 문자열 배열로 ListView 에 넣을 데이터를 하나 만듭시다. 이름은 myArray 라고 하겠습니다.
 String[] 현태로 데이터를 만들고, 나중에 유동적으로 데이러를 넣고 빼기 위해, List<String>형태로 변환 하겠습니다
-{% highlight java %}
+```java
 ...
 
         public PlaceholderFragment() {
@@ -339,7 +339,7 @@ String[] 현태로 데이터를 만들고, 나중에 유동적으로 데이러�
         }
     }
     ...
-{% endhighlight %}
+```
 
 그리고 우리가 준비한 데이터와 ListView 사이에서 다리 역할을 하는 Adapter 를 하나 초기화 해서 만들어 줘야 합니다. 먼저 Adapter 에 대해 알아 봅시다.
 
@@ -353,7 +353,7 @@ Adapter 는 언급한 바와 같이, AdapterView 와 AdapterView에 표시될 �
 
 ### ArrayAdapter 초기화 하기
 우리는 다양한 Adapter 중. ArrayAdapter 를 사용 할 것 입니다. 아래와 같이 초기화 합니다. 몇가지 매개변수를 요구하는대, 아래 코드를 참고해서 입력 하시면 됩니다.
-{% highlight java %}
+```java
 ...
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -371,7 +371,7 @@ Adapter 는 언급한 바와 같이, AdapterView 와 AdapterView에 표시될 �
             return rootView;
         }
     ...
-{% endhighlight %}
+```
 
 ### Context
 - 시스템 서비스에 접근하거나 앱의 서비스에 접근하기 위해 사용 됩니다.
@@ -379,7 +379,7 @@ Adapter 는 언급한 바와 같이, AdapterView 와 AdapterView에 표시될 �
 
 ### ListView 찾기
 findViewById 를 이용해 ListView를 id값으로 찾습니다.
-{% highlight java %}
+```java
 ...
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -398,11 +398,11 @@ findViewById 를 이용해 ListView를 id값으로 찾습니다.
             return rootView;
         }
     ...
-{% endhighlight %}
+```
 
 ## ListView 에 Adapter 설정하기
 마지막으로 LitView 에 Adapter 를 설정해 ListView 와 Adapter 가 서로 작용하도록 합시다.
-{% highlight java %}
+```java
 ...
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -423,7 +423,7 @@ findViewById 를 이용해 ListView를 id값으로 찾습니다.
             return rootView;
         }
     ...
-{% endhighlight %}
+```
 
 ## 앱 실행 결과
  <img src="/blogimgs/study_lesson1_result.png"><br>

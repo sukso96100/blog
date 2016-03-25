@@ -22,14 +22,14 @@ tags: android app develop tutorial
 여기서는 <a href="https://launchpad.net/~webupd8team/+archive/ubuntu/java">WebUpd8 Team의 오라클 Java PPA 저장소</a>를 추가해 봅시다.
 
 터미널을 열고, 아래 명령어를 실행하여 저장소 정보를 추가하고 설치합니다.
-{% highlight bash %}
+```bash
 #오라클 자바 저장소 추가
 sudo add-apt-repository ppa:webupd8team/java
 #저장소 정보 업데이트
 sudo apt-get update
 #오라클 자바7 설치하기
 sudo apt-get install oracle-java7-installer
-{% endhighlight %}
+```
 
 ---
 
@@ -50,21 +50,21 @@ PPA 저장소를 추가하여 설치하는 법이 있습니다.
 파일 관리자에서 실행되지 않으면, 터미널에서 실행해보세요.
 예를 들어, 압축 풀린 안드로이드 스튜디오 파일들이, ~/다운로드/android-studio/ 에 있다면, 아래와 같은 명령어를 실행하면 됩니다.
 
-{% highlight bash %}
+```bash
 cd ~/다운로드/android-studio/bin
 ./studio.sh
-{% endhighlight %}
+```
 
 ### PPA 로부터 설치하기.
 
 <a href="https://launchpad.net/~paolorotolo/+archive/ubuntu/android-studio">Paolo Rotolo 의 PPA</a>로 부터 설치해 봅시다.
 아래 명령어로, PPA를 추가하고 설치를 진행하세요.
 
-{% highlight bash %}
+```bash
 sudo add-apt-repository ppa:paolorotolo/android-studio
 sudo apt-get update
 sudo apt-get install android-studio
-{% endhighlight %}
+```
 
 설치 완료 후, 프로그램 메뉴에서 Android Studio 를 찿아 실행하세요.
 

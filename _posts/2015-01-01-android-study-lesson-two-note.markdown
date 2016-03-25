@@ -48,7 +48,7 @@ http://api.openweathermap.org/data/2.5/forecast/daily?id=1838716&units=metric&cn
 Lesson 1 에서 작성한 소스를 안드로이드 스튜디오 에서 열고. MainActivity.java 의 Fragment 부분에 위치한 onCreateView 부분에서 이어서 작업합시다.
 
 우선 URL 객체를 하나 만듭시다. 그리고 HttpURLConnection 을 이용해 연결하고, 데이터를 로드합시다.
-{% highlight java %}
+```java
 ...
 HttpURLConnection urlConnection = null; //HttpUrlConnection
 //새 URL 객체
@@ -59,13 +59,13 @@ urlConnection = (HttpURLConnection) url.openConnection();
 urlConnection.setRequestMethod("GET");
 urlConnection.connect();
 ...
-{% endhighlight %}
+```
 
 ### 예외 처리
 URL을 다루거나, 데이터를 받아올 때, 예상치 못한 오류에 대비하여 try-catch-finally 를 이용하여 예외처리를 해 봅시다.
 try 에 우리가 평상시에 실행할 코드가 들어가고, catch 에는 특정 오류가 잡히면, 실행된 코드들을 넣어주고, finally 에는 try 와 catch 이후 마지막으로 실행될 코드가 들어갑니다.
 HttpURLConnection 등의 변수들은, try에사만 사용하지 않고, 그 외의 곳에서도 사용되기에. 예외처리 구문 전에 변수를 선언하고 초기화 해줍시다. 
-{% highlight java %}
+```java
 ...
 HttpURLConnection urlConnection = null; //HttpUrlConnection - try가 아닌 곳에서도 사용 되므로 try 밖에 선언합니다.
 try {
@@ -83,13 +83,13 @@ try {
         } finally {
         }
         ...
-{% endhighlight %}
+```
 ## InputStream
 우리가 수십 리터의 물을 받을 때 어떻게 받나요? 한 손으로 한번에 받나요? 그것을 불가능 합니다. 그 작은 손으로 어떻게 몇 심 리터의 물을 한번에 받겠습니까.
 한 손으로 한번에 받지 않고. 도구를 이용해 조금씩 받습니다. 파이프를 연결해서 흘려받는 것을 예로 들 수 있겠군요.
 우리가 로드하는 데이터 또한 한번에 로드 할 수 없습니다. 그래서 InputStream 을 이용하여 데이터를 로드합니다. InputStream 은 여러가지 Stream 중 하나 인대.
 Stream 은 데이터를 운반 해 주는 통로 역할을 해 줍니다. 물을 흘려보내는 파이프 역할을 한다고 보면 됩니다. Stream 은 연속적인 데이터 흐름을 물에 비유해서 붙여진 이름인대. 물이 한쪽 방향으로만 흐르듯, Stream 은 하나의 방향으로만 통신이 가능해서. 입력/출력을 동시에 처리할 수 없습니다. 그래서 InputStream, OutputStream 이 따로 있습니다. 우리는 데이터를 입력 받으므로. InputStream 을 사용합니다.
-{% highlight java %}
+```java
 ...
 HttpURLConnection urlConnection = null; //HttpUrlConnection - try가 아닌 곳에서도 사용 되므로 try 밖에 선언합니다.
 try {
@@ -109,11 +109,11 @@ try {
         } finally {
         }
 ...
-{% endhighlight %}
+```
 
 ## StringBuffer
 StringBuffer 은 문자열인 String 과 매우 유사하지만. 다른 접이 있습니다. String 이 처음에 만들어 질때 저장된 문자열을 바꾸기 어렵지만. StringBuffer 는 쉽게 바꿀 수 있습니다.
-{% highlight java %}
+```java
 ...
 HttpURLConnection urlConnection = null; //HttpUrlConnection - try가 아닌 곳에서도 사용 되므로 try 밖에 선언합니다.
 BufferedReader reader = null; //try가 아닌 곳에서도 사용 되므로 try 밖에 선언합니다.
@@ -141,11 +141,11 @@ try {
         } finally {
         }
 ...
-{% endhighlight %}
+```
 
 ## 불러온 데이터 문자열 변수에 저장. 오류 예외처리
 이제 불러온 데이터는 String 형태의 변수에 저장하고. 위에서 미리 작성한 예외처리에서, catch 부분에 오류 발생시 실행될 코드를 넣어줍니다.
-{% highlight java %}
+```java
 ...
 HttpURLConnection urlConnection = null; //HttpUrlConnection
 BufferedReader reader = null; //try가 아닌 곳에서도 사용 되므로 try 밖에 선언합니다.
@@ -188,7 +188,7 @@ try{
             }
         }
 ...
-{% endhighlight %}
+```
 
 ## Log 찍기
 오류가 나는 경우 그에 대한 더 자세한 정보를 얻기 위해. Log 가 찍히도록 코드를 작성해 봅시다. 아래와 같은 형태의 Log 를 찍을 수 있습니다.
@@ -200,14 +200,14 @@ try{
 - Verbose(일반적인 정보)
 
 아래와 같은 코드로 Log 를 찍을 수 있습니다.
-{% highlight java %}
+```java
 
 Log.e("로그", "오류 발생"); 
 Log.w("로그", "경고!"); 
 Log.i("로그", "새로운 정보!"); 
 Log.d("로그", "디버깅 결과"); 
 Log.v("로그", "일반적인 정보");
-{% endhighlight %}
+```
 
 ## Logcat 보기
 여기까지 작성한 앱을 한번 실행 해 봅시다. 앱이 강제 종료 되지 않나요? 그것이 정상 입니다. Logcat을 확인해서 출력된 Log들을 살펴 봅시다.
@@ -296,7 +296,7 @@ AsyncTask 에는 4가지 메서드가 있습니다. 백그라운드 작업 전�
 <img src="/blogimgs/asynctask_methods.png"><br>
 
 AsyncTask 를 구현 할 때는, AsncTask 를 상속받는 클래스로 구현합니다.
-{% highlight java %}
+```java
 private class myAsyncTask extends AsyncTask<실행시 받을 매개변수 타입, 진행 현황 변수 타입, 완료시 반환할 변수 타입>{ 
     protected void onPreExecute() { 
     // 백그라운드 작업 전에 Main Thread 에 실행 
@@ -312,13 +312,13 @@ private class myAsyncTask extends AsyncTask<실행시 받을 매개변수 타입
     //백그라운드 작업 후 Main Thread 실행 
         }
     }
-{% endhighlight %}
+```
 
 그럼, 한번 구현해 봅시다. 일단 코드가 슬슬 길어져서 눈으로 읽이 좀 어려우니. Fragment 를 별도의 클래스 파일로 분리합니다.
 새로 클래스 파일을 만들고, 그곳으로 Fragment 부분을 모두 옮기고, 기존에 Activity 클래스 파일의 Fragment 코드는 지웁시다.
 
 수정된 MainActivity,java
-{% highlight java %}
+```java
 public class MainActivity extends ActionBarActivity {
 
     @Override
@@ -332,10 +332,10 @@ public class MainActivity extends ActionBarActivity {
         }
     }
     ...
-{% endhighlight %}
+```
 
 MainActivity.java 에서 WeatherFragment.java 로 분리된 Fragment 코드
-{% highlight java %}
+```java
 public class WeatherFragment extends Fragment {
 
     public WeatherFragment() {
@@ -399,10 +399,10 @@ public class WeatherFragment extends Fragment {
         return rootView;
     }
 }
-{% endhighlight %}
+```
 
 일단은, doInBackground() 만 구현해 봅시다. AsyncTask 를 상속하는 내부 클래스를 하나 만들고 doImBackgound() 를 구현한 다음, 그 안에 네트워크 작업 코드를 옮기면 됩니다.
-{% highlight java %}
+```java
 public class WeatherFragment extends Fragment {
 
     public WeatherFragment() {
@@ -464,7 +464,7 @@ public class WeatherFragment extends Fragment {
         }
     }
 }
-{% endhighlight %}
+```
 
 ## Overflow Menu 
 매번 네트워크 작업이 잘 실행되는지 보기 위해 앱을 죽이고 다시 실행하기는 번거롭습니다. Overflow Menu 를 만들어, 그곳에 새로고침 메뉴를 넣어 봅시다.
@@ -473,17 +473,17 @@ public class WeatherFragment extends Fragment {
 
 ### xml 파일로 Overflow Menu 정의하기
 우선, Overflow Menu 에 어떤 항목을 넣을지, xml 항목으로 정의 해 줘야 합니다. 먼저, 새로고침 항목에 쓸 문자열을 /res/values/strings.xml 에 추가 합시다.
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     ...
     <!--새로 추가한 문자열-->
     <string name="refresh">Refresh</string>
 </resources>
-{% endhighlight %}
+```
 그 다음, 메뉴 항목을 정의해 줍시다. 새로 메뉴 리소스 파일을 /res/menu/ 에 생성해 주세요. 저는 /res/menu/weatherfragment.xml 파일을 생성 했습니다.
 그리고 아래 코드를 참고하여, 메뉴를 정의해 주세요.
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -496,10 +496,10 @@ public class WeatherFragment extends Fragment {
     <item android:id="@+id/action_refresh" android:title="@string/refresh"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>
-{% endhighlight %}
+```
 
 이제, WeatherFragment.java (아까 MainActivity.java 에서 별도 클래스 파일로 분리된 Fragment 클래스 파일) 을 열고, Overflow Menu 동작을 처리해 줍시다.
-{% highlight java %}
+```java
 public class WeatherFragment extends Fragment {
 ...
 
@@ -526,9 +526,9 @@ public class WeatherFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 }
-{% endhighlight %}
+```
 아. 그리고 WeatherFragment 가 Overflow Menu 를 가지고 있음을 MainActivity 에 알려서, WeatherFragment 가 가지고 있는 Overflow Menu 를 표시 하도록 해 줍시다.
-{% highlight java %}
+```java
 public class WeatherFragment extends Fragment {
     public WeatherFragment() {
     }
@@ -545,7 +545,7 @@ public class WeatherFragment extends Fragment {
     }
     ...
 }
-{% endhighlight %}
+```
 
 이제 앱을 다시 한번 실행 해 보세요. 앱이 잘 실행 되나요? 여전히 오류가 날 것입니다. 그것이 정상입니다. Logcat 을 한번 확인 해 볼까요?
 <pre>
@@ -647,7 +647,7 @@ Logcat 에서 이 부분에 주목해 주세요. 이번에는 SecurityException 
 <img src="/blogimgs/google_play_app_permission_dialog.png"><br>
 
 AndroidManifest.xml 이 Manifest 파일 입니다. 여기에 인터넷 권한을 정의 해 봅시다. 아래와 같이 정의 하면 됩니다.
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.youngbin.androidstudy" >
@@ -659,13 +659,13 @@ AndroidManifest.xml 이 Manifest 파일 입니다. 여기에 인터넷 권한을
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         ...
-{% endhighlight %}
+```
 
 ## 도시 ID 매개변수로 받기
 이제 JSON 파싱을 해서, 데이터를 화면에 표시 할 건대. 그 전에, 나중에 사용자가 따로 도시 ID 를 설정 할 수 있도록 코드를 작성하기 위해.
 약간의 수정을 해서, 아까 작성한 AsyncTask 를 상속하는 클래스인 myAsyncTask 가 도시 ID 를 매개 변수로 받도록 수정 해 봅시다.
 URL 은 나중에 다른 부분도 사용자가 설정 할 수 있도록 코드를 작성하기 위해, [UriBuilder](http://developer.android.com/reference/android/net/Uri.Builder.html) 를 이용해 작성해 봅시다.
-{% highlight java %}
+```java
 public class WeatherFragment extends Fragment {
 
 
@@ -733,7 +733,7 @@ public class WeatherFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 }
-{% endhighlight %}
+```
 
 ## JSON Parsing
 이제, 우리가 작성한 코드로 읽어들인 JSON 코드를 분석해서 필요한 데이터만 뽑아 화면에 표시해 봅시다.
@@ -745,7 +745,7 @@ public class WeatherFragment extends Fragment {
 <img src="/blogimgs/json_formatted.png"><br>
 <img src="/blogimgs/json_formatted_fullscreen.png"><br>
 이제 좀 읽이 편하군요. 한번 우리가 원하는 데이터를 찾아 봅시다.
-{% highlight json %}
+```json
 {
    "cod":"200",
    "message":0.5484,
@@ -934,7 +934,7 @@ public class WeatherFragment extends Fragment {
       }
    ]
 }
-{% endhighlight %}
+```
 각 요일별 날씨 상태(예를들면 맑은, 눈이 옴, 비가 옴, 흐림 등)와 최대기온, 최저기온을 얻어 봅시다.
 각 요일별 날씨는 "list" 라는 Json Array 안에 있고. 그 안에 있는 각 객체 안에 날씨 데이터가 있습니다.
 최대기온과 최저기온에 해당되는 "max" 와 "min" 은 "temp" 라는 객체 내부에 있고.
@@ -942,7 +942,7 @@ public class WeatherFragment extends Fragment {
 
 먼저, 7일치 날씨정보를 저장할 String[]을 하나 만들고, 반복문을 작성해서 각 요일별 날씨 객체를 얻어냅시다.
 
-{% highlight java %}
+```java
     protected class myAsyncTask extends AsyncTask<String, Void, String[]> { // 네트워크 작업 후 String[]을 반환 하도록 수정
         @Override
         protected String[] doInBackground(String... params) {
@@ -968,10 +968,10 @@ public class WeatherFragment extends Fragment {
          }
         }
          
-{% endhighlight %}
+```
 
 먼저 최대 기온과 최저 기온을 얻어내 봅시다.
-{% highlight java %}
+```java
     protected class myAsyncTask extends AsyncTask<String, Void, String[]> { // 네트워크 작업 후 String[]을 반환 하도록 수정
         @Override
         protected String[] doInBackground(String... params) {
@@ -1001,10 +1001,10 @@ public class WeatherFragment extends Fragment {
          }
         }
          
-{% endhighlight %}
+```
 
 그리고 이어서 날씨 상태를 얻어내 봅시다.
-{% highlight java %}
+```java
     ...
     protected class myAsyncTask extends AsyncTask<String, Void, String[]> { // 네트워크 작업 후 String[]을 반환 하도록 수정
         @Override
@@ -1041,11 +1041,11 @@ public class WeatherFragment extends Fragment {
          }
         }
         ...
-{% endhighlight %}
+```
 
 그리고, 하나의 문자열로 묶어서 배열에 넣어 봅시다.
 
-{% highlight java %}
+```java
     protected class myAsyncTask extends AsyncTask<String, Void, String[]> { // 네트워크 작업 후 String[]을 반환 하도록 수정
         @Override
         protected String[] doInBackground(String... params) {
@@ -1087,13 +1087,13 @@ public class WeatherFragment extends Fragment {
          }
         }
          
-{% endhighlight %}
+```
 
 ## Adapter 갱신하기
 이제 날씨 데이터를 뽑아내기 까지 했으니, Adapter 에 새 데이터를 전달해서, 우리가 뽑아낸 데이터가 ListView 에 나타나도록 해 봅시다.
 Adapter 에 접근 하는것은 UI 에 접근 하는 것이기 때문에, doInBackground(Params...) 에서 처리 하면 안 되고.
 onPostExecute(Result) 를 따로 구현해서 처리 해 줘야 합니다.
-{% highlight java %}
+```java
 protected class myAsyncTask extends AsyncTask<String, Void, String[]> {
 ...
         @Override
@@ -1106,7 +1106,7 @@ protected class myAsyncTask extends AsyncTask<String, Void, String[]> {
             }
         }
 }
-{% endhighlight %}
+```
 
 Adapter 가 가진 데이터가 변경되면. Adapter.notifyDataSetChanged(); 를 호출해서 데이터가 변경 되었음을 알려야 합니다. 그러나 우리는 굳이 따로 호출 해 줄 필요가 없습니다.
 우리가 호출한 Adapter.clear(); 와 Adapter.add(String); 이 호출 될 때, Adapter.notifyDataSetChanged(); 이 같이 호출 되기 때문입니다.
@@ -1135,7 +1135,7 @@ Lesson 2 에 해당되는 소스코드 입니다.
 
 안드로이드 네트워킹을 쉽게 할 수 있도록 해 주는 라이브러리도 아주 다양합니다. RetroFit, OkHttp, Volley, Loopj Async-HttpClient 등이 있는대.
 이 포스트에서는 [OkHttp](http://square.github.io/okhttp/) 를 한번 다뤄 보고자 합니다. 먼저 라이브러리를 추가 해 줍시다. 우리는 Android Studio 를 사용하죠? Lesson 1 에서 언급한 Gradle 이 알아서 의존성 등을 처리해 줍니다. gradle 빌드 스크립트에 한 줄만 추가하면 라이브러리 추가는 끝납니다. 앱 모듈 디렉터리에 위치한 build.gradle 을 열고, dependencies 에 한줄 추가 합니다.
-{% highlight groovy %}
+```groovy
 ...
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -1143,10 +1143,10 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.2.0' // 이거 한줄만 추가하면 됩니다.
 }
 ...
-{% endhighlight %}
+```
 [OkHttp 의 Wiki 문서](https://github.com/square/okhttp/wiki)나 [JavaDoc 문서](http://square.github.io/okhttp/javadoc/index.html)를 참고해서 코드를 작성 하시면 됩니다. 아래는 비동기 방식으로 네트워크 작업을 OkHttp 로 하는 방법의 예시 입니다.
 우리가 기존에 사용하던 방법에 비하면 정말 간단하지 않나요?
-{% highlight java %}
+```java
   private final OkHttpClient client = new OkHttpClient();
 
   public void run() throws Exception {
@@ -1173,7 +1173,7 @@ dependencies {
       }
     });
   }
-{% endhighlight %}
+```
 
 ## 추가 자료들...
 이 포스트를 보실 때 참고 하시면 좋은 자료들과 웹 사이트 입니다.

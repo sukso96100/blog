@@ -21,15 +21,15 @@ nodejs, npm 패키지 모두 있었지만, 설치해도 제대로 작동하지 �
 터미널을 열고, 루트 계정으로 전환합시다. 대부분의 명령을 실행할 때, 루트권한이 필요해서 그렇습니다.
 앞에 sudo 를 붙이는 것도 좋치만, 루트로 전환하는 것이 편할 수도 있습니다.
 
-{% highlight bash %}
+```bash
 sudo su
-{% endhighlight %}
+```
 
 fdisk 를 이용하여 파티션 작업을 합니다. sd카드가 마운트 된 위치를 확인하신 후,
 fdisk 를 실행합니다. 저의 경우에는 sd카드가 /dev/sdb 에 마운트 되어 있어, 다음과 같은 명령을 실행했습니다.
-{% highlight bash %}
+```bash
 fdisk /dev/sdb
-{% endhighlight %}
+```
 
 이제 다음 사항을 그대로 따라하세요!
 
@@ -43,39 +43,39 @@ fdisk /dev/sdb
 - w 를 입력하여 파티션 설정을 적용하고 fdisk 에서 빠져 나옵니다.
 
 이번에는 파일 시스템을 만들어 줍시다. 먼저 아래 명령줄들을 실행하여, fat 파일 시스템을 만들고 마운트 합니다.
-{% highlight bash %}
+```bash
 mkfs.vfat /dev/sdb1
 mkdir boot
 mount /dev/sdb1 boot
-{% endhighlight %}
+```
 다음으로, ext4 파일 시스템을 만들고 마운트 합니다. 아래 명령줄들을 실행하세요.
-{% highlight bash %}
+```bash
 mkfs.ext4 /dev/sdb2
 mkdir root
 mount /dev/sdb2 root
-{% endhighlight %}
+```
 
 루트 파일시스템을 다운로드 받아 sdb2 를 마운트한 root 폴더에 압축을 풀어줍시다.
-{% highlight bash %}
+```bash
 wget http://archlinuxarm.org/os/ArchLinuxARM-rpi-latest.tar.gz
 bsdtar -xpf ArchLinuxARM-rpi-latest.tar.gz -C root
 sync
-{% endhighlight %}
+```
 
 boot 파일들을 첫번째 파티션을 마운트한 boot 폴더로 옮깁니다.
-{% highlight bash %}
+```bash
 mv root/boot/* boot
-{% endhighlight %}
+```
 설치가 끝났습니다. 이제 마운트를 해제하세요.
-{% highlight bash %}
+```bash
 umount boot root
-{% endhighlight %}
+```
 
 만들어둔 폴더들과 다운받은 파일은 불필요 하신 경우 지줘줍시다.
-{% highlight bash %}
+```bash
 rm -rf boot
 rm -rf root
 rm ArchLinuxARM-rpi-latest.tar.gz
-{% endhighlight %}
+```
 다 되었습니다. 이제 sd카드를 라즈베리파이에 삽입하시고, 부팅하셔서 사용하세요!
 ssh나 시리얼로 연결하실 수 있습니다. 기본으로 있는 계정은 root 이며, 기본 비밀번호도 root 입니다.

@@ -15,9 +15,9 @@ SimpleCV 는 파이썬 언어를 이용하여 컴퓨터 비전 앱을 쉽게 작
 ## 의존성 패키지 먼저 설치하기.
 
 우선 SimpleCV 설치에 앞서 필요한 패키지들을 먼저 설치해 줍시다.
-{% highlight bash %}
+```bash
 sudo apt-get install ipython python-opencv python-scipy python-numpy python-setuptools python-pip
-{% endhighlight %}
+```
 
 ## SimpleCV 설치
 
@@ -25,18 +25,18 @@ sudo apt-get install ipython python-opencv python-scipy python-numpy python-setu
 나머지 하나는 미리 소스 코드를 받은 다음, 받아둔 소스코드로 설치하는 것입니다.
 
 Github 에서 받아다가 바로 설치하려면, 아래 명령어를 실행하세요. pip을 이용하여 url로부터 바로 설치합니다.
-{% highlight bash %}
+```bash
 sudo pip install https://github.com/sightmachine/SimpleCV/zipball/master
-{% endhighlight %}
+```
 
 소스를 다운로드 받고, 받은 소스로부터 설치하려면, 아래 명령어들을 실행하세요.
 소스코드를 다운로드 한 다음, 다운로드된 소스코드 폴더에 접근해서 pip응 이용해 설치합니다.
-{% highlight bash %}
+```bash
 git clone git://github.com/sightmachine/SimpleCV.git
 cd SimpleCV
 sudo pip install -r requirements.txt
 sudo python setup.py develop
-{% endhighlight %}
+```
 
 ## SimpleCV 테스트 하기
 
@@ -47,12 +47,12 @@ sudo python setup.py develop
 
 SimpleCV에 내장된 인터렉티브 쉘로 들어가려면 아래 명령어를 실행하세요. 인터렉티브 쉘에 들어가면,
 SimpleCV에서 사용 가능한 코드들을 실행 해 보실 수 있습니다.
-{% highlight bash %}
+```bash
 simplecv
-{% endhighlight %}
+```
 
 콘솔에서 정상적으로 인터렉티브 쉘에 들어 간 경우, 보통 아래와 같은 것들이 나타납니다.
-{% highlight bash %}
+```bash
 youngbin@youngbin-ultrabook:~$ simplecv
 [3;J
 /usr/lib/python2.7/dist-packages/IPython/frontend.py:30: UserWarning: The top-level `frontend` package has been deprecated. All its subpackages have been moved to the top `IPython` level.
@@ -79,18 +79,18 @@ Documentation:
 	"docs()" will launch webbrowser showing documentation
 
 SimpleCV:1>
-{% endhighlight %}
+```
 
 인터렉티브 쉘에서 나가려면, 아래 코드를 실행하세요.
-{% highlight bash %}
+```bash
 exit()
-{% endhighlight %}
+```
 
 ### 파이썬으로 작성해서 실행 해보기.
 파이썬으로 SimpleCV 를 사용하는 간단한 코드를 작성해서 실행해 보는 방식으로 테스트 해 볼 수도 있습니다.
 아래 코드는 simplecv.org 에서 가져온 예제 입니다(주석만 우리말로 수정 해봤습니다).
 아래 코드들을 파이썬 스크립트 파일(확장자가 *.py인)로 저장해 보세요.
-{% highlight python %}
+```python
 #-*- coding: utf-8 -*-
 from SimpleCV import Camera
 # 카메라 초기화.
@@ -105,13 +105,13 @@ while True:
     img.drawText("Hello World!")
     # 이미지 보여주기.
     img.show()
-{% endhighlight %}
+```
 
 저장 하셨으면, 웹캠 등의 카메라를 연결하시고,
 한 번 실행 해 보세요, 예를 들어 파일 이름이 simplecv.py 인 경우, 아래와 같은 명령어로 실행합니다.
-{% highlight bash %}
+```bash
 python simplecv.py
-{% endhighlight %}
+```
 
 정상적으로 실행이 된다면, 아래와 같은 화면이 나타날 것입니다.
 <img class="image-wrapper" src="{{ site.url }}/blogimgs/simplecv_example.png"><br>
@@ -122,7 +122,7 @@ python simplecv.py
 #### svgwrite 모듈이 설치되어 있지 않아 오류가 나는 경우.
 
 인터렉티브 쉘로 들어가려 할때 svgwrite 모듈 미설치로 인한 오류가 나면 아마 아래과 같은 것이 나타날 것입니다.
-{% highlight bash %}
+```bash
 youngbin@youngbin-ultrabook:~$ simplecv
 ERROR:
 Traceback (most recent call last):
@@ -143,12 +143,12 @@ Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/SimpleCV/DrawingLayer.py", line 5, in <module>
     import svgwrite
 ImportError: No module named svgwrite
-{% endhighlight %}
+```
 
 아래 명령어를 이용해, pip을 사용해 svgwrite 모듈을 설치 하시면 됩니다.
-{% highlight bash %}
+```bash
 sudo pip install svgwrite
-{% endhighlight %}
+```
 
 ## 끝.
 SimpleCV에 대해서는, SimpleCV 웹사이트를 방문하시면, 문서자료나 튜터리얼 같은 다양한 정보들을 얻으실 수 있습니다.

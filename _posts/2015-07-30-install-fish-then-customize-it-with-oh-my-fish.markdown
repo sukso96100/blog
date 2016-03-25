@@ -27,11 +27,11 @@ fishshell.com 의 설명을 인용해 설명합니다.
 #### Ubuntu
 PPA 에서 패키지를 받아 설치합니다.
 
-{% highlight bash %}
+```bash
 sudo apt-add-repository ppa:fish-shell/release-2
 sudo apt-get update
 sudo apt-get install fish
-{% endhighlight %}
+```
 
 #### CentOS, Debian, Fedora, openSUSE, RHEL
 
@@ -41,52 +41,52 @@ sudo apt-get install fish
 
 #### Arch Linux
 pacamn을 이용해 ArchLinux 공식 저장소에서 받아 설치합니다.
-{% highlight bash %}
+```bash
 sudo pacman -S fish
-{% endhighlight %}
+```
 
 #### Gentoo linux
 내장된 패키지 관리자를 이용하여 설치합니다.
-{% highlight bash %}
+```bash
 su -
 emerge fish
-{% endhighlight %}
+```
 
 #### 기본 셸로 설정하기
 다음 명령을 실행합니다.
-{% highlight bash %}
+```bash
 chsh -s /usr/bin/fish
-{% endhighlight %}
+```
 
 이제, 터미널을 다시 켜서 fish 셸이 나오는지 확인합니다. 나오지 않는다면, 로그아웃 후 다시 로그인 합니다.
 
 ### Oh My Fish 로 커스터마이징 하기
 
 설치는 명령줄 하나면 됩니다.
-{% highlight bash %}
+```bash
 curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/tools/install.fish | fish
-{% endhighlight %}
+```
 
 이제 테마와 플러그인을 설치해 봅시다.
 저는 'theme' 플러그인과 'agnoster' 테마를 설치할 겁니다. 그러기 위해서, 설정파일인, "~/.config/fish/config.fish"
 를 열어줍시다.<br> 평소 사용하시는 텍스트 에디터로 열어주세요. 가장 하단에 다음을 추가해 줍시다.
-{% highlight bash %}
+```bash
 Theme 'agnoster'
 Plugin 'theme'
-{% endhighlight %}
+```
 
 저장 후, 터미널을 열고 다음 명령을 실행합니다. 우리가 조금 전에 설정 파일에 명시한 플러그인과 테마를 설치합니다.
-{% highlight bash %}
+```bash
 omf install
-{% endhighlight %}
+```
 
 테마를 변경해 봅시다. 우리가 설치한, 'theme' 플러그인으로 쉽게 변경이 가능합니다.
-{% highlight bash %}
+```bash
 # 설치된 테마 목록 보기
 theme -l
 # agnoster 테마 적용하기
 theme agnoster
-{% endhighlight %}
+```
 
  더 많은 테마와 플러그인은 [여기](https://github.com/oh-my-fish?page=1) 에서 찾으실 수 있습니다.
  설정 파일에 사용할 테마나 플러그인을``` Theme '테마이름' Plugin '플러그인 이름'```형식으로 정의하시면 됩니다.

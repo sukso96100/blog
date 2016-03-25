@@ -32,9 +32,9 @@ hdmi 케이블은 당연히 모니터에 연결시면 됩니다.
 
 라즈베리파이 설정화면을 열어주세요. 보통 Raspbian 을 처음 부팅하시는 경우에 설정 화면이 나타납니다.
 나타나지 않는 경우, 터미널을 열고 아래 명령어를 실행하셔서, 설정 화면을 열어보세요.
-{% highlight bash %}
+```bash
 sudo raspi-config
-{% endhighlight %}
+```
 
 설정 화면에서, "8 Advanced Options > A4 SSH" 로 들어가서, <Enable> 을 선택해 주세요.
 그럼 ssh 서버가 활성됩니다. 설정 후에 설정 초기 화면으로 돌아오는대, <Finish> 를 선택해서, 설정을 마칩시다.
@@ -42,26 +42,26 @@ sudo raspi-config
 접속시 ssh 비밀번호를 요구하는대, 기본 계정이름은 pi, 기본 비밀번호는 raspberry 입니다.
 
 ssh로 라즈베리 파이에 접속하려면, 아래 명령어를 이용하세요. ssh 를 이용하여 라즈베리 파이의 pi 사용자에 접속합니다.
-{% highlight bash %}
+```bash
 ssh (라즈베리파이에 할당된 IP주소) -ㅣ pi
 
 #접속 예시
 ssh 192.168.1.5 -l pi
-{% endhighlight %}
+```
 
 이 명령어로도 접속이 가능합니다.
-{% highlight bash %}
+```bash
 ssh pi@(라즈베리파이에 할당된 IP주소)
 
 #접속 예시
 ssh pi@192.168.1.5
-{% endhighlight %}
+```
 
 접속 하셨다면, 이제 라즈베리파이 에서 사용 가능한 명령어들을 쓸 수 있습니다.
 접속을 종료하려면, 간단히 아래 명령어를 실행하세요.
-{% highlight bash %}
+```bash
 exit
-{% endhighlight %}
+```
 
 ## vnc 서버 설정하기
 
@@ -69,24 +69,24 @@ vnc 서버는 기본적으로 제공되지 않으니, 설치해야 합니다. �
 저사양에서 쓰기 적합한 TightVNC 서버를 설치 해보겠습니다.
 
 설치는 apt-get 을 이용합니다.
-{% highlight bash %}
+```bash
 #패키지 저장소 정보 업데이트
 sudo apt-get update
 #TightVNC 설치
 sudo apt-get install tightvncserver
-{% endhighlight %}
+```
 
 설치가 끝났으니 vnc 서버를 켜 봅시다. 아래 명령어를 실행하세요.
-{% highlight bash %}
+```bash
 vncserver
-{% endhighlight %}
+```
 
 처음 하는 경우 vnc 접속시 사용할 비밀번호를 설정합니다. 그렇치 않으면 바로 vnc 접속이 켜집니다.
 잘 작동중인지 확인해 봅시다. 아래 명령어를 통해 Xtightvnc 가 5901 포트와 6001 포트에서 작동중인지 확인해보세요.
 TightVNC는 기본적으로 5901 포트와 6001 포트에서 작동합니다.
-{% highlight bash %}
+```bash
 netstat -tcpul
-{% endhighlight %}
+```
 
 설정은 끝났습니다. VNC 뷰어 앱에서. 주소 란에 (라즈베리파이의 IP):(포트번호) [예시 192.168.1.5:5901] 라즈베리파이 주소를,
 비밀번호는 본인이 정한걸로 하고 접속을 시도해 보세요. 보통 잘 나타나야 정상입니다.

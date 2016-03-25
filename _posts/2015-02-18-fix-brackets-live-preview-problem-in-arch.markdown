@@ -9,6 +9,6 @@ tags: web update tips tutorial
 Brackets 이 크롬을 찾지 못해 라이브 프리뷰가 시작되지 못하는 문제가 있습니다.
 아래와 같은 명령어로 심볼릭 링크를 걸어주면 문제를 해결할 수 있습니다.
 
-{% highlight bash %}
+```bash
 ln -s /usr/bin/google-chrome-stable /usr/bin/google-chrome
-{% endhighlight %}
+```

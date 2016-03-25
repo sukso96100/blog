@@ -24,14 +24,14 @@ image: /blogimgs/node_arm.png
 
 그리고 아래 명령을 순차적으로 실행하여, 소스코드를 받고, 컴파일하여, 설치합니다.
 컴파일 시간이 매우 오래 걸리니(사양이 낮은 라즈베리파이에서 빌드하므로...), 차 한잔 하시거나 한숨 주무시고 오시는 것이 좋습니다.
-{% highlight bash %}
+```bash
 wget https://nodejs.org/dist/v0.12.7/node-v0.12.7.tar.gz
 tar xvzf node-v0.12.7.tar.gz
 cd node-v0.12.7
 ./configure
 make
 sudo make install
-{% endhighlight %}
+```
 
 ### 미리 빌드된 패키지로 설치하기
 
@@ -39,15 +39,15 @@ Nathaniel Johnson 이 빌드해 둔 패키지를 다운로드하여 설치합니
 미리 빌드된 것을 설치하기에, 금방 설치가 가능합니다.(적어도 직접 컴파일 할 때 보다 훨씬 빨리...)
 
 아래 명령들을 순서대로 실행하여, 패키지를 받고 설치합니다.
-{% highlight bash %}
+```bash
 wget http://node-arm.herokuapp.com/node_latest_armhf.deb
 sudo dpkg -i node_latest_armhf.deb
-{% endhighlight %}
+```
 
 ### 설치 잘 되었나 확인하기.
 설치 후, Node.js 와 Npm 버전 띄우는 명령으로 설치가 잘 되었는지 확인해 보세요.
 참고로 최근 버전의 Node.js 는 설치시 Npm 도 같이 설치 됩니다.
-{% highlight bash %}
+```bash
 node -v
 npm -v
-{% endhighlight %}
+```

@@ -52,7 +52,7 @@ Activity 가 완전히 종료 될 때 호출됩니다. 우리가 앱을 사용�
 그래서 저희는 Realm 데이터 베이스를 다루는 것으로 대신 했습니다.
 
 Realm 을 사용하려면 일단, build.gradle 의 dependencies 에 의존성으로 Realm 을 추가해 줘야 합니다.
-{% highlight groovy %}
+```groovy
 ...
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -61,14 +61,14 @@ dependencies {
     compile 'io.realm:realm-android:0.78.0' // 이거 한줄만 추가하면 됩니다.
 }
 ...
-{% endhighlight %}
+```
 
 ### 데이터 모델 정의하기
 클래스 파일을 하나 새로 생성하세요. 데이터 모델을 정의하는 클래스로 사용할 것입니다.
 데이터 모델을 정의하는 클래스는 RealmObject 를 상속 받고, 클래스에는 데이터 한 열 마다 어떤 데이터가 들어갈지 변수로 정의하고.
 getter 와 setter 메서드를 작성해 줍니다. 아래는 스터디를 통해 작성된 것입니다. 하루치 일기예보 데이터 모델을 정의한 것입니다.
 한 열에 날씨 상태, 최대기온, 최저기온을 저장하도록 정의되어 있습니다.
-{% highlight java %}
+```java
 public class WeatherDataModel extends RealmObject {
     private String State;
     private String Max;
@@ -98,11 +98,11 @@ public class WeatherDataModel extends RealmObject {
         this.Min = min;
     }
 }
-{% endhighlight %}
+```
 
 ### 쓰기 작업
 모든 쓰기(추가, 삭제, 수정) 작업은 아래와 같이 쓰기 트랜젝션 안에서 이루어 집니다.
-{% highlight java %}
+```java
 // Realm 인스턴스 얻기
 Realm realm = Realm.getInstance(this);
 
@@ -111,13 +111,13 @@ realm.beginTransaction();
 //여기에서 쓰기 작업이 이뤄집니다.
 
 realm.commitTransaction();
-{% endhighlight %}
+```
 
 ### 데이터 캐싱을 관리할 클래스 작성하기.
 
 클래스를 새로 하나 더 만듭시다. 데이터를 관리해 주는 클래스로 사용할 것입니다.
 생성자를 작성하고, 생성자에서 Realm 인스턴스를 얻어줍시다.
-{% highlight java %}
+```java
 public class WeatherDataManager {
     Realm realm;
     String TAG = "WeatherDataManager";
@@ -126,11 +126,11 @@ public class WeatherDataManager {
         realm = Realm.getInstance(context);
     }
 }
-{% endhighlight %}
+```
 
 우선, 캐시를 저장하는 메서드를 새로 작성합시다. 캐시를 저장하는 메서드에는 기존 데이터를 모두 지우고 새로 얻은 데이터를 저장하는 코드를 넣을 겁니다.
 캐시를 저장하는 메서드를 작성하기 앞서, 데이터를 모두 쿼리하여 불러오는 메서드를 작성합시다.
-{% highlight java %}
+```java
 public class WeatherDataManager {
     Realm realm;
     String TAG = "WeatherDataManager";
@@ -149,11 +149,11 @@ public class WeatherDataManager {
     }
      
 }
-{% endhighlight %}
+```
 
 이제 캐시를 저장하는 메서드를 작업합니다. 우선, 기존 데이터를 비워줍시다.
 
-{% highlight java %}
+```java
 public class WeatherDataManager {
     Realm realm;
     String TAG = "WeatherDataManager";
@@ -183,10 +183,10 @@ public class WeatherDataManager {
     }
      
 }
-{% endhighlight %}
+```
 
 그리고 반복문을 이용해 저장해 줍니다.
-{% highlight java %}
+```java
 public class WeatherDataManager {
     Realm realm;
     String TAG = "WeatherDataManager";
@@ -227,12 +227,12 @@ public class WeatherDataManager {
     }
      
 }
-{% endhighlight %}
+```
 
 저장된 데이터를 로드하는 4가지 메서드 또한 작성해 줍니다.
 3개의 메서드는 각각 상태, 최대, 최저 값을 따로 로드하여 배열로 반환하고.
 나머지 하나는 3가지 값을 한 항목으로 합쳐서 배열로 반환해 줍니다.
-{% highlight java %}
+```java
 public class WeatherDataManager {
     Realm realm;
     String TAG = "WeatherDataManager";
@@ -307,12 +307,12 @@ public class WeatherDataManager {
     }
      
 }
-{% endhighlight %}
+```
 
 ### 데이터 캐싱 해보기
 
 우리가 작성한 데이터 관리 클래스에서 메서드를 호출해 캐싱 해 봅시다. 아래는 예시 코드입니다.
-{% highlight java %}
+```java
 //인스턴스 얻기
 WeatherDataManager manager = new WeatherDataManager(Context);
 ...
@@ -327,7 +327,7 @@ manager.dropOldAndSaveNew(State, Max, Min, 7);
 State = manager.loadStateArrayList();
 Max = manager.loadMaxArrayList();
 Min = manager.loadMinArrayList();
-{% endhighlight %}
+```
 
 ## 참고 자료
 

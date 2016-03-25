@@ -25,37 +25,37 @@ tags: aws server docker ubuntu linux tip tutorial note update
 필자는 EC2 인스턴스에 우분투 서버 14.04LTS 를 돌리므로 이를 기준으로 설명 하겠습니다.
 
 먼저 사용중인 커널 버전이 3.10 이상이고 64bit 커널인지 확인합니다.
-{% highlight bash %}
+```bash
 uname -r
-{% endhighlight %}
+```
 
 우분투 12.04LTS의 경우, 커널 버전이 3.13 이상이여야 합니다. 아래 명령어로, 커널을 업그레이드 합니다.
-{% highlight bash %}
+```bash
 sudo apt-get update
 sudo apt-get install linux-image-generic-lts-trusty
 sudo reboot
-{% endhighlight %}
+```
 
 필요한 버전의 커널을 설치 하였다면, 이제 Docker 를 설치 합시다. 설치에 curl 이 필요 하므로, 먼저 curl 이 설치 되어 있는지 확인합니다.
-{% highlight bash %}
+```bash
 which curl
-{% endhighlight %}
+```
 
 설치 되어 있지 않다면, 설치 합니다.
-{% highlight bash %}
+```bash
 sudo apt-get update
 sudo apt-get install curl
-{% endhighlight %}
+```
 
 아래 명령으로, 최신 버전의 Docker 를 설치합니다.
-{% highlight bash %}
+```bash
 curl -sSL https://get.docker.com/ | sh
-{% endhighlight %}
+```
 
 설치가 잘 되었는지 확인합니다.
-{% highlight bash %}
+```bash
 sudo docker run hello-world
-{% endhighlight %}
+```
 
 
 ## (설정하기) Docker 그룹 만들기.
@@ -66,20 +66,20 @@ Docker 는 TCP 소켓 대신, 유닉스 소켓에 붙어 있습니다. 기본적
 
  - `sudo`를 사용가능한 사용자로 로그인 합니다. 예를 들어 `ubuntu`라는 사용자로 로그인 합니다.
  - `docker` 그룹을 만들고, 그 안에 `ubuntu`사용자를 추가 합니다.
- {% highlight bash %}
+ ```bash
 sudo usermod -aG docker ubuntu
- {% endhighlight %}
+ ```
  - `sudo없이 `docker` 명령이 실행 되는지 확인합니다.
- {% highlight bash %}
+ ```bash
  docker run hello-world
- {% endhighlight %}
+ ```
 
 ## (설정하기) 부팅시 Docker 데몬 자동 시작되도록 설정하기.
 
 우분투 15.04 이상은, `systemd`로 서비스를 관리합니다. 아래 명령으로 부팅시 자동시작 되도록 설정합니다.
- {% highlight bash %}
+ ```bash
 sudo systemctl enable docker
- {% endhighlight %}
+ ```
 
 우분투 14.10 이하는, `upstart` 로 서비스를 관리하는데, 위의 과정에서 설치중 자동으로 설정되므로, 따로 설정하실 필요가 없습니다.
 

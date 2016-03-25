@@ -14,9 +14,9 @@ tags: archlinux aur packaging linux note update tip tips
 ## 준비
 
 먼저 AUR 사용자 계정과, ssh 키 한쌍을 준비합니다. AUR 계정은 [여기](https://aur.archlinux.org/register/) 에서 하나 새로 만드실 수 있고, `ssh` 키는 아래 명령어로 하나 새로 생성하실 수 있습니다. 생성된 `ssh` 키 쌍은 보통 `~/.ssh`에 저장 됩니다.
-{% highlight bash %}
+```bash
 ssh-keygen
-{% endhighlight %}
+```
 
 AUR 웹사이트에서 로그인 하신 뒤, "My Account" 로 가셔서, "SSH Public Key:" 에 조금전 생성한 ssh키 쌍의 공개키를 넣습니다.
 
@@ -33,13 +33,13 @@ AUR 웹사이트에서 로그인 하신 뒤, "My Account" 로 가셔서, "SSH Pu
 
 ## 새로 올리기
 아래와 같이 본인이 패키징할 소프트웨어 이름의 `git` 저장소를 하나 복제합니다. (네, 새로 만드는 게 아니고 복제 합니다.)
-{% highlight bash %}
+```bash
 git clone ssh://aur@aur.archlinux.org/<원하는 패키지 이름>.git
-{% endhighlight %}
+```
 예를 들어, `hello`라는 패키지를 올리려면, `hello`라는 저장소를 복제합니다. 
-{% highlight bash %}
+```bash
 git clone ssh://aur@aur.archlinux.org/hello.git
-{% endhighlight %}
+```
 
 그리고, 이제 복제된 저장소 폴더에 PKGBUILD 와 설치 스크립트 등을 넣어줍시다.
 
@@ -48,7 +48,7 @@ git clone ssh://aur@aur.archlinux.org/hello.git
 이것을 기반으로 하여, 패키지가 빌드되고, 패키지 메타 데이터를 기술하는 `.SRCINFO` 파일이 생성됩니다.
 
 아래는 `PKGBUILD` 작성 예시 입니다. 예시를 보면서 각 변수가 무엇을 의미하는지 알아봅시다.
-{% highlight bash %}
+```bash
 # Maintainer: Your Name <youremail@domain.com>
 pkgname=NAME
 pkgver=VERSION
@@ -84,7 +84,7 @@ package() {
 
   make DESTDIR="$pkgdir/" install
 }
-{% endhighlight %}
+```
 
 ### pkgbase
 분할 패키지(하나의 소스트리에서 여러 패키지가 분리되어 빌드되는 경우)를 `PKGBUILD` 에 기술하는 경우 pkgname 보다 상위 개념으로 쓰이는 변수 입니다.
@@ -144,7 +144,7 @@ package() {
 ## 설치 스크립트 작성하기
 필요한 경우, 패키지 설치/업그레이드/삭제 시 실행할 스크립트를 작성해 줍니다.
 아래는 설치 스크립트 파일 예시 입니다.
-{% highlight bash %}
+```bash 
 # This is a default template for a post-install scriptlet.
 # Uncomment only required functions and remove any functions
 # you don't need (and this header).
@@ -180,7 +180,7 @@ package() {
 #post_remove() {
 	# do something here
 #}
-{% endhighlight %}
+```
 몇가지 함수가 있는데, 살펴봅시다.
 
 ### pre_install()
@@ -203,18 +203,18 @@ package() {
 
 ## 업로드 하기
 먼저 `pkgbuild-introspection` 패키지를 설치 하지 않으신 경우, 설치 하시고.
-{% highlight bash %}
+```bash 
 sudo pacman -S pkgbuild-introspection
-{% endhighlight %}
+```
 
 다음 명령어를 순서대로 실행해서 올립니다.
-{% highlight bash %}
+```bash 
 cd <패키지 git 저장소 폴더>
 mksrcinfo
 git add .
 git commit -m "<변경사항>"
 git push
-{% endhighlight %}
+```
 
 패키지가 잘 올라간 경우, 올라간 패키지를 AUR 에서 검색하실 수 있습니다.
 

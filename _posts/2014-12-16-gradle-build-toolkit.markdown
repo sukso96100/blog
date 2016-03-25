@@ -30,7 +30,7 @@ Gradle은 JDK위에서 작동합니다. 쓸려면 JDK(Java Development Kit) 먼�
 Gradle 빌드 스크립트 예제(개인적으로 작성했습니다.)
 http://gist.github.com/sukso96100/4ae0db5827be2eddff6f
 
-{% highlight groovy lineos%}
+```groovy lineos%}
 /* Gradle 빌드 스크립트 예제
  *
  * 아래 GitHub 저장소를 참조하여 작성하였습니다.
@@ -97,7 +97,7 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.2.0' //이미지 다운로딩 라이브러리(메이븐 중앙 저장소에서 가져옴)
     compile 'com.squareup.okhttp:okhttp:1.5.4' //HTTP+SPDY클라이언트 라이브러리(메이븐 중앙 저장소에서 가져옴)
 }
-{% endhighlight %}
+```
 
 ## 참고하면 좋은 웹사이트들.....
 * <a href="http://kwonnam.pe.kr/wiki/gradle">권남 위키 Gradle문서</a>

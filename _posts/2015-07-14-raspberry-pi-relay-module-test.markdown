@@ -23,7 +23,7 @@ image: /blogimgs/connect_relay_to_rpi_with_jumper.png
 연결 하셨스면. 이제 테스트를 한번 해 봅시다.
 아래 Python 스크립트로 테스트 해 봅시다. 단순히 릴레이 모듈 각 체널 스위치 켜고 끄는 스크립트 입니다.
 소스코드는 Raspbian 에서 실행됨을 가정하고 작성하였습니다. Raspbian 사용 중이시라면 실행시 문제가 없을 겁니다.
-{% highlight python %}
+```python
 import RPi.GPIO as GPIO
 import time
 
@@ -57,14 +57,14 @@ for i in range(2, 10):
 
 print "Done Testing. Cleaning Up GPIO"
 GPIO.cleanup()
-{% endhighlight %}
+```
 
 소스코드를 Python 파일(.py)로 저장하고. 아래 명령으로 실행해 봅시다.
 예를들어 파일명이 relay.py 면, 다음과 같은 명령으로 실행합니다.
 참고로 GPIO 사용시 루트 권한이 필요하므로. 앞에 sudo 를 붙여 실행합니다.
-{% highlight python %}
+```python
 sudo python relay.py
-{% endhighlight %}
+```
 
 잘 작동하나요? 아래 영상처럼 작동한다면, 잘 작동하는 겁니다.
 

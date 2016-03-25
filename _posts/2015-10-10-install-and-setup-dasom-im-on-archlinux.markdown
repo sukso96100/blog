@@ -12,43 +12,43 @@ tags: korean-input linux archlinux dasom-im
 
 [dasom-git](https://aur.archlinux.org/packages/dasom-git/) 패키지를 AUR 에서 받아 설치합니다.
 [yaourt](https://wiki.archlinux.org/index.php/Yaourt) 같은 AUR 도구를 사용하세요.
-{% highlight bash %}
+```bash
 yaourt -S dasom-git
-{% endhighlight %}
+```
 
 ### libindicator 빌드 오류 해결하기.
 다솜 입력기는 libappindicator-gtk3 를 요구하는데, 이 패키지는 libindicator 패키지를 요구합니다.
 그런데, libindicator 패키지를 빌드하는 중 아래와 같은 오류가 발생하는 경우가 있습니다.
-{% highlight bash %}
+```bash
 /usr/bin/ld: cannot find -lglib-2.0-lm
-{% endhighlight %}
+```
 이러한 오류를 방지하려면, 빌드에 앞서 아래와 같이, PKGBUILD 수정을 원하냐고 물을 때, y를 눌러, PKGBUILD 를 수정해야 합니다.
-{% highlight bash %}
+```bash
 Edit PKGBUILD ? [Y/n] ("A" to abort)
-{% endhighlight %}
+```
 그리고, PKGBUILD 에서 build() 부분의 cd 명령어와 ./configure 사이에 다음을 추가합니다.(두 군데 있는데, 두 군데 모두 추가합니다.)
-{% highlight bash %}
+```bash
 sed -i 's/LIBINDICATOR_LIBS+="$LIBM"/LIBINDICATOR_LIBS+=" $LIBM"/g' ./configure
-{% endhighlight %}
+```
 저장 후, 빌드를 계속하여 설치합니다.
 
 ### 입력기 설정하기
 다른 입력기와 설정 방법은 거의 동일합니다.
 
 먼저, ~/.xprofile 파일을 아래와 같이 수정하여 저장합니다.
-{% highlight bash %}
+```bash
 export GTK_IM_MODULE=dasom
 export QT_IM_MODULE=dasom
 export XMODIFIERS="@im=dasom"
 dasom-daemon &
 dasom-indicator &
-{% endhighlight %}
+```
 
 그리고, 그놈 셸을 사용하시는 경우, 아래 명령을 추가로 실행합니다.
-{% highlight bash %}
+```bash
 gsettings set org.gnome.settings-daemon.plugins.keyboard active false
 gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/IMModule':<'dasom'>}"
-{% endhighlight %}
+```
 
 이제, 로그아웃 후 다시 로그인 하시면, 다솜 입력기를 사용하실 수 있습니다,
 

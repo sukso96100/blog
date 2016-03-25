@@ -14,17 +14,17 @@ Evolve OS PPA에서는 Budgie Desktop뿐만 아니라, 다른 Evolve OS 소프�
 <br>
 Evolve OS 공식 PPA 를 통해서 Budgie Desktop을 설치하실 분들은, 아래 명령어를 실행하시기 바랍니다.<br>
 
-{% highlight bash %}
+```bash
 sudo add-apt-repository ppa:evolve-os/ppa
 sudo apt-get update
 sudo apt-get install budgie-desktop
-{% endhighlight %}
+```
 
 저의 기존 비공식 Budgie Desktop PPA는 계속 관리됩니다. 여기에는 불안정 패키지도 업로드 됩니다.<br>
 제 비공식 PPA사용을 여전히 사용하실 분은 아래 명령어를 이용하시면 됩니다.<br>
 
-{% highlight bash %}
+```bash
 sudo add-apt-repository ppa:sukso96100/budgie-desktop
 sudo apt-get update
 sudo apt-get install budgie-desktop
-{% endhighlight %}
+```

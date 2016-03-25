@@ -22,18 +22,18 @@ tags: tutorial develop development raspberry-pi linux fedora jdk oracle
 패키지를 설치하려면, 그냥 다운로드 받은 것을 파일 탐색이로 찿아, 더블클릭으로 열어서 설치 하실수도 있고, 터미널에서 명령어로 설치도 가능합니다.
 
 터미널에서 명령어로 설치하려면, 터미널을 열고, 다운로드 받은 파일이 있는 곳으로 접근하세요. 그리고 아래 명령어를 실행합니다.
-{% highlight bash %}
+```bash
 # "<파일이름>" 은 다운로드 받은 파일의 이름으로 합니다
 sudo rpm -i <파일이름>
 # 명령어 예시 : sudo rpm -i jdk-8u25-linux-x64.rpm
-{% endhighlight %}
+```
 
 ##JAVA_HOME 및 PATH 변수 설정
 
 Java로 작성된 프로그램들 중 일부는, JAVA_HOME 및 PATH 변수가 설정 되어있어야 실행이 가능하기도 합니다.(예를 들자면, Android Studio?) 사용중인 계정에 대해서만 설정 하거나, 시스템 전체적으로 설정하실 수 있습니다.
 
 먼저 프로필 파일을 텍스트 에디터로 열어주세요. 
-{% highlight bash %}
+```bash
 # "gedit" 은 텍스트 에디터 이름 입니다. 
 # 다른 텍스트 에디터 사용시 gedit 대신 해당 에디터 이름을 입력하세요.
 
@@ -42,36 +42,36 @@ gedit ~/.bash_profile
 # 시스템 전체적으로 설정 할 경우
 # (시스템 영역에 접근하여 파일 수정시, 루트 권한이 필요하므로, 앞에 sudo를 붙입니다.)
 sudo gedit /etc/profile
-{% endhighlight %}
+```
 
 에디터로 열었으면, 가장 아래에 다음을 추가 하세요.
-{% highlight bash %}
+```bash
 # <JDK경로>는 여러분의 시스템에 JDK 가 설치된 경로로 하시면 됩니다.
 export JAVA_HOME=<JDK경로>
 # 예시 : export JAVA_HOME=/usr/java/jdk1.8.0_25
 export PATH=$JAVA_HOME/bin:$PATH
-{% endhighlight %}
+```
 
 다 했으면, 저장하고 에디터를 닫습니다. 그리고 아래 명령어로 설정한 것을 적용 시키세요.
 
-{% highlight bash %}
+```bash
 # 사용중인 계정에 대해서만 설정 한 경우
 source ~/.bash_profile
 # 시스템 전체적으로 설정 한 경우
 source /etc/profile
-{% endhighlight %}
+```
 
 잘 설정 되었는지 확인 해봅시다. 아래 명령어로 확인하세요.
-{% highlight bash %}
+```bash
 java -version
-{% endhighlight %}
+```
 
 "Java(TM) SE ... "로 출력이 되면 오라클 JDK로 잘 설정이 된 것입니다. 저의 경우는 64비트 시스템에서 JDK8을 설치/설정 했기 때문에, 아래와 같이 나옵니다.
 
-{% highlight bash %}
+```bash
 [youngbin@youngbin-desktop ~]$ java -version
 java version "1.8.0_25"
 Java(TM) SE Runtime Environment (build 1.8.0_25-b17)
 Java HotSpot(TM) 64-Bit Server VM (build 25.25-b02, mixed mode)
 [youngbin@youngbin-desktop ~]$
-{% endhighlight %}
+```

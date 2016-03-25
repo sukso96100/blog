@@ -27,67 +27,67 @@ image : /blogimgs/zsh-is-awesome.png
 리눅스의 경우 보통 배포판별로 패키지 저장소에 있는 zsh 를 패키지 관리자로 설치하시면 됩니다.
 
 Arch Linux
-{% highlight bash %}
+```bash
 $ sudo pacman -S zsh
-{% endhighlight %}
+```
 
 Debian based distros(Debian, Ubuntu, Linux Mint, etc.)
-{% highlight bash %}
+```bash
 $ sudo apt-get install zsh
-{% endhighlight %}
+```
 
 Fedora
-{% highlight bash %}
+```bash
 $ sudo yum install zsh
-{% endhighlight %}
+```
 
 설치 후, 기본 셸을 zsh 로 변경해 줍시다. 아래 명령줄을 실행하세요.
-{% highlight bash %}
+```bash
 $ chsh -s /usr/local/bin/zsh
-{% endhighlight %}
+```
 
 변경 후, 터미널을 닫고 다시 새로 열어주세요. 아래 명령줄로 zsh 로 변경 되었는지 확인합니다.
-{% highlight bash %}
+```bash
 $ echo $SHELL
 $ zsh --version
-{% endhighlight %}
+```
 
 .zshrc 설정을 하려면 아래 명령줄을 이용하세요, 쉽게 설정 가능합니다.<br>
 oh my zsh 설치 시 .zshrc 파일 설정을 해 주기에 반드시 하실 필요는 없습니다.
-{% highlight bash %}
+```bash
 $ zsh /usr/share/zsh/functions/Newuser/zsh-newuser-install -f
-{% endhighlight %}
+```
 
 ## oh my zsh 설치
 
 별거 없습니다. 아래 명령줄 중 하나를 실행하세요.
 
 curl 을 이용하여 설치하기
-{% highlight bash %}
+```bash
 $ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-{% endhighlight %}
+```
 
 wget 을 이용하여 설치하기
-{% highlight bash %}
+```bash
 $ wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
-{% endhighlight %}
+```
 
 ## 테마 적용하기
 
 테마를 적용하려면, .zshrc 수정 후 저장합니다.ZSH_THEME 값을 원하시는 테마 이름으로 바꾸시면 됩니다. <br>
 [여기](https://github.com/robbyrussell/oh-my-zsh/wiki/Themes)에서 어떤 테마가 있는지 살펴보세요.
 전 agnoster 테마로 설정하겠습니다.
-{% highlight bash %}
+```bash
 ...
 ZSH_THEME="agnoster"
 ...
-{% endhighlight %}
+```
 
 agnoster 를 포함한 일부 테마는 특수한 폰트를 요구합니다 [여기](https://github.com/powerline/fonts) 에서 <br>
 Download ZIP 을 눌러 폰트를 받으신 후, 압축을 풀어 해당 폴더에서 다음과 같은 명령줄을 실행하여 폰트를 설치합니다.
-{% highlight bash %}
+```bash
 ./install.sh
-{% endhighlight %}
+```
 
 ## 끝!
 <img src="/blogimgs/zsh-is-awesome.png"><br>
