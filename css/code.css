@@ -1,5 +1,6 @@
-pre, code, .codehilite { background-color: #ffffcc; font-family: 'Source Code Pro'; overflow: auto}
-.codehilite .hll { background-color: #ffffcc ; font-family: 'Source Code Pro'; overflow: auto}
+pre, code, .codehilite { background-color: #ffffbb; font-family: 'Source Code Pro';
+                         overflow: auto; padding: 8px; border-style: groove; border-color: #ffff66}
+.codehilite .hll { background-color: #ffffbb ; font-family: 'Source Code Pro';}
 .codehilite .c { color: #999988; font-style: italic ; font-family: 'Source Code Pro'} /* Comment */
 .codehilite .err { color: #a61717; background-color: #e3d2d2 ; font-family: 'Source Code Pro'} /* Error */
 .codehilite .k { color: #000000; font-weight: bold ; font-family: 'Source Code Pro'} /* Keyword */
