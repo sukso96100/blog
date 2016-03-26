@@ -51,6 +51,7 @@ A / *.example.com / <서버 IP 주소>
 웹 브라우저를 열고, 주소창에 서버의 IP 주소나 도메인을 쳐서 이동하세요. 아래 이미지와 같은 화면이 나타날 것입니다.
 
 <img src="/blogimgs/dokku_setup.png"><br>
+
 > 이미지 출처 : https://assets.digitalocean.com/articles/dokku_intro/dokku_setup.png
 
 DNS 설정을 통해, 도메인을 서버와 연결할 경우 다음과 같이 설정합니다.

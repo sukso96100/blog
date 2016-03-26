@@ -21,10 +21,12 @@ Windows 의 경우 7 부터 기본적으로 이 기능이 켜져 있고, 리눅�
 
 ## 수동으로 TRIM 하기
 `fstrim`을 이용하여 TRIM 합니다.
+
 ```bash
 sudo fstrim <TRIM할 리눅스 파티션> -v
 ```
 예를들어 `/` 파티션을 TRIM 하는경우 아래와 같이 실행합니다.
+
 ```bash
 sudo fstrim / -v
 ```
@@ -32,9 +34,11 @@ sudo fstrim / -v
 ## 마운트 옵션 변경하기
 대부분의 리눅스 배포판에서 사용되는 방법입니다. `/etc/fstab`을 수정합니다.
 먼저 TRIM 할 파티션의 UUID 를 알아야 합니다. 아래 명령으로 UUID 를 알아냅니다.
+
 ```bash
 lsblk -f
 ```
+
 ```bash
 youngbin@youngbin-ultrabook ~> lsblk -f
 NAME   FSTYPE LABEL        UUID                                 MOUNTPOINT
@@ -93,11 +97,13 @@ UUID=59C9-02ED /boot/efi vfat defaults,rw,noatime 0 0
 아래 명령어를 이용해 켤 수 있습니다.
 
 부팅할 때 마다 TRIM 하려면, `fstrim.service` 를 켭니다.
+
 ```bash
 suso systemctl enable fstrim.service
 ```
 
 1주일에 한번씩 TRIM 하려면, `fstrim.timer` 를 켭니다.
+
 ```bash
 suso systemctl enable fstrim.timer
 ```

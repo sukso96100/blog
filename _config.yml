@@ -1,18 +1,17 @@
 # Build settings
 markdown: kramdown
 
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  
 # Site settings
 title: "YoungbinLab Blog"
 description: "Logs of Youngbin han's Laboratory"
 email: sukso96100@gmail.com
-#blog logo
-logo: "/assets/images/df_logo.jpg"
-# blog cover
-cover: "/assets/images/background_image.jpg"
 
 name: 'Youngbin Han'
 author: 'Youngbin Han'
-author_image: "/assets/images/author.jpg"
 
 paginate: 10
 

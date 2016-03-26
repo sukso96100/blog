@@ -60,7 +60,7 @@ dokku letsencrypt:revoke <대상-앱-이름>      # 대상 앱에 대한 인증�
 - 앱 URL 에 `/` 와 같은 올바르지 않은 문자가 포함되어 있으면 안됩니다. 인증서 발급 시 발급 오류의 원인이 됩니다.
 필요한 경우, `/home/dokku/VHOST` 그리고, `/home/dokku/<앱-이름>/VHOST` 에서 URL 을 수정하여, 올바르지 않은 문자를 지워 줍시다.
 - Dokku 를 통해 배포중인 앱의 수가 매우 많은 경우, 각 앱의 서브도메인마다 인증서를 발급하지 않도록 주의합니다.
-[동일한 최상위 도메인에 대해 발급 가능한 서로 다른 인증수 수가 제한되어 있습니다.](https://community.letsencrypt.org/t/rate-limits-for-lets-encrypt/6769)
+[동일한 최상위 도메인에 대해 발급 가능한 서로 다른 인증서 수가 제한되어 있습니다.](https://community.letsencrypt.org/t/rate-limits-for-lets-encrypt/6769)
 
 ## 참고문헌 및 참고 웹페이지
 - [Let's Encrypt](https://letsencrypt.org/)
