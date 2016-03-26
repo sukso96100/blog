@@ -1,4 +1,4 @@
-pre, code, .codehilite { background-color: #ffffbb; font-family: 'Source Code Pro'; overflow: auto; padding: 2px; }
+pre, code, .codehilite { background-color: #ffffbb; font-family: 'Source Code Pro'; overflow: auto; padding: 2px}
 .codehilite .hll { background-color: #ffffbb ; font-family: 'Source Code Pro';}
 .codehilite .c { color: #999988; font-style: italic ; font-family: 'Source Code Pro'} /* Comment */
 .codehilite .err { color: #a61717; background-color: #e3d2d2 ; font-family: 'Source Code Pro'} /* Error */
