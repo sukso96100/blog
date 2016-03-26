@@ -1,5 +1,4 @@
-pre, code, .codehilite { background-color: #ffffbb; font-family: 'Source Code Pro'; overflow: auto; padding: 2px}
-.codehilite .hll { background-color: #ffffbb ; font-family: 'Source Code Pro';}
+.codehilite .hll { background-color: #ffffbb ; font-family: 'Source Code Pro'; overflow: auto;}
 .codehilite .c { color: #999988; font-style: italic ; font-family: 'Source Code Pro'} /* Comment */
 .codehilite .err { color: #a61717; background-color: #e3d2d2 ; font-family: 'Source Code Pro'} /* Error */
 .codehilite .k { color: #000000; font-weight: bold ; font-family: 'Source Code Pro'} /* Keyword */
@@ -59,4 +58,4 @@ pre, code, .codehilite { background-color: #ffffbb; font-family: 'Source Code Pr
 .codehilite .vc { color: #008080 ; font-family: 'Source Code Pro'} /* Name.Variable.Class */
 .codehilite .vg { color: #008080 ; font-family: 'Source Code Pro'} /* Name.Variable.Global */
 .codehilite .vi { color: #008080 ; font-family: 'Source Code Pro'} /* Name.Variable.Instance */
-.codehilite .il { color: #009999 ; font-family: 'Source Code Pro'} /* Literal.Number.Integer.Long */
+.codehilite .il { color: #009999 ; font-family: 'Source Code Pro'; overflow: auto;} /* Literal.Number.Integer.Long */
