@@ -77,10 +77,10 @@ dokku apps:create <원하는-앱-이름>
 이 포스트에서는 PostgreSQL 플러그인을 예로 들어 설치합니다.
 
 ```bash
-#### PostgreSQL 플러그인 설치
+# PostgreSQL 플러그인 설치
 sudo dokku plugin:install https://github.com/dokku/dokku-postgres.git
 
-#### PostgreSQL 서비스 생성
+# PostgreSQL 서비스 생성
 dokku postgres:create <원하는-DB-서비스-이름>
 ```
 
