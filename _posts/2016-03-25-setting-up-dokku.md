@@ -2,6 +2,7 @@
 layout: post
 date: 2016-03-25
 title: "Dokku 설치 및 설정하기"
+image: /blogimgs/dokku_logo.png
 tags: linux note update tip tips docker dokku
 ---
 
