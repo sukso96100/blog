@@ -120,7 +120,7 @@ git push dokku master
        http://<배포된-앱-이름>.example.com
 ```
 
-## 참고문헌
+## 참고문헌 및 참고 웹페이지
 - [Getting Started with Dokku](http://dokku.viewdocs.io/dokku/installation/)
 - [How to Use the DigitalOcean Dokku Application](https://www.digitalocean.com/community/tutorials/how-to-use-the-digitalocean-dokku-application)
 - [DNS Configuration](http://dokku.viewdocs.io/dokku/dns/)
