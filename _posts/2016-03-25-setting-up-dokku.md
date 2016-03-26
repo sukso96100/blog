@@ -7,13 +7,10 @@ tags: linux note update tip tips docker dokku
 ---
 
 개인적으로 AWS EC2 인스턴스에 Dokku 라는 것을 설치해서 사용하는 중인데요.
-Heroku 같이은 PaaS 를 개인 서버에 설치해 사용해 줄 주 있게 해 주는 도구 입니다.
-이 포스트에서 Dokku 가 무엇이고, 설치와 설정은 어떻게 하는지 알아봅시다.
-
-## Dokku?
-Heroku 와 같은 일종의 PaaS(Platform as a Service) 들 중 하나 입니다.
+Dokku 는 Heroku 와 같은 일종의 PaaS(Platform as a Service) 들 중 하나 입니다.
 Docker를 활용하며, 약 200줄 짜리의 셸 스크립트 등으로 구성되어 있습니다.
 대부분의 PaaS 와 다른 점이 있다면, Dokku 는 서비스를 제공하는 업체나 회사의 서버가 아닌, 사용자의 서버에서 돌아갑니다.
+이 글을 통해 Dokku 를 설치하는 방법과 설정하는 방법을 알아봅시다.
 
 ## 설치
 먼저 Dokku 를 설치할 서버의 셸에 접속합니다.
