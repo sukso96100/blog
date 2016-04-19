@@ -99,13 +99,13 @@ UUID=59C9-02ED /boot/efi vfat defaults,rw,noatime 0 0
 부팅할 때 마다 TRIM 하려면, `fstrim.service` 를 켭니다.
 
 ```bash
-suso systemctl enable fstrim.service
+sudo systemctl enable fstrim.service
 ```
 
 1주일에 한번씩 TRIM 하려면, `fstrim.timer` 를 켭니다.
 
 ```bash
-suso systemctl enable fstrim.timer
+sudo systemctl enable fstrim.timer
 ```
 
 ---
