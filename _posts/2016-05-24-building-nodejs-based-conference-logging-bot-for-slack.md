@@ -97,13 +97,13 @@ rtm.on(RTM_EVENTS.MESSAGE, function (message) {
 이 `message` 에는, 메시지 내용, 메시지를 보낸 채널, 메시지를 보낸 사람 정보 등이 담겨 있습니다. 이를 이용하여 회의시작, 종료 등을 차리할 수 있습니다.
 
 ```js
-# 메시지 내용 얻기
+// 메시지 내용 얻기
 message.text;
 
-# 메시지를 보낸 채널 고유번호 얻기
+// 메시지를 보낸 채널 고유번호 얻기
 message.channel;
 
-# 메시지 보낸 사람 고유번호 얻기
+// 메시지 보낸 사람 고유번호 얻기
 message.user;
 ```
 
