@@ -95,6 +95,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function (message) {
 ```
 
 이 `message` 에는, 메시지 내용, 메시지를 보낸 채널, 메시지를 보낸 사람 정보 등이 담겨 있습니다. 이를 이용하여 회의시작, 종료 등을 차리할 수 있습니다.
+
 ```js
 # 메시지 내용 얻기
 message.text;
@@ -187,6 +188,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function (message) {
     }
   }
 });
+```
 
 여기까지 일단은 메시지 받은것을 처리해서, 회의 기록을 시작/종료 하는 거세 대한 포스팅 이였고.
 다음 포스팅에서는 회의 내용 기록하는 것이랑, 회의 종료시 파일로 처리하는 것을 다루도록 하겠습니다.
@@ -194,4 +196,3 @@ rtm.on(RTM_EVENTS.MESSAGE, function (message) {
 ## 참고문헌
 - [slackhq/node-slack-sdk](https://github.com/slackhq/node-slack-sdk)
 - [Bot Users](https://api.slack.com/bot-users)
-```
