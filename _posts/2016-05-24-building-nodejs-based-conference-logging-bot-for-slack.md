@@ -24,7 +24,8 @@ tags: nodejs slack bot
 
 ## 채널에서 메시지 받기.
 봇이 받는 메시지에 따라서 채널에 메시지를 보내거나 작업을 수행해야 하니, Slack 채널에서 메시지를 받아야 합니다.   
-그러려면,`package.json`이 있는 작업 폴더에서 `@slack/client` 패키지를 설치해야 합니다.   
+그러려면,`package.json`이 있는 작업 폴더에서 `@slack/client` 패키지를 설치해야 합니다.  
+
 ```bash
 # package.json 이 없는 경우, 다음 명령으로 새로 만듭니다.
 npm init
@@ -36,6 +37,7 @@ npm install --save @slack/client
 파일을 하나 만들고 본격적으로 코딩을 합니다. 저는 `index.js` 로 했습니다.
 먼저 RTM(Real Time Messsaging)클라이언트를 생성해야 합니다. 아래와 같은 코드를 통해 생성 할 수 있습니다.
 앞서 봇 사용자 생성을 통해 얻은 토큰이 여기에서 필요합니다.
+
 ```js
 //RTM 클라이언트 모듈
 var RtmClient = require('@slack/client').RtmClient;
@@ -53,6 +55,7 @@ rtm.start();
 ```
 
 봇과 Slack 연결 확인하려면, 아래 코드와 같이 `RTM.AUTHENTICATED` 이벤트를 통해 연결 여부를 알 수 있습니다.
+
 ```js
 ...
 //클라이언트 이벤트 모듈
@@ -65,6 +68,7 @@ rtm.on(CLIENT_EVENTS.RTM.AUTHENTICATED, function (rtmStartData) {
 ```
 
 이제 Slack 에 올라오는 메시지를 받아 봅시다. `RTM_EVENTS` 모듈을 불러오고, `MESSAGE` 이벤트를 통해 메시지를 받을 수 있습니다.
+
 ```js
 //RTM_EVENTS 모듈
 var RTM_EVENTS = require('@slack/client').RTM_EVENTS;
@@ -82,6 +86,7 @@ rtm.on(RTM_EVENTS.CHANNEL_CREATED, function (message) {
 
 ## 메시지 처리하기 & 채널에 응답 올리기
 이제 받은 메시지를 처리하고, 메시지에 대한 응답을 채널에 보냅니다. 앞서 작성한 메시지를 받는 코드를 보면, 콜백을 통해 `message` 를 받는것을 볼 수 있습니다.
+
 ```js
 //Slack 팀으로부터의 모든 메시지 받기
 rtm.on(RTM_EVENTS.MESSAGE, function (message) {
@@ -102,6 +107,7 @@ message.user;
 ```
 
 저는 아래과 같은 방식으로 코드를 작성하여, 회의 시작과 종료를 처리 했습니다.
+
 ```js
 var isRecording = false; //회의 내용 기록 여부(회의 진행중 여부)
 var channel = undefined; //채널 고유값 저장할 변수
@@ -138,6 +144,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function (message) {
 ```
 
 각 상황에 따라 채널에 메시지도 보내봅시다. 앞에서 생성한 `rtm`객체가 가진 `rtm.sendMessage();` 를 이용하여 보낼 수 있습니다.
+
 ```js
 //다음과 같은 코드를 이용하여 보낼 수 있습니다.
 rtm.sendMessage('<보낼 메시지 내용>', '<메시지를 보낼 채널 또는 DM(Direct Message)의 고유번호 값>');
@@ -149,6 +156,7 @@ rtm.sendMessage('<보낼 메시지 내용>', '<메시지를 보낼 채널 또는
 ```
 
 이제 이를 앞에서 작성한 조건문으로 메시지 처리하는 코드에 끼워넣어, 아래와 같이 작성할 수 있습니다.
+
 ```js
 ...
 var isRecording = false; //회의 내용 기록 여부(회의 진행중 여부)
