@@ -194,5 +194,5 @@ rtm.on(RTM_EVENTS.MESSAGE, function (message) {
 다음 포스팅에서는 회의 내용 기록하는 것이랑, 회의 종료시 파일로 처리하는 것을 다루도록 하겠습니다.
 
 ## 참고문헌
-- [slackhq/node-slack-sdk](https://github.com/slackhq/node-slack-sdk)
+- [slackhq/node-slack-sdk: Slack client library for node.js](https://github.com/slackhq/node-slack-sdk)
 - [Bot Users](https://api.slack.com/bot-users)
