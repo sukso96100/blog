@@ -48,6 +48,7 @@ http://api.openweathermap.org/data/2.5/forecast/daily?id=1838716&units=metric&cn
 Lesson 1 에서 작성한 소스를 안드로이드 스튜디오 에서 열고. MainActivity.java 의 Fragment 부분에 위치한 onCreateView 부분에서 이어서 작업합시다.
 
 우선 URL 객체를 하나 만듭시다. 그리고 HttpURLConnection 을 이용해 연결하고, 데이터를 로드합시다.
+
 ```java
 ...
 HttpURLConnection urlConnection = null; //HttpUrlConnection
@@ -65,6 +66,7 @@ urlConnection.connect();
 URL을 다루거나, 데이터를 받아올 때, 예상치 못한 오류에 대비하여 try-catch-finally 를 이용하여 예외처리를 해 봅시다.
 try 에 우리가 평상시에 실행할 코드가 들어가고, catch 에는 특정 오류가 잡히면, 실행된 코드들을 넣어주고, finally 에는 try 와 catch 이후 마지막으로 실행될 코드가 들어갑니다.
 HttpURLConnection 등의 변수들은, try에사만 사용하지 않고, 그 외의 곳에서도 사용되기에. 예외처리 구문 전에 변수를 선언하고 초기화 해줍시다. 
+
 ```java
 ...
 HttpURLConnection urlConnection = null; //HttpUrlConnection - try가 아닌 곳에서도 사용 되므로 try 밖에 선언합니다.
@@ -84,11 +86,13 @@ try {
         }
         ...
 ```
+
 ## InputStream
 우리가 수십 리터의 물을 받을 때 어떻게 받나요? 한 손으로 한번에 받나요? 그것을 불가능 합니다. 그 작은 손으로 어떻게 몇 심 리터의 물을 한번에 받겠습니까.
 한 손으로 한번에 받지 않고. 도구를 이용해 조금씩 받습니다. 파이프를 연결해서 흘려받는 것을 예로 들 수 있겠군요.
 우리가 로드하는 데이터 또한 한번에 로드 할 수 없습니다. 그래서 InputStream 을 이용하여 데이터를 로드합니다. InputStream 은 여러가지 Stream 중 하나 인대.
 Stream 은 데이터를 운반 해 주는 통로 역할을 해 줍니다. 물을 흘려보내는 파이프 역할을 한다고 보면 됩니다. Stream 은 연속적인 데이터 흐름을 물에 비유해서 붙여진 이름인대. 물이 한쪽 방향으로만 흐르듯, Stream 은 하나의 방향으로만 통신이 가능해서. 입력/출력을 동시에 처리할 수 없습니다. 그래서 InputStream, OutputStream 이 따로 있습니다. 우리는 데이터를 입력 받으므로. InputStream 을 사용합니다.
+
 ```java
 ...
 HttpURLConnection urlConnection = null; //HttpUrlConnection - try가 아닌 곳에서도 사용 되므로 try 밖에 선언합니다.
@@ -113,6 +117,7 @@ try {
 
 ## StringBuffer
 StringBuffer 은 문자열인 String 과 매우 유사하지만. 다른 접이 있습니다. String 이 처음에 만들어 질때 저장된 문자열을 바꾸기 어렵지만. StringBuffer 는 쉽게 바꿀 수 있습니다.
+
 ```java
 ...
 HttpURLConnection urlConnection = null; //HttpUrlConnection - try가 아닌 곳에서도 사용 되므로 try 밖에 선언합니다.
@@ -145,6 +150,7 @@ try {
 
 ## 불러온 데이터 문자열 변수에 저장. 오류 예외처리
 이제 불러온 데이터는 String 형태의 변수에 저장하고. 위에서 미리 작성한 예외처리에서, catch 부분에 오류 발생시 실행될 코드를 넣어줍니다.
+
 ```java
 ...
 HttpURLConnection urlConnection = null; //HttpUrlConnection
@@ -200,6 +206,7 @@ try{
 - Verbose(일반적인 정보)
 
 아래와 같은 코드로 Log 를 찍을 수 있습니다.
+
 ```java
 
 Log.e("로그", "오류 발생"); 
@@ -217,7 +224,8 @@ Log.v("로그", "일반적인 정보");
 <img src="/blogimgs/check_logcat.png"><br>
 
 Logcat 을 한번 확인 해 봅시다.
-<pre>
+
+```text
 01-02 00:01:33.119    4099-4099/com.youngbin.androidstudy D/AndroidRuntime﹕ Shutting down VM
 01-02 00:01:33.127    4099-4099/com.youngbin.androidstudy E/AndroidRuntime﹕ FATAL EXCEPTION: main
     Process: com.youngbin.androidstudy, PID: 4099
@@ -265,10 +273,11 @@ Logcat 을 한번 확인 해 봅시다.
             at java.lang.reflect.Method.invoke(Method.java:372)
             at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:899)
             at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:694)
-</pre>
+```
 
 우리가 작성한 코드의 네트워크 통신 부분에서 오류가 발생했군요. NetworkOnMainThreadException 오류가 발생했습니다. 우리가 네트워크 작업이 Main Thread 에서 실행되도록 작성해서 그렇습니다. 이를 해결하기 위해, Thread 에 대해서 알아봅시다.
-<pre>
+
+```text
     ...
     Process: com.youngbin.androidstudy, PID: 4099
     java.lang.RuntimeException: Unable to start activity ComponentInfo{com.youngbin.androidstudy/com.youngbin.androidstudy.MainActivity}: android.os.NetworkOnMainThreadException
@@ -283,7 +292,7 @@ Logcat 을 한번 확인 해 봅시다.
             at android.support.v4.app.Fragment.performCreateView(Fragment.java:1786)
             at android.support.v4.app.FragmentManagerImpl.moveToState(FragmentManager.java:947)
             ...
-</pre>
+```
 
 ## Thread
 어떤 프로그램 또는 프로세스 내부에서 실행이 되는 흐름의 단위를 말합니다. 필요에 따하 둘 이상의 Thread 를 실행 시킬수도 있는대 이러한 실행 방식을 Multithread 하며, 둘 이상의 Thread 를 다루는 것을 보고, MultiThreading 이라고 합니다. 안드로이드 앱 에서는 기본적으로 사용자로 부터의 입력 및 출력을 처리해 주는 UI Thread 가 있습니다. Main Thread 라고도 부릅니다. UI Thread 는 버튼 클릭, 화면 드래그 등의 간단하고 짧은 작업들을 수행합니다. 그런대 여기서 네트워크 작업을 실행하게 되면. 네트워크 작업을 일단 마쳐야 하기 때문에, 만약 네트워크 작업이 오래 걸리면 사용자로 부터의 입력과 출력 등을 처리하지 못하게 됩니다. 사용자 입장에서는 앱이 먹통인 것으로 보입니다. 그러므로 안드로이드 3.0 부터는 이렇게 작동되면 오류로 처리가 되어 버립니다. 우리는 네트워크 작업을 별도 Thread 에서 실행되도록 할 건대. AsyncTask 를 이용하여 구현 할 것입니다.
@@ -296,6 +305,7 @@ AsyncTask 에는 4가지 메서드가 있습니다. 백그라운드 작업 전�
 <img src="/blogimgs/asynctask_methods.png"><br>
 
 AsyncTask 를 구현 할 때는, AsncTask 를 상속받는 클래스로 구현합니다.
+
 ```java
 private class myAsyncTask extends AsyncTask<실행시 받을 매개변수 타입, 진행 현황 변수 타입, 완료시 반환할 변수 타입>{ 
     protected void onPreExecute() { 
@@ -318,6 +328,7 @@ private class myAsyncTask extends AsyncTask<실행시 받을 매개변수 타입
 새로 클래스 파일을 만들고, 그곳으로 Fragment 부분을 모두 옮기고, 기존에 Activity 클래스 파일의 Fragment 코드는 지웁시다.
 
 수정된 MainActivity,java
+
 ```java
 public class MainActivity extends ActionBarActivity {
 
@@ -335,6 +346,7 @@ public class MainActivity extends ActionBarActivity {
 ```
 
 MainActivity.java 에서 WeatherFragment.java 로 분리된 Fragment 코드
+
 ```java
 public class WeatherFragment extends Fragment {
 
@@ -402,6 +414,7 @@ public class WeatherFragment extends Fragment {
 ```
 
 일단은, doInBackground() 만 구현해 봅시다. AsyncTask 를 상속하는 내부 클래스를 하나 만들고 doImBackgound() 를 구현한 다음, 그 안에 네트워크 작업 코드를 옮기면 됩니다.
+
 ```java
 public class WeatherFragment extends Fragment {
 
@@ -473,6 +486,7 @@ public class WeatherFragment extends Fragment {
 
 ### xml 파일로 Overflow Menu 정의하기
 우선, Overflow Menu 에 어떤 항목을 넣을지, xml 항목으로 정의 해 줘야 합니다. 먼저, 새로고침 항목에 쓸 문자열을 /res/values/strings.xml 에 추가 합시다.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
@@ -483,6 +497,7 @@ public class WeatherFragment extends Fragment {
 ```
 그 다음, 메뉴 항목을 정의해 줍시다. 새로 메뉴 리소스 파일을 /res/menu/ 에 생성해 주세요. 저는 /res/menu/weatherfragment.xml 파일을 생성 했습니다.
 그리고 아래 코드를 참고하여, 메뉴를 정의해 주세요.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
@@ -499,6 +514,7 @@ public class WeatherFragment extends Fragment {
 ```
 
 이제, WeatherFragment.java (아까 MainActivity.java 에서 별도 클래스 파일로 분리된 Fragment 클래스 파일) 을 열고, Overflow Menu 동작을 처리해 줍시다.
+
 ```java
 public class WeatherFragment extends Fragment {
 ...
@@ -528,6 +544,7 @@ public class WeatherFragment extends Fragment {
 }
 ```
 아. 그리고 WeatherFragment 가 Overflow Menu 를 가지고 있음을 MainActivity 에 알려서, WeatherFragment 가 가지고 있는 Overflow Menu 를 표시 하도록 해 줍시다.
+
 ```java
 public class WeatherFragment extends Fragment {
     public WeatherFragment() {
@@ -548,7 +565,7 @@ public class WeatherFragment extends Fragment {
 ```
 
 이제 앱을 다시 한번 실행 해 보세요. 앱이 잘 실행 되나요? 여전히 오류가 날 것입니다. 그것이 정상입니다. Logcat 을 한번 확인 해 볼까요?
-<pre>
+```text
 01-02 11:18:54.040  16366-16387/com.youngbin.androidstudy E/AndroidRuntime﹕ FATAL EXCEPTION: AsyncTask #1
     Process: com.youngbin.androidstudy, PID: 16366
     java.lang.RuntimeException: An error occured while executing doInBackground()
@@ -621,17 +638,17 @@ public class WeatherFragment extends Fragment {
             at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1112)
             at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:587)
             at java.lang.Thread.run(Thread.java:818)
-</pre>
+```
 
 Logcat 에서 이 부분에 주목해 주세요. 이번에는 SecurityException 때문에 앱이 종료 되었군요. 앱이 인터넷 권한(Permission)을 가지고 있지 않아서 그렇습니다.
 문제를 해결하기 위해, 우선 안드로이드의 Permission 시스템에 대해 알아보고, Manifest 에 인터넷 권한도 정의 해 봅시다.
-<pre>
+```text
             ...
             at java.lang.Thread.run(Thread.java:818)
      Caused by: java.lang.SecurityException: Permission denied (missing INTERNET permission?)
             at java.net.InetAddress.lookupHostByName(InetAddress.java:451)
             ...
-</pre>
+```
 
 ## Permission
 안드로이드 에서 각각의 앱 들은 설치가 될 때 그 앱 만의 고유한 리눅스 사용자 ID 를 부여 받습니다. 그리고 각 앱들은 안드로이드 가상 머신 안의 각 앱의 인스턴스 안에서 실행 됩니다.
@@ -647,6 +664,7 @@ Logcat 에서 이 부분에 주목해 주세요. 이번에는 SecurityException 
 <img src="/blogimgs/google_play_app_permission_dialog.png"><br>
 
 AndroidManifest.xml 이 Manifest 파일 입니다. 여기에 인터넷 권한을 정의 해 봅시다. 아래와 같이 정의 하면 됩니다.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -665,6 +683,7 @@ AndroidManifest.xml 이 Manifest 파일 입니다. 여기에 인터넷 권한을
 이제 JSON 파싱을 해서, 데이터를 화면에 표시 할 건대. 그 전에, 나중에 사용자가 따로 도시 ID 를 설정 할 수 있도록 코드를 작성하기 위해.
 약간의 수정을 해서, 아까 작성한 AsyncTask 를 상속하는 클래스인 myAsyncTask 가 도시 ID 를 매개 변수로 받도록 수정 해 봅시다.
 URL 은 나중에 다른 부분도 사용자가 설정 할 수 있도록 코드를 작성하기 위해, [UriBuilder](http://developer.android.com/reference/android/net/Uri.Builder.html) 를 이용해 작성해 봅시다.
+
 ```java
 public class WeatherFragment extends Fragment {
 
@@ -745,6 +764,7 @@ public class WeatherFragment extends Fragment {
 <img src="/blogimgs/json_formatted.png"><br>
 <img src="/blogimgs/json_formatted_fullscreen.png"><br>
 이제 좀 읽이 편하군요. 한번 우리가 원하는 데이터를 찾아 봅시다.
+
 ```json
 {
    "cod":"200",
@@ -971,6 +991,7 @@ public class WeatherFragment extends Fragment {
 ```
 
 먼저 최대 기온과 최저 기온을 얻어내 봅시다.
+
 ```java
     protected class myAsyncTask extends AsyncTask<String, Void, String[]> { // 네트워크 작업 후 String[]을 반환 하도록 수정
         @Override
@@ -1004,6 +1025,7 @@ public class WeatherFragment extends Fragment {
 ```
 
 그리고 이어서 날씨 상태를 얻어내 봅시다.
+
 ```java
     ...
     protected class myAsyncTask extends AsyncTask<String, Void, String[]> { // 네트워크 작업 후 String[]을 반환 하도록 수정
@@ -1093,6 +1115,7 @@ public class WeatherFragment extends Fragment {
 이제 날씨 데이터를 뽑아내기 까지 했으니, Adapter 에 새 데이터를 전달해서, 우리가 뽑아낸 데이터가 ListView 에 나타나도록 해 봅시다.
 Adapter 에 접근 하는것은 UI 에 접근 하는 것이기 때문에, doInBackground(Params...) 에서 처리 하면 안 되고.
 onPostExecute(Result) 를 따로 구현해서 처리 해 줘야 합니다.
+
 ```java
 protected class myAsyncTask extends AsyncTask<String, Void, String[]> {
 ...
@@ -1135,6 +1158,7 @@ Lesson 2 에 해당되는 소스코드 입니다.
 
 안드로이드 네트워킹을 쉽게 할 수 있도록 해 주는 라이브러리도 아주 다양합니다. RetroFit, OkHttp, Volley, Loopj Async-HttpClient 등이 있는대.
 이 포스트에서는 [OkHttp](http://square.github.io/okhttp/) 를 한번 다뤄 보고자 합니다. 먼저 라이브러리를 추가 해 줍시다. 우리는 Android Studio 를 사용하죠? Lesson 1 에서 언급한 Gradle 이 알아서 의존성 등을 처리해 줍니다. gradle 빌드 스크립트에 한 줄만 추가하면 라이브러리 추가는 끝납니다. 앱 모듈 디렉터리에 위치한 build.gradle 을 열고, dependencies 에 한줄 추가 합니다.
+
 ```groovy
 ...
 dependencies {
@@ -1146,6 +1170,7 @@ dependencies {
 ```
 [OkHttp 의 Wiki 문서](https://github.com/square/okhttp/wiki)나 [JavaDoc 문서](http://square.github.io/okhttp/javadoc/index.html)를 참고해서 코드를 작성 하시면 됩니다. 아래는 비동기 방식으로 네트워크 작업을 OkHttp 로 하는 방법의 예시 입니다.
 우리가 기존에 사용하던 방법에 비하면 정말 간단하지 않나요?
+
 ```java
   private final OkHttpClient client = new OkHttpClient();
 
