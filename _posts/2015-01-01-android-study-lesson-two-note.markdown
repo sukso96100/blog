@@ -668,6 +668,7 @@ Logcat 에서 이 부분에 주목해 주세요. 이번에는 SecurityException 
 > 다음 링크들을 참조하세요.
 > https://developer.android.com/training/permissions/requesting.html
 > https://developers-kr.googleblog.com/2015/09/playservice81android60.html
+
 <img src="/blogimgs/google_play_app_permission_dialog.png"><br>
 
 AndroidManifest.xml 이 Manifest 파일 입니다. 여기에 인터넷 권한을 정의 해 봅시다. 아래와 같이 정의 하면 됩니다.
