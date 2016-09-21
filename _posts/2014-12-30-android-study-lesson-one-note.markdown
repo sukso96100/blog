@@ -9,6 +9,7 @@ image : /blogimgs/android_study_lesson_one_cover.jpg
 몇 주 전 부터 교내에서 친구 몇명 모아서 안드로이드 스터디를 하고 있습니다. 구글 코리아 측에서 스터디 그룹 프로그램을 해서 해 보게 되었는대. 2차 지필평가로 인해 진도가 많이 밀렸습니다. Udacity(udacity.com) 에 있는 Developing Android Apps코스를 기반으로 진행 중입니다. 7~8개의 레슨으로 구성 되어 있는대. 레슨 하나가 마무리 될 때마다. 이렇게 글로 정리를 해 보고자 합니다. 한참 진도가 늦습니다만... 일단 드디어 레슨 1 을 마무리 했으므로. 레슨 1 을 정리해 보고자 합니다.
 
 ## 시작하기 앞서...
+
 - Java 프로그래밍을 접해보신 적이 없나요? 먼저 공부 하고 오시는 것이 좋습니다. 아래 사이트들이 유용합니다.
  - [생활코딩 Java 코스](http://opentutorials.org/course/1223)
  - [점프 투 자바 Ebook](https://wikidocs.net/book/31)
@@ -40,6 +41,7 @@ Ubuntu, Arch Linux 계열 리눅스를 사용하시면, 이 부분을 건너 뛰
 
 ### Linux - RPM 패키지 사용 하는경우
  * 다운로드 받은 RPM 파일을 아래 명령어를 사용하여 설치하거나, GUI 기반의 패키지 설치 프로그램이 있다면, 그냥 클릭해서 설치합니다.
+
 ```bash
 # "<파일이름>" 은 다운로드 받은 파일의 이름으로 합니다
 sudo rpm -i <파일이름>
@@ -48,6 +50,7 @@ sudo rpm -i <파일이름>
 
 ### Linux - Ubuntu 계열
 터미널에서 다음 명령어로, WebUpd8 JDK 저장소를 추가하고, 설치를 진행합니다.(아래 명령어는 JDK8을 설치합니다)
+
 ```bash
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
@@ -56,24 +59,31 @@ sudo apt-get install oracle-java8-installer
 
 ### Linux - Arch Linux 계열
 간단히 AUR에서 받아다 설치합니다. 아래 명령어를 실행하세요.
+
 ```bash
 yaourt -S jdk
 ```
 
 ### Linux - 그 외 배포판
  * 먼저 루트 권한이 필요합니다. 루트로 전환하거나. 매번 명령어 앞에 sudo 를 붙여서 실행하세요. 여기에서를 루트로 전환하여 하는 방법을 소개합니다. 아래 명령어로, 루트로 전환합니다.
+
 ```bash
 sudo -i
 ```
  * JDK를 설치할 디렉터리에 접근합니다. 예를들어, /usr/java/ 라면. 아래 명령어를 실행하여 접근합니다
+
 ```bash
 cd /usr/java/
 ```
+
  * 다운로드한 *.tar.gz 파일을 지금 접근중인 경로로 옮기거나 복사합니다. 여기에서는 복사합니다.
+
 ```bash
 cp (*.tar.gz 파일의 상위 경로)/(해당 파일 이름).tar.gz (해당 파일 이름).tar.gz 
 ```
+
  * 압축을 해제합니다.
+
 ```bash
 tar zxvf (해당 파일 이름).tar.gz
 ```
@@ -92,6 +102,7 @@ Java 로 작성된 프로그램을 실행하기 위해, JAVA_HOME 변수와, Pat
 
 ### Linux
 먼저 프로필 파일을 텍스트 에디터로 열어주세요. 
+
 ```bash
 # "gedit" 은 텍스트 에디터 이름 입니다. 
 # 다른 텍스트 에디터 사용시 gedit 대신 해당 에디터 이름을 입력하세요.
@@ -104,11 +115,13 @@ sudo gedit /etc/profile
 ```
 
 에디터로 열었으면, 가장 아래에 다음을 추가 하세요.
+
 ```bash
 # <JDK경로>는 여러분의 시스템에 JDK 가 설치된 경로로 하시면 됩니다.
 export JAVA_HOME=<JDK경로>
 # 예시 : export JAVA_HOME=/usr/java/jdk1.8.0_25
 export PATH=$JAVA_HOME/bin:$PATH
+
 ```
 
 다 했으면, 저장하고 에디터를 닫습니다. 그리고 아래 명령어로 설정한 것을 적용 시키세요.
@@ -122,6 +135,7 @@ source /etc/profile
 
 ### JDK 작동여부 확인
 아래 명령어를 실행하여 확인합니다.
+
 ```bash
 java -version
 ```
@@ -129,7 +143,7 @@ java -version
 ## Android Studio 설치
 http://developer.android.com/sdk/index.html
 위 URL 에 접속하여 Android Studio 를 다운로드 하세요.
-항
+
 - Windows 는, 다운로드 받은 것을 실행하여, 설치 마법사에 따라 설치를 진행합니다
 - Linux 에서는, 다운로드 반은 파일 압축을 풀고, bin 폴더 안의 studio.sh 를 실행하세요.
 
@@ -191,6 +205,7 @@ http://developer.android.com/sdk/index.html
 
 코드의 상단에는 아래와 같은 내용이 있습니다.
 MainActivity 클래스가 정의 되어 있는 것을 보실 수 있습니다.
+
 ```java
 //ActionBarActivity 를 상속 하는 MainActivity 클래스가 정의되어 있습니다.
 public class MainActivity extends ActionBarActivity {
@@ -203,6 +218,7 @@ public class MainActivity extends ActionBarActivity {
 ```
 
 그리고 스크롤을 하다 보면 다음과 같이 PlaceholderFragment 클래스가 MainActivity 클래스 내부에 정의 되어 있습니다.
+
 ```java
 /**
      * A placeholder fragment containing a simple view.
@@ -266,6 +282,7 @@ View 도 상당히 그 종류가 다양합니다. 나눠보자면 대략 이렇�
 fragment_main.xml 파일을 수정하여, Layout 을 변경해 봅시다. 우리는 화면을 ListView로 가득 체울 것이므로. FrameLayout 을 사용하고 그 내부에 RelativeLayout 을 배치 할 것입니다.
 
 먼저 fragment_main.xml 을 열고, 하단에 탭을 Design 에서 Text 로 변경하여, 텍스트 편집 화면으로 바꾸세요. 아래와 같은 코드가 보이나요?
+
 ```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
@@ -282,6 +299,7 @@ fragment_main.xml 파일을 수정하여, Layout 을 변경해 봅시다. 우리
 ```
 
 이 코드에서, RelativeLayout을 FramgLayout 으로 변경하고. 기존에 내부에 있던 TextView 를 지운다음, ListView 를 넣읍시다. 그러면 아래와 같이 코드가 바뀝니다.
+
 ```xml
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
@@ -301,6 +319,7 @@ fragment_main.xml 파일을 수정하여, Layout 을 변경해 봅시다. 우리
 
 ### Java 코드 작성하기
 MainActivity.java 를 열어 동작을 구현해 봅시다. 우리는 Fragment 에 동작을 구현할 것이므로, Framgnet 코드를 먼저 찾으세요. 아래와 같은 코드를 찾았나요?
+
 ```java
 /**
      * A placeholder fragment containing a simple view.
@@ -322,6 +341,7 @@ MainActivity.java 를 열어 동작을 구현해 봅시다. 우리는 Fragment �
 
 문자열 배열로 ListView 에 넣을 데이터를 하나 만듭시다. 이름은 myArray 라고 하겠습니다.
 String[] 현태로 데이터를 만들고, 나중에 유동적으로 데이러를 넣고 빼기 위해, List<String>형태로 변환 하겠습니다
+
 ```java
 ...
 
@@ -353,6 +373,7 @@ Adapter 는 언급한 바와 같이, AdapterView 와 AdapterView에 표시될 �
 
 ### ArrayAdapter 초기화 하기
 우리는 다양한 Adapter 중. ArrayAdapter 를 사용 할 것 입니다. 아래와 같이 초기화 합니다. 몇가지 매개변수를 요구하는대, 아래 코드를 참고해서 입력 하시면 됩니다.
+
 ```java
 ...
         @Override
@@ -379,6 +400,7 @@ Adapter 는 언급한 바와 같이, AdapterView 와 AdapterView에 표시될 �
 
 ### ListView 찾기
 findViewById 를 이용해 ListView를 id값으로 찾습니다.
+
 ```java
 ...
         @Override
@@ -402,6 +424,7 @@ findViewById 를 이용해 ListView를 id값으로 찾습니다.
 
 ## ListView 에 Adapter 설정하기
 마지막으로 LitView 에 Adapter 를 설정해 ListView 와 Adapter 가 서로 작용하도록 합시다.
+
 ```java
 ...
         @Override

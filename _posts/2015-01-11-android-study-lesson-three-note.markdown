@@ -50,6 +50,7 @@ public class WeatherFragment extends Fragment {
 
 그리고 Adapter 에서 항목에 해당되는 데이터를 얻어서 Toast 메시지로 표시 해 줍시다. 아래 사진이 Toast 메시지가 나타났을 때 사진입니다. 다들 이미 많이 보셨을 겁니다.
 <img src="/blogimgs/toast_message.png"><br>
+
 ```java
 public class WeatherFragment extends Fragment {
 ...
@@ -103,6 +104,7 @@ Intent 는 두가지 종류로 나뉩니다.
 
 ## Explicit Intent 를 사용하여 DetailActivity 시작하기
 Explicit Intent 를 이용해 한번 DetailActivity 로 전환해 봅시다.
+
 ```java
 public class WeatherFragment extends Fragment {
 ...
@@ -133,6 +135,7 @@ public class WeatherFragment extends Fragment {
 ## Intent 에 Extra 첨부하기
 Intent 를 이용해 통신을 할 때, Extra 를 첨부하여 간단한 데이터를 주고 받을 수 있습니다. DetailActivity에 날씨 정보를 Extra 로 첨부해 보내봅시다.
 Intent.putExtra("키 이름", 보낼 데이터); 를 이용해 Extra를 넣고, 나중에 받을 때는 getIntent.getStringExtra() / getIntent.getIntExtra() 등으로 받아서 사용하면 됩니다. 우선 첨부해서 보내 봅시다.
+
 ```java
 public class WeatherFragment extends Fragment {
 ...
@@ -166,6 +169,7 @@ public class WeatherFragment extends Fragment {
 
 우선, 레이아웃 파일에서 날씨 정보를 표시할 TextView 를 작업합시다. 일단 기본적으로 들어가 있는 TextView 에 id 값만 지정해 줍시다.
 저는 id 를 weather_data 로 하겠습니다.
+
 ```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
@@ -183,6 +187,7 @@ public class WeatherFragment extends Fragment {
 </RelativeLayout>
 ```
 그리고 이어서 Java 코드 작업을 해 줍시다.
+
 ```java
 public class DetailActivity extends ActionBarActivity {
     ...
@@ -218,6 +223,7 @@ public class DetailActivity extends ActionBarActivity {
 
 SettingsActivity 를 생성 하셨으면, 우선 xml 파일 먼저 작성 하겠습니다. res 디렉터리 안에, xml디렉터리를 하나 생성합니다. 그리고 그 안에 settings.xml 을 생성합시다.
 지역 선택 설정은. 지역 id 코드를 입력 하도록 할 것입니다. 그러므로 EditTextPreference 를 사용하며, 온도 단위 설정은. 단위 목록에서 선택하여 설정 하므로, ListPreference 를 사용합니다.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
@@ -240,6 +246,7 @@ SettingsActivity 를 생성 하셨으면, 우선 xml 파일 먼저 작성 하겠
 ```
 
 필요한 문자열도 strings.xml 에 추가 해 줍시다.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
@@ -263,6 +270,7 @@ SettingsActivity 를 생성 하셨으면, 우선 xml 파일 먼저 작성 하겠
 
 Java 클래스 파일도 슬슬 수정해 봅시다. 먼저 아래와 같이 PreferenceActivity 를 상속하도록 수정합시다.
 그리고 onCreate 메서드에서 평소에 보던 setContentView(); 대신 addPreferencesFromResource(); 를 이용해 조금전 작성한 xml 파일을 로드합니다.
+
 ```java
 public class SettingsActivity extends PreferenceActivity {
     @Override
@@ -274,6 +282,7 @@ public class SettingsActivity extends PreferenceActivity {
 ```
 
 클래스에 onPreferenceChangeListener를 구현하고, onPreferenceChangeListener에 Value 를 전달해 줄 메서드도 작성합니다.
+
 ```java
 public class SettingsActivity extends PreferenceActivity 
     implements Preference.OnPreferenceChangeListener{
@@ -302,6 +311,7 @@ public class SettingsActivity extends PreferenceActivity
     }
 ```
 onPreferenceChange메서드에 코드를 작성해서, 설정이 변경되면 선택한 내용이 설정 항목 제목 바로 아래 나타나는 Summary 로 나타나도록 해 줍시다.
+
 ```java
 public class SettingsActivity extends PreferenceActivity 
     implements Preference.OnPreferenceChangeListener{
@@ -344,15 +354,13 @@ public class SettingsActivity extends PreferenceActivity
 
 
 
-
-
-
 설정 화면을 만들었습니다. 이제 설정 사항이 앱이 작동할 때 적용 되도록 해 봅시다. WeatherFragment 를 수정하여 설정값이 사용되도록 합시다.
 PreferenceActivity 에서 설정한 설정값들은 SharedPreference 의 보호된 공간에 저장 됩니다. 다시 저장된 값들을 불러오거나 수정 하는 경우에는.
 SharedPreference 클래스를 이용하면 됩니다.
 
 우선 설정값을 불러온 다음. 그 값을 AsyncTask 작업이 실행 될 때 AsyncTask 클래스로 넘겨줘야 하는대. 매번 메서드를 일일이 호출하기 번거로우니.
 따로 하나의 메서드를 만들어서 묶어버리고. 우리가 만든 메서드만 한번씩 호출해 줍시다.
+
 ```java
 public class WeatherFragment extends Fragment {
 ...
@@ -371,12 +379,14 @@ public class WeatherFragment extends Fragment {
 ```
 우리가 기존에 호출한 AsyncTask 를 실행하는 메서드는 방금 추가한 updateWeather 메서드에서 호출되니 모두 지워줍시다.
 아래와 같은 코드들을 지워주면 됩니다.
+
 ```java
 myAsyncTask mat = new myAsyncTask(); //myAsyncTask 객체 생성
 mat.execute(CityId,Unit); //myAsyncTask 실행하기
 ```
 
 그리고 그 자리에 updateWeather() 를 호출해 줍시다. 그리고 AsyncTask 클래스에서 추가로 넘겨준 값도 사용하도록 수정해 줍시다.
+
 ```java
 public class WeatherFragment extends Fragment {
     ArrayList<String> WeatherData;
@@ -478,6 +488,7 @@ public class WeatherFragment extends Fragment {
 이번에는 암시적 인텐트를 이용하여, OpenWeatherMap 사이트에서 날시를 볼수 있도록 하는 것과, 날시 정보를 공유하는 기능을 추가해 봅시다.
 먼저 WeatherFragment 에서 사이트에서 날시 보기 기능을 추가해 줍시다.
 Java 코드를 수정하기 앞서, Menu 항목을 추가해 줍시다. 앞서 만들어 둔 /res/menu/weatherfragment.xml 에 코드를 추가합니다.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
@@ -488,6 +499,7 @@ Java 코드를 수정하기 앞서, Menu 항목을 추가해 줍시다. 앞서 �
 </menu>
 ```
 필요한 문자열도 strings.xml 에 추가해 줍시다.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
@@ -499,6 +511,7 @@ Java 코드를 수정하기 앞서, Menu 항목을 추가해 줍시다. 앞서 �
 WeatherFragment 클래스 파일에서 onOptionsItemSelected 메서드 부분을 수정해 줍시다.
 SharedPreference 에서 도시ID 값을 불러와서 URL 완성에 사용합니다.
 그리고 암시적 인텐트를 이용에 웹 브라우저에서 열리도록 해 줍시다. 액션은 ACTION_VIEW 로 해줍니다.
+
 ```java
 public class WeatherFragment extends Fragment {
     ...
@@ -530,6 +543,7 @@ public class WeatherFragment extends Fragment {
 우리가 DetailActivity 를 생성할 때 같이 생성된 /res/menu/menu_detail.xml 을 편집해 줍시다.
 showAsAction 은 ifRoom 으로 하여, 액션바에 공간이 있을 때 ActionButton 으로 나타나게 하고.
 actionProviderClass 는 Android Support Library 에 있는 ShareActionProvider 로 해 줍니다.
+
 ```xml
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -543,6 +557,7 @@ actionProviderClass 는 Android Support Library 에 있는 ShareActionProvider �
 </menu>
 ```
 마찬가지로 필요한 문자열을 strings.xml 에 추가해 줍니다.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
@@ -555,6 +570,7 @@ actionProviderClass 는 Android Support Library 에 있는 ShareActionProvider �
 DetailActivity 를 생성할 때, 같이 Activity 쪽에 생성된 onCreateOptionsMenu 와 onOptionsItemSelected 메서드 부분을 통째로 지우고.
 대신 Fragment 쪽에 메서드를 구현해 줍니다. 그리고 공유에 사용할 Implicit Intent 를 만들어 주는 메서드도 만들어 줍시다.
 그리고, Fragment 부분의 onCreateView 메서드에서, setHasOptionsMenu(true); 메서드를 호출하여, Activity 에 Fragment 가 메뉴를 가지고 있음을 알려줍시다.
+
 ```java
 public class DetailActivity extends ActionBarActivity {
 
@@ -627,6 +643,7 @@ BroadcastReceiver는 말 단어 그대로 방송을 받는 앱 컴포넌트 입�
 
 아래 코드가 BroadcastReceiver 를 상속하는 클래스 코드 예제 입니다. 간단히 onReceive 메서드 하나로 구성되어 있습니다.
 onReceive 메서드에 Intent 를 수신하면 실행될 코드들을 넣어주시면 됩니다.
+
 ```java
 public class MyReceiver extends BroadcastReceiver {
     public MyReceiver() {
@@ -646,6 +663,7 @@ Manifest 에 정의하여 등룩하는 방법과, Java 코드를 이용해 필�
 아래는 Manifest 에 등룩하는 방법의 에제 입니다. Manifest에 아래와 같은 코드를 넣어서 등룩합니다.
 Intent Filter 태그 안에 어떤 Intent 를 받을지 Intent Filter 를 정의해 줍니다.
 여기서는 전원 케이블 연결에 대한 Intent Filter 를 예시로 넣었습니다.
+
 ```xml
     <receiver
             android:name=".MyReceiver" >
@@ -656,6 +674,7 @@ Intent Filter 태그 안에 어떤 Intent 를 받을지 Intent Filter 를 정의
 ```
 
 Java 코드를 이용해 동적으로 등룩하고 해제할 때 아래와 같은 코드를 이용합니다.
+
 ```java
 //myReceiver 객체 생성
 MyReceiver myReceiver = new MyReceiver();

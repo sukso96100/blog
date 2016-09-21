@@ -295,7 +295,7 @@ Logcat 을 한번 확인 해 봅시다.
 ```
 
 ## Thread
-어떤 프로그램 또는 프로세스 내부에서 실행이 되는 흐름의 단위를 말합니다. 필요에 따하 둘 이상의 Thread 를 실행 시킬수도 있는대 이러한 실행 방식을 Multithread 하며, 둘 이상의 Thread 를 다루는 것을 보고, MultiThreading 이라고 합니다. 안드로이드 앱 에서는 기본적으로 사용자로 부터의 입력 및 출력을 처리해 주는 UI Thread 가 있습니다. Main Thread 라고도 부릅니다. UI Thread 는 버튼 클릭, 화면 드래그 등의 간단하고 짧은 작업들을 수행합니다. 그런대 여기서 네트워크 작업을 실행하게 되면. 네트워크 작업을 일단 마쳐야 하기 때문에, 만약 네트워크 작업이 오래 걸리면 사용자로 부터의 입력과 출력 등을 처리하지 못하게 됩니다. 사용자 입장에서는 앱이 먹통인 것으로 보입니다. 그러므로 안드로이드 3.0 부터는 이렇게 작동되면 오류로 처리가 되어 버립니다. 우리는 네트워크 작업을 별도 Thread 에서 실행되도록 할 건대. AsyncTask 를 이용하여 구현 할 것입니다.
+어떤 프로그램 또는 프로세스 내부에서 실행이 되는 흐름의 단위를 말합니다. 필요에 따라 둘 이상의 Thread 를 실행 시킬수도 있는데, 이러한 실행 방식을 Multithread 하며, 둘 이상의 Thread 를 다루는 것을 보고, Multi Threading 이라고 합니다. 안드로이드 앱 에서는 기본적으로 사용자로 부터의 입력 및 출력을 처리해 주는 UI Thread 가 있습니다. Main Thread 라고도 부릅니다. UI Thread 는 버튼 클릭, 화면 드래그 등의 간단하고 짧은 작업들을 수행합니다. 그런대 여기서 네트워크 작업을 실행하게 되면. 네트워크 작업을 일단 마쳐야 하기 때문에, 만약 네트워크 작업이 오래 걸리면 사용자로 부터의 입력과 출력 등을 처리하지 못하게 됩니다. 따라서, 사용자 입장에서는 앱이 먹통인 것으로 보입니다. 그러므로 안드로이드 3.0 부터는 이렇게 작동되면 오류로 처리가 되어 버립니다. 우리는 네트워크 작업을 별도 Thread 에서 실행되도록 할 건데. AsyncTask 를 이용하여 구현 할 것입니다.
 <img src="/blogimgs/multithreading.png"><br>
 
 
@@ -565,6 +565,7 @@ public class WeatherFragment extends Fragment {
 ```
 
 이제 앱을 다시 한번 실행 해 보세요. 앱이 잘 실행 되나요? 여전히 오류가 날 것입니다. 그것이 정상입니다. Logcat 을 한번 확인 해 볼까요?
+
 ```text
 01-02 11:18:54.040  16366-16387/com.youngbin.androidstudy E/AndroidRuntime﹕ FATAL EXCEPTION: AsyncTask #1
     Process: com.youngbin.androidstudy, PID: 16366
@@ -642,6 +643,7 @@ public class WeatherFragment extends Fragment {
 
 Logcat 에서 이 부분에 주목해 주세요. 이번에는 SecurityException 때문에 앱이 종료 되었군요. 앱이 인터넷 권한(Permission)을 가지고 있지 않아서 그렇습니다.
 문제를 해결하기 위해, 우선 안드로이드의 Permission 시스템에 대해 알아보고, Manifest 에 인터넷 권한도 정의 해 봅시다.
+
 ```text
             ...
             at java.lang.Thread.run(Thread.java:818)
@@ -661,6 +663,11 @@ Logcat 에서 이 부분에 주목해 주세요. 이번에는 SecurityException 
 그러면, 사용자가 앱을 설치 할 때 아래 사진과 같은 화면이 나타나, 앱이 요구하는 권한을 확인하고 승인 하도록 합니다.
 
 좋은 앱을 개발하고자 한다면, 가능한 최소의 권한을 요구하도록 앱을 개발하도록 해 보세요. 여러분이 작성한 코드가 권한을 필요로 할 때, 권한을 요구하지 않고 다른 방법으로 할 수는 없는지 생각 해 보시기 바랍니다.
+
+> 업데이트(2016.09.21) : Android 6.0 Marshmellow 부터 런타임 퍼미션이 도입되어, 각 권한이 필요할 때 사용자로부터 승인을 받도록 변경되었습니다.
+> 다음 링크들을 참조하세요.
+> https://developer.android.com/training/permissions/requesting.html
+> https://developers-kr.googleblog.com/2015/09/playservice81android60.html
 <img src="/blogimgs/google_play_app_permission_dialog.png"><br>
 
 AndroidManifest.xml 이 Manifest 파일 입니다. 여기에 인터넷 권한을 정의 해 봅시다. 아래와 같이 정의 하면 됩니다.
