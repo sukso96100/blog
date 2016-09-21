@@ -666,6 +666,7 @@ Logcat 에서 이 부분에 주목해 주세요. 이번에는 SecurityException 
 
 > 업데이트(2016.09.21) : Android 6.0 Marshmellow 부터 런타임 퍼미션이 도입되어, 각 권한이 필요할 때 사용자로부터 승인을 받도록 변경되었습니다.
 > 다음 링크들을 참조하세요.
+>
 > https://developer.android.com/training/permissions/requesting.html
 > https://developers-kr.googleblog.com/2015/09/playservice81android60.html
 
