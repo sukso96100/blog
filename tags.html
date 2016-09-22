@@ -8,8 +8,8 @@ permalink: /tags/
     <section class="content">
        {% for tag in site.tags %}
        <a href="#{{ tag | first }}">
-         <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-           # {{ tag | first }}
+         <button type="button" class="mdl-chip">
+             <span class="mdl-chip__text">#{{ tag | first }}</span>
          </button>
        </a>
        {% endfor %}
@@ -19,7 +19,9 @@ permalink: /tags/
       <div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
 
       {% for tag in site.tags %}
-  <h4 id="{{ tag | first }}"># {{ tag | first }}<h4>
+      <span class="mdl-chip">
+        <span class="mdl-chip__text" id="{{ tag | first }}">#{{ tag | first }}</span>
+      </span>
   {% for posts in tag %}
     {% for post in posts %}
     {% if post.title %}
