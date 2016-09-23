@@ -8,17 +8,17 @@ padding:16px;">
   <section align="start" class="post-header">
   <h3 style="color:white; padding-top:128px;">{{ page.title }}</h3>
   <table><tr><td><i class="material-icons">today</i></td><td>{{ page.date | date: "%Y.%m.%d" }}</td></tr></table>
-  {% for tag in page.tags %}
-  <a class="card-content" href="{{ site.baseurl }}/tags/#{{ tag }}">
-    <button type="button" class="mdl-chip">
-        <span class="mdl-chip__text">#{{ tag }}</span>
-    </button>
-  </a>
- {% endfor %}
 </section>
 </div>
            <section class="content postcard">
            <hr>
+           {% for tag in page.tags %}
+           <a class="card-content" href="{{ site.baseurl }}/tags/#{{ tag }}">
+             <button type="button" class="mdl-chip">
+                 <span class="mdl-chip__text">#{{ tag }}</span>
+             </button>
+           </a>
+          {% endfor %}
           {{ content }}
           <hr>
           <!-- 구글플러스 +1 버튼 -->
