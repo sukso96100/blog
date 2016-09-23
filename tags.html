@@ -4,8 +4,7 @@ title: Tags
 permalink: /tags/
 ---
 
-  <div class="mdl-card mdl-cell mdl-cell--12-col postcard" align="start">
-    <section class="content">
+    <section class="content postcard" align="start">
        {% for tag in site.tags %}
        <a href="#{{ tag | first }}">
          <button type="button" class="mdl-chip">
@@ -14,11 +13,9 @@ permalink: /tags/
        </a>
        {% endfor %}
      </section>
-      </div>
-
-      <div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
 
       {% for tag in site.tags %}
+      <section class="content postcard" align="start">
       <span class="mdl-chip">
         <span class="mdl-chip__text" id="{{ tag | first }}">#{{ tag | first }}</span>
       </span>
@@ -29,9 +26,9 @@ permalink: /tags/
     {% endif %}
     {% endfor %}
   {% endfor %}
+</section>
+
   {% endfor %}
 
-
-</div>
 
 </div>
