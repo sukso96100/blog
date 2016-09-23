@@ -29,7 +29,7 @@ layout: default
 
 <div class="mdl-grid postcard content">
   {% if page.previous.url %}
-<div class="mdl-card mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+<div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
   <h3>{{ page.previous.title }}</h3>
   <table><tr><td><i class="material-icons">today</i></td><td>{{ page.previous.date | date: "%Y.%m.%d" }}</td></tr></table>
   <a href="{{ site.baseurl }}/{{page.previous.url}}">
@@ -40,7 +40,7 @@ layout: default
 {% else %}{% endif %}
 
 {% if page.next.url %}
-<div class="mdl-card mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+<div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">
   <h3>{{ page.next.title }}</h3>
   <table><tr><td><i class="material-icons">today</i></td><td>{{ page.next.date | date: "%Y.%m.%d" }}</td></tr></table>
   <a href="{{ site.baseurl }}/{{page.next.url}}">
