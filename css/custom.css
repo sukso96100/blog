@@ -24,7 +24,7 @@ p{
   height: 100;
 }
 
-.post-header > section{
+section.post-header{
   max-width: 1000px;
   color: white;
 }
