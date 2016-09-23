@@ -1,14 +1,13 @@
 ---
 layout: default
 ---
-
+<div class="post-img"
+style="{% if page.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
+rgba(0, 0, 0, 0.4) ), url('{{ page.image }}')center / cover;{% endif %}
+padding:16px;">
+  <h3 style="color:white; padding-top:104px;">{{ page.title }}</h3>
+</div>
 <div class="mdl-card mdl-cell mdl-cell--12-col postcard" align="start">
-           <div class="mdl-card__media mdl-color-text--grey-50"
-           style="{% if page.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
-           rgba(0, 0, 0, 0.4) ), url('{{ page.image }}')center / cover;{% endif %}
-           padding:16px;">
-             <h3 style="color:white; padding-top:104px;">{{ page.title }}</h3>
-           </div>
            <section class="content">
            <table><tr><td><i class="material-icons">today</i></td><td>{{ page.date | date: "%Y.%m.%d" }}</td></tr></table>
            <hr>
