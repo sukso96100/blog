@@ -26,8 +26,9 @@ title: Recent Posts
 
 
 {% endfor %}
-<div class="mdl-card mdl-cell mdl-cell--12-col postcard">
-<table align="center" style="padding-bottom:160px;">
+<div class="mdl-card mdl-cell mdl-cell--12-col postcard"
+  style="padding-bottom:160px;">
+<table align="center">
   <tr>
     <td style="padding-right:16px;">
       <a href="{% if paginator.next_page %}{{ site.baseurl }}/{{ paginator.next_page_path }}{% else %}{% endif %}">
