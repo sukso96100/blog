@@ -32,7 +32,7 @@ title: Recent Posts
     <td style="padding-right:16px;">
       <a href="{% if paginator.next_page %}{{ site.baseurl }}/{{ paginator.next_page_path }}{% else %}{% endif %}">
         <button class="mdl-button mdl-js-button">
-          <i class="material-icons">arrow_back</i> Older
+          << Older
         </button>
         </a>
       </td>
@@ -40,7 +40,7 @@ title: Recent Posts
       <td style="padding-left:16px;">
         <a href="{% if paginator.previous_page %}{{ site.baseurl }}/{{ paginator.previous_page_path }}{% else %}{% endif %}">
           <button class="mdl-button mdl-js-button">
-         Newer<i class="material-icons">arrow_forward</i>
+         Newer >>
         </button>
        </a>
      </td>
