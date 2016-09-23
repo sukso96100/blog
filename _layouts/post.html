@@ -5,8 +5,10 @@ layout: default
 style="{% if page.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
 rgba(0, 0, 0, 0.4) ), url('{{ page.image }}')center / cover;{% endif %}
 padding:16px;">
+  <section>
   <h3 style="color:white; padding-top:104px;">{{ page.title }}</h3>
   <table><tr><td><i class="material-icons">today</i></td><td>{{ page.date | date: "%Y.%m.%d" }}</td></tr></table>
+</section>
 </div>
            <section class="content postcard">
            <hr>
