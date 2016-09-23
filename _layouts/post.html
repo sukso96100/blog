@@ -27,30 +27,33 @@ layout: default
           <div class="fb-like" data-href="{{ site.baseurl }}/{{ page.url }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div><br>
 </section>
 
+<div class="mdl-grid">
+  {% if page.previous.url %}
+<div class="mdl-card mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+  <h3>{{ page.previous.title }}</h3>
+  <table><tr><td><i class="material-icons">today</i></td><td>{{ page.previous.date | date: "%Y.%m.%d" }}</td></tr></table>
+  <a href="{{ site.baseurl }}/{{page.previous.url}}">
+  <button class="mdl-button mdl-js-button">
+     Read This
+   </button></a>
+</div>
+{% else }{% endif %}
+
+{% if page.next.url %}
+<div class="mdl-card mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+  <h3>{{ page.next.title }}</h3>
+  <table><tr><td><i class="material-icons">today</i></td><td>{{ page.next.date | date: "%Y.%m.%d" }}</td></tr></table>
+  <a href="{{ site.baseurl }}/{{page.next.url}}">
+  <button class="mdl-button mdl-js-button">
+     Read This
+   </button></a>
+</div>
+{% else %}{% endif %}
+</div>
          <div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
         {% include adsense.html %}
-                  </div>
+        </div>
 
-                  <div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
-                 {% include disqus.html %}
-                           </div>
-                           <table align="center" style="padding-bottom:160px;">
-                             <tr>
-                               <td style="padding-right:16px;">
-                                 <a href="{% if page.previous.url %}{{ site.baseurl }}/{{page.previous.url}}{% else %}{% endif %}" class="demo-nav__button">
-                                   <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                                     <i class="material-icons">arrow_back</i>
-                                     </button>
-                                       <b style="color:blog;">Older</b>
-                                   </a>
-                                 </td>
-                                 <td style="padding-left:16px;">
-                                   <a href="{% if page.next.url %}{{ site.baseurl }}/{{page.next.url}}{% else %}{% endif %}" class="demo-nav__button">
-                                    <b style="color:blog;">Newer</b>
-                                   <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                                     <i class="material-icons">arrow_forward</i>
-                                   </button>
-                                  </a>
-                                </td>
-                              </tr>
-                            </table>
+        <div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
+        {% include disqus.html %}
+        </div>
