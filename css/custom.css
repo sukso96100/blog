@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 .demo-layout-transparent {
-  background: white;
+  background: #eeeeee;
 }
 .demo-layout-transparent .mdl-layout__header,
 .demo-layout-transparent .mdl-layout__drawer-button {
