@@ -12,6 +12,7 @@
 
 .postcard{
   max-width: 1000px;
+  text-align: start;
 }
 
 p{
