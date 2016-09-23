@@ -29,7 +29,11 @@ layout: default
 
 <div class="mdl-grid postcard content">
   {% if page.previous.url %}
-<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+<div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet"
+  style="{% if page.previous.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
+  rgba(0, 0, 0, 0.4) ), url('{{ page.previous.image }}')center / cover;
+  {% else %}background-color: #ff4081;{% endif %}
+  padding:16px;">
   <h3>{{ page.previous.title }}</h3>
   <table><tr><td><i class="material-icons">today</i></td><td>{{ page.previous.date | date: "%Y.%m.%d" }}</td></tr></table>
   <a href="{{ site.baseurl }}/{{page.previous.url}}">
@@ -40,7 +44,11 @@ layout: default
 {% else %}{% endif %}
 
 {% if page.next.url %}
-<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+<div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet"
+  style="{% if page.next.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
+  rgba(0, 0, 0, 0.4) ), url('{{ page.next.image }}')center / cover;
+  {% else %}background-color: #ff4081;{% endif %}
+  padding:16px;">
   <h3>{{ page.next.title }}</h3>
   <table><tr><td><i class="material-icons">today</i></td><td>{{ page.next.date | date: "%Y.%m.%d" }}</td></tr></table>
   <a href="{{ site.baseurl }}/{{page.next.url}}">
