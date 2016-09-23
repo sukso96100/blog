@@ -26,9 +26,7 @@ title: Recent Posts
 
 
 {% endfor %}
-<div class="mdl-card mdl-cell mdl-cell--12-col postcard"
-  style="margin-bottom:160px;">
-<table align="center">
+<table align="center" class="mdl-data-table mdl-js-data-table"   style="margin-bottom:160px;">
   <tr>
     <td style="padding-right:16px;">
       <a href="{% if paginator.next_page %}{{ site.baseurl }}/{{ paginator.next_page_path }}{% else %}{% endif %}">
@@ -47,4 +45,3 @@ title: Recent Posts
      </td>
    </tr>
  </table>
- </div>
