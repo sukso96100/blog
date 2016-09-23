@@ -8,6 +8,13 @@ padding:16px;">
   <section align="start">
   <h3 style="color:white; padding-top:104px;">{{ page.title }}</h3>
   <table><tr><td><i class="material-icons">today</i></td><td>{{ page.date | date: "%Y.%m.%d" }}</td></tr></table>
+  {% for tag in page.tags %}
+  <a class="card-content" href="{{ site.baseurl }}/tags/#{{ tag }}">
+    <button type="button" class="mdl-chip">
+        <span class="mdl-chip__text">#{{ tag }}</span>
+    </button>
+  </a>
+ {% endfor %}
 </section>
 </div>
            <section class="content postcard">
@@ -19,13 +26,6 @@ padding:16px;">
           <!-- Facebook 좋아요 버튼 -->
           <div class="fb-like" data-href="{{ site.baseurl }}/{{ page.url }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div><br>
           <hr>
-          {% for tag in page.tags %}
-          <a class="card-content" href="{{ site.baseurl }}/tags/#{{ tag }}">
-            <button type="button" class="mdl-chip">
-                <span class="mdl-chip__text">#{{ tag }}</span>
-            </button>
-          </a>
-         {% endfor %}
 </section>
 
          <div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
