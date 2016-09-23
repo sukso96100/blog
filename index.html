@@ -17,7 +17,7 @@ title: Recent Posts
                   </div>
                <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
                  <a href="{{ site.baseurl }}/{{ post.url }}">
-                   <button class="mdl-button mdl-js-button">
+                   <button class="mdl-button mdl-js-button mdl-button--accent">
                       Read More...
                     </button>
                   </a>
@@ -27,23 +27,20 @@ title: Recent Posts
 
 {% endfor %}
 
-<h4 style="color:black;">Page {{ paginator.page }} of {{ paginator.total_pages }}</h4>
-
 <table align="center" style="padding-bottom:160px;">
   <tr>
     <td style="padding-right:16px;">
-      <a href="{% if paginator.next_page %}{{ site.baseurl }}/{{ paginator.next_page_path }}{% else %}{% endif %}" class="demo-nav__button">
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-          <i class="material-icons">arrow_back</i>
-          </button>
-            <b style="color:black;">Older</b>
+      <a href="{% if paginator.next_page %}{{ site.baseurl }}/{{ paginator.next_page_path }}{% else %}{% endif %}">
+        <button class="mdl-button mdl-js-button">
+          <i class="material-icons">arrow_back</i> Older
+        </button>
         </a>
       </td>
+      <td><h4>{{ paginator.page }} / {{ paginator.total_pages }}</h4></td>
       <td style="padding-left:16px;">
-        <a href="{% if paginator.previous_page %}{{ site.baseurl }}/{{ paginator.previous_page_path }}{% else %}{% endif %}" class="demo-nav__button">
-         <b style="color:black;">Newer</b>
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-          <i class="material-icons">arrow_forward</i>
+        <a href="{% if paginator.previous_page %}{{ site.baseurl }}/{{ paginator.previous_page_path }}{% else %}{% endif %}">
+          <button class="mdl-button mdl-js-button">
+         Newer<i class="material-icons">arrow_forward</i>
         </button>
        </a>
      </td>
