@@ -26,7 +26,7 @@ title: Recent Posts
 
 
 {% endfor %}
-
+<div class="mdl-card mdl-cell mdl-cell--12-col postcard">
 <table align="center" style="padding-bottom:160px;">
   <tr>
     <td style="padding-right:16px;">
@@ -36,7 +36,7 @@ title: Recent Posts
         </button>
         </a>
       </td>
-      <td><h4>{{ paginator.page }} / {{ paginator.total_pages }}</h4></td>
+      <td>{{ paginator.page }} / {{ paginator.total_pages }}</td>
       <td style="padding-left:16px;">
         <a href="{% if paginator.previous_page %}{{ site.baseurl }}/{{ paginator.previous_page_path }}{% else %}{% endif %}">
           <button class="mdl-button mdl-js-button">
@@ -46,3 +46,4 @@ title: Recent Posts
      </td>
    </tr>
  </table>
+ </div>
