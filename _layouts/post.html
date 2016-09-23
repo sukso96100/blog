@@ -7,12 +7,7 @@ rgba(0, 0, 0, 0.4) ), url('{{ page.image }}')center / cover;{% endif %}
 padding:16px;">
   <section align="start">
   <h3 style="color:white; padding-top:104px;">{{ page.title }}</h3>
-  <span class="mdl-chip">
-    <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white">
-      <i class="material-icons" style="text-size:10px;">today</i>
-    </span>
-    <span class="mdl-chip__text">{{ page.date | date: "%Y.%m.%d" }}</span>
-</span>
+  <table><tr><td><i class="material-icons">today</i></td><td>{{ page.date | date: "%Y.%m.%d" }}</td></tr></table>
 </section>
 </div>
            <section class="content postcard">
