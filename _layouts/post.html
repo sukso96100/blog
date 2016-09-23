@@ -11,7 +11,7 @@ padding:16px;">
 </section>
 </div>
            <section class="content postcard">
-           <hr>
+           {{ content }}<br>
            {% for tag in page.tags %}
            <a class="card-content" href="{{ site.baseurl }}/tags/#{{ tag }}">
              <button type="button" class="mdl-chip">
@@ -19,13 +19,10 @@ padding:16px;">
              </button>
            </a>
           {% endfor %}
-          {{ content }}
-          <hr>
           <!-- 구글플러스 +1 버튼 -->
-           <g:plusone></g:plusone><br>
+           <g:plusone></g:plusone><br><br>
           <!-- Facebook 좋아요 버튼 -->
           <div class="fb-like" data-href="{{ site.baseurl }}/{{ page.url }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div><br>
-          <hr>
 </section>
 
          <div class="mdl-card mdl-cell mdl-cell--12-col postcard content" align="start">
