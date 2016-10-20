@@ -13,16 +13,16 @@ tags: canonical kernel livepatch update note ubuntu
 - 일반 사용자 : 우분투 원 계정이 있는 경우, 최대 3대의 서버/데스크탑/VM 에서 무료로 사용이 가능합니다. 그 이상의 장치에서 사용 하려는 경우, Ubuntu Avantage 프로그램에 구독해야 합니다.
 - Ubuntu Advantage 구독자 : 이미 구독중인 경우 추가적으로 비용을 지불하지 않아도 됩니다.
   - Ubuntu Advantage for Servers 의 Essential Server 요금은 노드(머신) 1개당 1년에 150USD 입니다.
-  - Ubuntu Advantage 요금에 대한 상세 사항은 https://buy.ubuntu.com/ 을 참조하세요.
+  - Ubuntu Advantage 요금에 대한 상세 사항은 [https://buy.ubuntu.com/](https://buy.ubuntu.com/) 을 참조하세요.
 
 ## 준비할 것
 - 우분투 원 계정
-  - 없는 경우, https://login.ubuntu.com 에서 무료로 생성 가능합니다.
+  - 없는 경우, [https://login.ubuntu.com](https://login.ubuntu.com) 에서 무료로 생성 가능합니다.
 - 인터넷 연결이 있는 Ubuntu 16.04 LTS x86 64bit 버전이 설치된 머신
 
 ## 설치 및 설정하기
 - 아래 링크로 이동한 다음, `Sign up` 을 눌러 시작합니다.
-  - https://www.ubuntu.com/server/livepatch
+  - [https://www.ubuntu.com/server/livepatch](https://www.ubuntu.com/server/livepatch)
 - 그럼 https://auth.livepatch.canonical.com/ 로 이동되는데, 이 페이지에서 `Ubuntu user` 를 선택하고, `Get Your Token` 을 눌러 계속합니다.
   - Ubuntu Advantage 구독자인 경우, `Ubuntu Advantage customer` 를 선택합니다.
 - 우분투 원 계정으로 로그인 하지 않은 경우, 로그인 화면이 나타납니다. 본인의 계정으로 로그인 합니다.
