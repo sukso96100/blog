@@ -30,24 +30,28 @@ tags: canonical kernel livepatch update note ubuntu
 - 라이브패치 서비스를 사용할 머신에 접속합니다.
 - 라이브패치 서비스에 필요한 패키지인 `canonical-livepatch` 는 `snap` 패키지로 제공됩니다. 아직 `snap` 패키지 관리자가 설치되어 있지 않은 경우, 아래와 같은 방법으로, `snapd` 패키지를 설치합니다.
 
- ```bash
- sudo apt install snapd
- ```
+```bash
+sudo apt install snapd
+```
+
 - `canonical-livepatch` 패키지를 설치합니다.
 
 ```bash
 sudo snap install canonical-livepatch
 ```
+
 - 다음과 같은 방법으로 라이브패치 서비스를 켭니다.
 
 ```bash
 sudo canonical-livepatch enable (KEY)
 ```
+
   - `(KEY)` 에는 앞서 라이브패치 서비스에서 로그인 후 화면에 표시된 키값으로 넣어주면 됩니다. 예를 들어, 키값이 `45bf098767b84abcspt71d7aedc12345` 라면, 아래와 같은 명령을 실행합니다.
 
   ```bash
   sudo canonical-livepatch enable 45bf098767b84abcspt71d7aedc12345
   ```
+
 - 라이브패치 서비스가 켜졌습니다. 라이브패치 상태를 확인하려면, 아래와 같은 명령줄을 실행하여 확인할 수 있습니다.
 
 ```bash
