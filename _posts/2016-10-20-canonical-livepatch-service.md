@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2016-10-10
+date: 2016-10-20
 title: "캐노니컬 라이브패치 서비스 사용하기"
 tags: canonical kernel livepatch update note ubuntu
 ---
