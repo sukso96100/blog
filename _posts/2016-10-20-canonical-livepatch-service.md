@@ -2,7 +2,7 @@
 layout: post
 date: 2016-10-20
 title: "캐노니컬 라이브패치 서비스 사용하기"
-tags: canonical kernel livepatch update note ubuntu
+tags: canonical kernel livepatch update note ubuntu linux
 ---
 
 캐노니컬(Canonical) 에서 몇일 전(2016.10.18 18:02:06 UTC) 에 캐노니컬 라이브패치 서비스(Canonical Livepatch Service) 를 공개했습니다.
