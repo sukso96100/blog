@@ -1,9 +1,9 @@
 ---
 layout: post
 image: /blogimgs/cloud-computing-day-with-aws-0.jpg
-date: 2016-10-20
+date: 2016-11-09
 title: "아마존과 함께하는 클라우드 컴퓨팅 데이 참여 후기"
-tags: aws cloud seminar
+tags: aws cloud seminar update note review
 ---
 오늘(2016.11.09) 경기창조경제혁신센터에서 열렸던 아마존과 함께하는 클라우드 컴퓨팅 데이에 참석하고 왔습니다.
 갔다 온 김에 가서 들은 내용을 들으면서 필기한 내용 기반으로, 포스팅으로 정리해 보고자 합니다. 개인적으로 서버리스에 대해 다룬 세션과 서비스 확장에 대해 다룬 세션이 좋았습니다.
