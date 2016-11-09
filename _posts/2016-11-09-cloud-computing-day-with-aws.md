@@ -3,6 +3,7 @@ layout: post
 image: /blogimgs/cloud-computing-day-with-aws-0.jpg
 date: 2016-11-09
 title: "아마존과 함께하는 클라우드 컴퓨팅 데이 참여 후기"
+description: "나름 많은 것을 배운 세미나(?)"
 tags: aws cloud seminar update note review
 ---
 오늘(2016.11.09) 경기창조경제혁신센터에서 열렸던 아마존과 함께하는 클라우드 컴퓨팅 데이에 참석하고 왔습니다.
