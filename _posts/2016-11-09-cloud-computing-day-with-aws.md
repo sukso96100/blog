@@ -6,16 +6,19 @@ title: "아마존과 함께하는 클라우드 컴퓨팅 데이 참여 후기"
 tags: aws cloud seminar update note review
 ---
 오늘(2016.11.09) 경기창조경제혁신센터에서 열렸던 아마존과 함께하는 클라우드 컴퓨팅 데이에 참석하고 왔습니다.
-갔다 온 김에 가서 들은 내용을 들으면서 필기한 내용 기반으로, 포스팅으로 정리해 보고자 합니다. 개인적으로 서버리스에 대해 다룬 세션과 서비스 확장에 대해 다룬 세션이 좋았습니다.
+갔다 온 김에 가서 들은 내용을 들으면서 필기한 내용 기반으로, 포스팅으로 정리해 보고자 합니다.
+ 개인적으로 서버리스에 대해 다룬 세션과 서비스 확장에 대해 다룬 세션이 좋았습니다.
 
 ## 키노트 세션
 간단하게 AWS 에 대해 소개하는 내용이 주를 이뤘습니다. 언제부터 AWS 가 시작 되었고, 올해 새로 리전을 설립한 지역 등에 대해 소개해 주셨습니다.
+
 ![Keynote Session](/blogimgs/cloud-computing-day-with-aws-1.jpg)
 
 ## AWS 에서 작은 서비스 구현하기
 청중들에게 웹사이트를 통해 먼저 몇가지 질문을 하고 세션이 시작되었습니다.
 먼저 백그라운드 지식을 다뤘는데, AWS 에 어떤 서비스가 있는지(EC2, S3, Lambda, Kinesis, CloudFront 등) 간단히 집고 넘어갔습니다.
 그리고 클라우드로 마이그레이션 하는 경우나 아마존 웹서비스 활용 시나리오에 대해 몇가지 소개해 주셨습니다.
+
 ![Keynote Session](/blogimgs/cloud-computing-day-with-aws-2.jpg)
 ![Keynote Session](/blogimgs/cloud-computing-day-with-aws-3.jpg)
 ![Keynote Session](/blogimgs/cloud-computing-day-with-aws-4.jpg)
@@ -73,6 +76,7 @@ tags: aws cloud seminar update note review
 ## 클라우드를 통해 내 서비스 무한대로 확장하기
 처음에는 적은 사용자로 시작한 서비스가 시간에 따라 사용자 수가 늘면서 어떤 방식으로 구성을 변경하고 확장하면 좋은지,
 사용자 수에 따라서 나눠서 알아보는 시간을 가졌습니다.
+
 ![Keynote Session](/blogimgs/cloud-computing-day-with-aws-5.jpg)
 ![Keynote Session](/blogimgs/cloud-computing-day-with-aws-6.jpg)
 
@@ -139,7 +143,7 @@ HPC 가 처음 듣는 단어여서 뭔 의미인가 했더니, High Performance 
 ![Keynote Session](/blogimgs/cloud-computing-day-with-aws-8.jpg)
 ![Keynote Session](/blogimgs/cloud-computing-day-with-aws-9.jpg)
 
-- AWS 기반 HPC :
+- AWS 기반 HPC
  - 유연한 가격 정책으로 비용 절감
  - 무제한 확장
  - 효율적인 클러스터 인프라 관리
