@@ -8,6 +8,11 @@ layout: default
   padding:16px;">
   <section align="start" class="post-header">
     <h3 style="color:white; padding-top:256px;">{{ page.title }}</h3>
+    {% if page.description %}
+    <p>
+      {% page.description %}
+    </p>
+    {% endif %}
     <table><tr><td><i class="material-icons">today</i></td><td>{{ page.date | date: "%Y.%m.%d" }}</td></tr></table>
   </section>
 </div>
