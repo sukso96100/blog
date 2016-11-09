@@ -2,10 +2,10 @@
 layout: post
 date: 2016-10-20
 title: "캐노니컬 라이브패치 서비스 사용하기"
-tags: canonical kernel livepatch update note ubuntu
+tags: canonical kernel livepatch update note ubuntu linux
 ---
 
-캐노니컬(Canonical) 에서 몇일 전(2016 19.18 18:02:06 UTC) 에 캐노니컬 라이브패치 서비스(Canonical Livepatch Service) 를 공개했습니다.
+캐노니컬(Canonical) 에서 몇일 전(2016.10.18 18:02:06 UTC) 에 캐노니컬 라이브패치 서비스(Canonical Livepatch Service) 를 공개했습니다.
 라이브패치 서비스를 사용하면, 중요한 커널 패치를 **재부팅 없이** 적용할 수 있습니다.
 때문에, 우분투를 이용하여 서버를 운영하는 경우, 라이브패치 서비스를 이용하면, 재부팅으로 인해 서비스 중단이 생기는 경우가 없어지는 장점을 얻을 수 있습니다.
 
