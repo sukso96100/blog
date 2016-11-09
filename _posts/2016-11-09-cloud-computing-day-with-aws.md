@@ -19,9 +19,9 @@ tags: aws cloud seminar update note review
 먼저 백그라운드 지식을 다뤘는데, AWS 에 어떤 서비스가 있는지(EC2, S3, Lambda, Kinesis, CloudFront 등) 간단히 집고 넘어갔습니다.
 그리고 클라우드로 마이그레이션 하는 경우나 아마존 웹서비스 활용 시나리오에 대해 몇가지 소개해 주셨습니다.
 
-![Keynote Session](/blogimgs/cloud-computing-day-with-aws-2.jpg)
-![Keynote Session](/blogimgs/cloud-computing-day-with-aws-3.jpg)
-![Keynote Session](/blogimgs/cloud-computing-day-with-aws-4.jpg)
+![AWS 에서 작은 서비스 구현하기](/blogimgs/cloud-computing-day-with-aws-2.jpg)
+![투표](/blogimgs/cloud-computing-day-with-aws-3.jpg)
+![시나리오 예제](/blogimgs/cloud-computing-day-with-aws-4.jpg)
 
 
 ### 온프레미스에서 클라우드로 마이그레이션
@@ -77,8 +77,8 @@ tags: aws cloud seminar update note review
 처음에는 적은 사용자로 시작한 서비스가 시간에 따라 사용자 수가 늘면서 어떤 방식으로 구성을 변경하고 확장하면 좋은지,
 사용자 수에 따라서 나눠서 알아보는 시간을 가졌습니다.
 
-![Keynote Session](/blogimgs/cloud-computing-day-with-aws-5.jpg)
-![Keynote Session](/blogimgs/cloud-computing-day-with-aws-6.jpg)
+![클라우드를 통해 내 서비스 무한대로 확장하기](/blogimgs/cloud-computing-day-with-aws-5.jpg)
+![사용자가 만명~십만명 일 때](/blogimgs/cloud-computing-day-with-aws-6.jpg)
 
 ### 사용자 1명
 - Route53 - Elastic IP - EC2 Instance
@@ -158,8 +158,9 @@ HPC 가 처음 듣는 단어여서 뭔 의미인가 했더니, High Performance 
 ## Big Data On AWS
 아마존 웹서비스에서 빅 데이터를 다루는 것에 대한 세션 이였는데... 이때 졸아서(...) 제대로 듣질 못했네요.(연사분께 죄송합니다...)
 스토리지가 제일 중요하다고 한 부분이 기억에 남는 세션이였습니다. 안정적이고 안전한 스토리지가 있어야, 데이터를 쌓아서, 그것으로 뭔갈 할 수 있고, 그렇치 않아서 유실되거나 하면 아무것도 못하는 경우가 있을 수 있기 때문이라고 하더군요. S3 의 내구성이 아주 좋으니, AWS 를 사용한다면, S3　를 활용하라는 내용이 기억이 나는군요.
-![Keynote Session](/blogimgs/cloud-computing-day-with-aws-10.jpg)
-![Keynote Session](/blogimgs/cloud-computing-day-with-aws-11.jpg)
+
+![Big Data On AWS](/blogimgs/cloud-computing-day-with-aws-10.jpg)
+![음... 이게 뭐였더라...](/blogimgs/cloud-computing-day-with-aws-11.jpg)
 
 ## 경품 추첨
 헤드셋 두개랑 아마존 에코 하나 뿌렸는데, 별 기대 안했습니다.
