@@ -1,0 +1,142 @@
+<html>
+  <head>
+  <link rel="import" href="/assets/bower_components/polymer/polymer.html" />
+  <link rel="import" href="/assets/bower_components/paper-header-panel/paper-header-panel.html" />
+  <link rel="import" href="/assets/bower_components/paper-toolbar/paper-toolbar.html" />
+  <link rel="import" href="/assets/bower_components/paper-icon-button/paper-icon-button.html" />
+  <link rel="import" href="/assets/bower_components/paper-material/paper-material.html">
+  <link rel="import" href="/assets/bower_components/paper-ripple/paper-ripple.html">
+  <link rel="import" href="/assets/bower_components/paper-badge/paper-badge.html">
+  <link rel="import" href="/assets/bower_components/paper-fab/paper-fab.html">
+  <link rel="import" href="/assets/bower_components/paper-menu/paper-menu.html">
+  <link rel="import" href="/assets/bower_components/paper-menu-button/paper-menu-button.html">
+  <link rel="import" href="/assets/bower_components/paper-item/paper-item.html">
+
+  <link rel="import" href="/assets/bower_components/iron-icon/iron-icon.html">
+  <link rel="import" href="/assets/bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="/assets/bower_components/iron-icons/social-icons.html">
+
+  <link rel="stylesheet" type="text/css" href="/assets/css/highlighter.css" />
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="/assets/css/simplegrid.css" />
+</head>
+
+  <body>
+  <paper-header-panel>
+  <paper-toolbar>
+    <paper-icon-button icon="arrow-back" onclick="location.href='/'"></paper-icon-button>
+    <div class="title">
+      Your awesome title
+    </div>
+    <paper-icon-button icon="search"></paper-icon-button>
+  </paper-toolbar>
+  <div>
+    <section class="postview-header" elevation="0"
+      style="">
+      <h1>Welcome to Jekyll!</h1>
+      <p>
+        2016.11.20
+      </p>
+    </section>
+    <paper-menu-button class="share-btn">
+      <paper-fab icon="social:share" class="dropdown-trigger"></paper-fab>
+        <paper-menu class="dropdown-content">
+          <paper-item>Share</paper-item>
+          <paper-item>Settings</paper-item>
+          <paper-item>Help</paper-item>
+        </paper-menu>
+      </paper-menu-button>
+      <div align="center">
+        <section class="postview-content" align="start">
+          <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+
+<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+
+<p>Check out the <a href="http://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+
+
+          <section>
+            <hr class="hr-with-margin" />
+            
+            <table class="social-btns">
+              <tbody>
+                <tr>
+                  <td>
+                    <!-- 구글플러스 +1 버튼 -->
+                    <g:plusone></g:plusone>
+                  </td>
+                  <td>
+                    <!-- Facebook 좋아요 버튼 -->
+                    <div class="fb-like" data-href="//jekyll/update/2016/11/20/welcome-to-jekyll.html"
+                     data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</section>
+
+        </section>
+        <!-- Show Previous and Next Post Link -->
+        <div class="grid grid-pad">
+          
+          
+        </div>
+      </div>
+    </div>
+  </paper-header-panel>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.5&appId=465942550220840";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+
+</html>
