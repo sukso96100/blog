@@ -28,7 +28,6 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-theme: jekyll-polymer-magazine
 gems:
   - jekyll-feed
   - jekyll-paginate
