@@ -1,6 +1,7 @@
 ---
 layout: post
 image: /blogimgs/cloud-computing-day-with-aws-0.jpg
+color: "#4a4a4a"
 date: 2016-11-09
 title: "아마존과 함께하는 클라우드 컴퓨팅 데이 참여 후기"
 description: "나름 많은 것을 배운 세미나(?)"

@@ -1,6 +1,7 @@
 ---
 layout: post
 image: /blogimgs/docker_study_meetup.jpg
+color: "#919191"
 date: 2016-09-24
 title: "우분투 한국 커뮤니티 도커(Docker) 스터디 후기"
 tags: review docker study update note ubuntu
