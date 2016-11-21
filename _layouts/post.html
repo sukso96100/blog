@@ -25,25 +25,24 @@ layout: default
           <paper-item
             onclidk="window.open('https://plus.google.com/share?url=
             {{ site.url }}/{{ site.baseurl }}/{{ page.url }}')">
-            <iron-icon icon="fa:google-plus"></iron-icon>
+            <i class="fa fa-google-plus" aria-hidden="true"></i>
             Google+
           </paper-item>
           <paper-item
             onclidk="window.open('https://www.facebook.com/sharer/sharer.php?u=
             {{ site.url }}/{{ site.baseurl }}/{{ page.url }}')">
-            <iron-icon icon="fa:facebook"></iron-icon>
+            <i class="fa fa-facebook" aria-hidden="true"></i>
             Facebook
           </paper-item>
           <paper-item
             onclidk="window.open('https://twitter.com/intent/tweet?text=
             {{ page.title }} {{ site.url }}/{{ site.baseurl }}/{{ page.url }}')">
-            <iron-icon icon="fa:twitter"></iron-icon>
-            Facebook
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            Twitter
           </paper-item>
-          <paper-item>
+          <paper-item onclick="prompt('Copy This URL','{{ site.url }}/{{ site.baseurl }}/{{ page.url }}')">
             <iron-icon icon="link"></iron-icon>
-            <paper-input disabled
-              value="{{ site.url }}/{{ site.baseurl }}/{{ page.url }}"></paper-input>
+            Copy Link
           </paper-item>
         </paper-menu>
       </paper-menu-button>
