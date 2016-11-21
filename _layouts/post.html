@@ -3,7 +3,7 @@ layout: default
 ---
 <body>
   <paper-header-panel>
-  <paper-toolbar id="postview-toolbar" {% if page.color %} style="background: {{ page.color }};" {% endif %}>
+  <paper-toolbar id="postview-toolbar" {% if page.color %} style='background: {{ page.color }};' {% endif %}>
     <paper-icon-button icon="arrow-back" onclick="location.href='{{ site.baseurl }}/'"></paper-icon-button>
     <div class="title">
       {{ site.title }}
