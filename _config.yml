@@ -16,10 +16,15 @@
 title: "YoungbinLab Blog"
 description: "Logs of Youngbin han's Laboratory"
 email: sukso96100@gmail.com
+name: "Youngbin Han"
 
 url: "http://sukso96100.github.io/" # the base hostname & protocol for your site
 baseurl: "/blog"
-github_username:  sukso96100
+
+facebook: hanyoungbin
+googleplus: +한영빈96
+twitter: sukso96100
+github:  sukso96100
 disqus: youngbinhan
 paginate: 10
 # Build settings
