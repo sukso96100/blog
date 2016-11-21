@@ -3,7 +3,7 @@ layout: default
 ---
 <body>
   <paper-header-panel>
-  <paper-toolbar id="postview-toolbar" {% if page.color %} style='background: {{ page.color }};' {% endif %}>
+  <paper-toolbar id="postview-toolbar" style='{% if page.color %}background: {{ page.color }};{% endif %}'>
     <paper-icon-button icon="arrow-back" onclick="location.href='{{ site.baseurl }}/'"></paper-icon-button>
     <div class="title">
       {{ site.title }}
@@ -11,13 +11,9 @@ layout: default
     <paper-icon-button icon="search"></paper-icon-button>
   </paper-toolbar>
   <div>
-    <section class="postview-header" elevation="0" id="header"
-      {% if page.image %}
-      src="{{ page.image }}"
-      style="background: linear-gradient( rgba(0, 0, 0, 0.4);
-      rgba(0, 0, 0, 0.4) ); url('{{ page.image }}')center / cover;"
-      {% endif %}
-      onload="setToolBarColorOfImg()"
+    <section class="postview-header" elevation="0"
+      style="{% if page.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4) ), url('{{ page.image }}')center / cover;{% endif %}"
       align="center">
       <div class="postview-titlebox" align="start">
         <h1>{{ page.title }}</h1>
