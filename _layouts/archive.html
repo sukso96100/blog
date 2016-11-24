@@ -2,6 +2,7 @@
 layout: default
 ---
 <body>
+  <iron-pages selected="0">
   <paper-header-panel>
     {% include header.html %}
     <div>
@@ -37,4 +38,7 @@ layout: default
     {% include footer.html %}
   </div>
   </paper-header-panel>
+  {% include search.html %}
+</iron-pages>
+  {% include javascripts.html %}
 </body>
