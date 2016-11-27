@@ -1,6 +1,6 @@
 ---
 layout: post
-image: /blogimgs/slackbot0_0.png
+image: https://sukso96100.github.io/blogimgs/slackbot0_0.png
 date: 2016-05-27
 title: "Node.js로 Slack 회의록봇 만들기. - 회의 내용 처리 및 저장"
 tags: nodejs slack bot json node-filesystem
@@ -97,7 +97,7 @@ data.push({"type":"talk",
 
 ## 마크다운 문법으로 정리하여 `*.md` 파일로 저장하기
   배열에 저장한 것을 하나씩 꺼내서, 아래와 같은 형식의 마크다운 문서로 작성하도록 코드를 작성해 봅시다.
-  
+
 ```md
 ## 회의 정보
 - Slack 팀 이름 :

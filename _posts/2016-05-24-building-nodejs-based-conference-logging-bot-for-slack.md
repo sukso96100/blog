@@ -1,6 +1,6 @@
 ---
 layout: post
-image: /blogimgs/slackbot0_0.png
+image: https://sukso96100.github.io/blogimgs/slackbot0_0.png
 date: 2016-05-24
 title: "Node.js로 Slack 회의록봇 만들기. - 메시지 받아 처리하기"
 tags: nodejs slack bot
@@ -14,11 +14,11 @@ tags: nodejs slack bot
 봇을 새로 만드시는 경우 아래와 같은 화면을 보실 수 있습니다. 봇 사용자의 `@username`에 원하는 봇 사용자의 사용자 이름을 넣고,
  `Add bot integration` 를 클릭하여 봇 사용자를 생성합니다.
 
-<img src="/blogimgs/slackbot0_1.png">
+![](/blogimgs/slackbot0_1.png)
 
 봇 사용자가 생성되면, 아래와 같은 화면이 나타나고, API 토큰을 확인하실 수 있습니다. 이제 이 토큰으로 봇을 만듭니다.
 
-<img src="/blogimgs/slackbot0_2.png">
+![](/blogimgs/slackbot0_2.png)
 
 > 주의 : API 토큰이 온라인 상에 노출되지 않도록 주의하세요. 노출되는 경우 Slack 대화내용이 노출될 수 있습니다.
 

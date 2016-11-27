@@ -2,12 +2,12 @@
 layout: post
 date: 2016-03-25
 title: "Let's Encrypt 를 이용해 Dokku 앱 HTTPS 연결 지원하기"
-image: /blogimgs/LE_stacked1_L.png
+image: https://sukso96100.github.io/blogimgs/LE_stacked1_L.png
 tags: linux note update tip tips docker dokku letsencrypt
 ---
 
 웹사이트들을 이용하다 보면, 보안을 위해 HTTPS 연결 지원을 하는 경우를 어렵지 않게 볼 수 있습니다.
-보통 HTTPS 연결을 지원하려면, TLS/SSL 인증서를 발급받아야 합니다. 
+보통 HTTPS 연결을 지원하려면, TLS/SSL 인증서를 발급받아야 합니다.
 그런대, TLS/SSL 인증서를 발급할 때 일정 금액을 지불해야 하다보니.
 개인 사이트에 사용하는 경우에는 부담이 되는 경우가 있을 수가 있습니다.
 

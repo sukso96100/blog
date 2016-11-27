@@ -1,6 +1,6 @@
 ---
 layout: post
-image: /blogimgs/first-outsourcing.jpg
+image: https://sukso96100.github.io/blogimgs/first-outsourcing.jpg
 color: "#9f6955"
 date: 2016-11-26
 title: "첫 외주"

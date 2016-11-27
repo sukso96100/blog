@@ -3,7 +3,7 @@ layout: post
 title: "zsh 와 oh my zsh 를 이용해 셸 꾸미기(대신 bash 버리기)"
 date: "2015-05-17"
 tags: update tips tutorial shell linux ubuntu archlinux fedora zsh oh_my_zsh
-image : /blogimgs/zsh-is-awesome.png
+image : https://sukso96100.github.io/blogimgs/zsh-is-awesome.png
 ---
 
 보통 우리가 리눅스나 맥에서 터미널을 사용할 때 사용하게 되는 명령줄은 셸 bash 입니다.<br>

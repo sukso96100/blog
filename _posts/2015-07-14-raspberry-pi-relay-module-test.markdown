@@ -3,7 +3,7 @@ layout: post
 title: "라즈베리파이 모델B+ 릴레이 모듈 테스트."
 date: 2015-07-14
 tags: raspberry-pi linux tutorial tips
-image: /blogimgs/connect_relay_to_rpi_with_jumper.png
+image: https://sukso96100.github.io/blogimgs/connect_relay_to_rpi_with_jumper.png
 ---
 최근 가지고 있던 라즈베리파이에, 릴레이 모듈을 연결해서 뭐 하나 만들어 보는 중 입니다.
 라즈베리파이와 릴레이 모듈을 연결하여, 방에 있는 가전제품 전원은 제어해 보려구요.

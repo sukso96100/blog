@@ -3,7 +3,7 @@ layout: post
 title: "시온고 안드로이드 스터디 노트 - 2.Connect Sunshine to the Cloud"
 date: "2015-01-01"
 tags: develop development android app study note
-image : /blogimgs/multithreading.png
+image : https://sukso96100.github.io/blogimgs/multithreading.png
 ---
 
 안녕하세요. 저번에 Lesson 1 노트에 이어 이번에 저희 시온고등학교 내 안드로이드 스터디 그룹에서 진도를 나간(부득이하게 온라인으로 나간건 함정...) Lesson 2 내용을 정리하여 포스트로 작성 해 보고자 합니다. Lesson 2 에 대한 정리는... 생각보다 길군요. 바로 들어가겠습니다.
@@ -19,7 +19,7 @@ image : /blogimgs/multithreading.png
 
 - OpenWeatherMap API 를 사용해 날씨정보 얻기
 - HttpURLConnection 으로 HttpRequest 보내고 Reponse 받기
-- Log 찍기, Logcat 보기 
+- Log 찍기, Logcat 보기
 - AsyncTask 를 이용하여 Background Thread 돌리기
 - Permission
 - JSON 파싱
@@ -54,7 +54,7 @@ Lesson 1 에서 작성한 소스를 안드로이드 스튜디오 에서 열고. 
 HttpURLConnection urlConnection = null; //HttpUrlConnection
 //새 URL 객체
 String WeatherURL = "http://api.openweathermap.org/data/2.5/forecast/daily?id=1838716&units=metric&cnt=7";
-URL url = new URL(WeatherURL); 
+URL url = new URL(WeatherURL);
 //새 URLConnection
 urlConnection = (HttpURLConnection) url.openConnection();
 urlConnection.setRequestMethod("GET");
@@ -65,7 +65,7 @@ urlConnection.connect();
 ### 예외 처리
 URL을 다루거나, 데이터를 받아올 때, 예상치 못한 오류에 대비하여 try-catch-finally 를 이용하여 예외처리를 해 봅시다.
 try 에 우리가 평상시에 실행할 코드가 들어가고, catch 에는 특정 오류가 잡히면, 실행된 코드들을 넣어주고, finally 에는 try 와 catch 이후 마지막으로 실행될 코드가 들어갑니다.
-HttpURLConnection 등의 변수들은, try에사만 사용하지 않고, 그 외의 곳에서도 사용되기에. 예외처리 구문 전에 변수를 선언하고 초기화 해줍시다. 
+HttpURLConnection 등의 변수들은, try에사만 사용하지 않고, 그 외의 곳에서도 사용되기에. 예외처리 구문 전에 변수를 선언하고 초기화 해줍시다.
 
 ```java
 ...
@@ -73,7 +73,7 @@ HttpURLConnection urlConnection = null; //HttpUrlConnection - try가 아닌 곳�
 try {
         //새 URL 객체
         String WeatherURL = "http://api.openweathermap.org/data/2.5/forecast/daily?id=1838716&units=metric&cnt=7";
-        URL url = new URL(WeatherURL); 
+        URL url = new URL(WeatherURL);
         //새 URLConnection
         urlConnection = (HttpURLConnection) url.openConnection();
         urlConnection.setRequestMethod("GET");
@@ -99,7 +99,7 @@ HttpURLConnection urlConnection = null; //HttpUrlConnection - try가 아닌 곳�
 try {
         //새 URL 객체
         String WeatherURL = "http://api.openweathermap.org/data/2.5/forecast/daily?id=1838716&units=metric&cnt=7";
-        URL url = new URL(WeatherURL); 
+        URL url = new URL(WeatherURL);
         //새 URLConnection
         urlConnection = (HttpURLConnection) url.openConnection();
         urlConnection.setRequestMethod("GET");
@@ -125,7 +125,7 @@ BufferedReader reader = null; //try가 아닌 곳에서도 사용 되므로 try 
 try {
         //새 URL 객체
         String WeatherURL = "http://api.openweathermap.org/data/2.5/forecast/daily?id=1838716&units=metric&cnt=7";
-        URL url = new URL(WeatherURL); 
+        URL url = new URL(WeatherURL);
         //새 URLConnection
         urlConnection = (HttpURLConnection) url.openConnection();
         urlConnection.setRequestMethod("GET");
@@ -159,7 +159,7 @@ String forecastJsonStr = null; //불러온 데이터 저장에 사용할 변수 
 try{
     //새 URL 객체
     String WeatherURL = "http://api.openweathermap.org/data/2.5/forecast/daily?id=1838716&units=metric&cnt=7";
-    URL url = new URL(WeatherURL); 
+    URL url = new URL(WeatherURL);
     //새 URLConnection
     urlConnection = (HttpURLConnection) url.openConnection();
     urlConnection.setRequestMethod("GET");
@@ -209,10 +209,10 @@ try{
 
 ```java
 
-Log.e("로그", "오류 발생"); 
-Log.w("로그", "경고!"); 
-Log.i("로그", "새로운 정보!"); 
-Log.d("로그", "디버깅 결과"); 
+Log.e("로그", "오류 발생");
+Log.w("로그", "경고!");
+Log.i("로그", "새로운 정보!");
+Log.d("로그", "디버깅 결과");
 Log.v("로그", "일반적인 정보");
 ```
 
@@ -220,7 +220,7 @@ Log.v("로그", "일반적인 정보");
 여기까지 작성한 앱을 한번 실행 해 봅시다. 앱이 강제 종료 되지 않나요? 그것이 정상 입니다. Logcat을 확인해서 출력된 Log들을 살펴 봅시다.
 <img src="/blogimgs/networkonmain.png"><br>
 
-보통, Run 버튼을 눌러 앱을 테스트 하면, 자동으로 하단에 Android DDMS 가 나타나고, 그곳에 Logcat 이 나타납니다. Run 버튼과 같은 줄에 위치한 Android Device Monitor(안드로이드 마스코드 모양의 버튼)에서도 Logcat 확인이 가능합니다. 
+보통, Run 버튼을 눌러 앱을 테스트 하면, 자동으로 하단에 Android DDMS 가 나타나고, 그곳에 Logcat 이 나타납니다. Run 버튼과 같은 줄에 위치한 Android Device Monitor(안드로이드 마스코드 모양의 버튼)에서도 Logcat 확인이 가능합니다.
 <img src="/blogimgs/check_logcat.png"><br>
 
 Logcat 을 한번 확인 해 봅시다.
@@ -301,25 +301,25 @@ Logcat 을 한번 확인 해 봅시다.
 
 ## AsyncTask
 AsyncTask 는 백그라운드 작업을 쉽게 실행 할 수 있도록, 그리고 결과를 UI Thread 로 쉽게 넘길 수 있도록 해줍니다.
-AsyncTask 에는 4가지 메서드가 있습니다. 백그라운드 작업 전에 실행되는 onPreExecute(), 백그라운드 작업을 실행하는 doInBackground(Params...), 중간에 진행 정도를 UI Thread 에 넘겨주는 onProgressUpdate(Progress...), 백그라운드 작업이 끝나고 실행되며 결과를 Ui Thread 로 넘기는 onPostExecute(Result) 가 있습니다. 
+AsyncTask 에는 4가지 메서드가 있습니다. 백그라운드 작업 전에 실행되는 onPreExecute(), 백그라운드 작업을 실행하는 doInBackground(Params...), 중간에 진행 정도를 UI Thread 에 넘겨주는 onProgressUpdate(Progress...), 백그라운드 작업이 끝나고 실행되며 결과를 Ui Thread 로 넘기는 onPostExecute(Result) 가 있습니다.
 <img src="/blogimgs/asynctask_methods.png"><br>
 
 AsyncTask 를 구현 할 때는, AsncTask 를 상속받는 클래스로 구현합니다.
 
 ```java
-private class myAsyncTask extends AsyncTask<실행시 받을 매개변수 타입, 진행 현황 변수 타입, 완료시 반환할 변수 타입>{ 
-    protected void onPreExecute() { 
-    // 백그라운드 작업 전에 Main Thread 에 실행 
-        } 
-    protected void doInBackground(Params... params) { 
-    //백그라운드 작업 실행 
-    } 
-    protected void onProgressUpdate(Progress... progress) { 
-    //도중에 진행 정도 변경 시 Main Thread 에서 실행 
-    publishProgress(progress); 
-        } 
-    protected void onPostExecute(Result result) { 
-    //백그라운드 작업 후 Main Thread 실행 
+private class myAsyncTask extends AsyncTask<실행시 받을 매개변수 타입, 진행 현황 변수 타입, 완료시 반환할 변수 타입>{
+    protected void onPreExecute() {
+    // 백그라운드 작업 전에 Main Thread 에 실행
+        }
+    protected void doInBackground(Params... params) {
+    //백그라운드 작업 실행
+    }
+    protected void onProgressUpdate(Progress... progress) {
+    //도중에 진행 정도 변경 시 Main Thread 에서 실행
+    publishProgress(progress);
+        }
+    protected void onPostExecute(Result result) {
+    //백그라운드 작업 후 Main Thread 실행
         }
     }
 ```
@@ -479,7 +479,7 @@ public class WeatherFragment extends Fragment {
 }
 ```
 
-## Overflow Menu 
+## Overflow Menu
 매번 네트워크 작업이 잘 실행되는지 보기 위해 앱을 죽이고 다시 실행하기는 번거롭습니다. Overflow Menu 를 만들어, 그곳에 새로고침 메뉴를 넣어 봅시다.
 아래 사진이 Overflow Menu 입니다. 안드로이드 디바이스에서 다양한 앱 들을 사용 하시면서, 많이 보셨을 겁니다.
 <img src="/blogimgs/overflow_menu.png"><br>
@@ -654,7 +654,7 @@ Logcat 에서 이 부분에 주목해 주세요. 이번에는 SecurityException 
 
 ## Permission
 안드로이드 에서 각각의 앱 들은 설치가 될 때 그 앱 만의 고유한 리눅스 사용자 ID 를 부여 받습니다. 그리고 각 앱들은 안드로이드 가상 머신 안의 각 앱의 인스턴스 안에서 실행 됩니다.
-결과적으로, 각 앱들은 각각의 보호된 영역에 완전히 갇혀 실행 되게 됩니다. 또한 외부로 부터 영향을 받지 않으며, 내부에서도 외부에 영향을 주지 못합니다. 
+결과적으로, 각 앱들은 각각의 보호된 영역에 완전히 갇혀 실행 되게 됩니다. 또한 외부로 부터 영향을 받지 않으며, 내부에서도 외부에 영향을 주지 못합니다.
 
 이러한 형태의 보안 모델을 샌드박스(Sandbox) 라고 하며, 다시 말해 안드로이드 에서 각 앱들은 별도의 샌드박스 에서 실행 됩니다. 이로 인해 각 앱들은 다른 앱의 리소스나 프로세스에 접근 할 수 없게 됩니다. 또한 그 어떤 앱도 다른 앱, 안드로이드 OS, 또는 사용자에게 영향을 주는 민감한 데이터 접근하는 것 이나, 민감한 작업을 실행하는 것들을 못하도록 해 줍니다.
 
@@ -678,7 +678,7 @@ AndroidManifest.xml 이 Manifest 파일 입니다. 여기에 인터넷 권한을
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.youngbin.androidstudy" >
-    
+
     <!-- 인터넷 Permission 정의 -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -733,7 +733,7 @@ public class WeatherFragment extends Fragment {
                         .appendQueryParameter(UNITS_PARAM, units)
                         .appendQueryParameter(DAYS_PARAM, Integer.toString(numDays))
                         .build();
-                
+
                 URL url = new URL(builtUri.toString());
                ...
             } catch (MalformedURLException e) {
@@ -768,7 +768,7 @@ public class WeatherFragment extends Fragment {
 우선, 우리가 읽어들인 데이터가 어떻게 생겼나 볼까요?
 <img src="/blogimgs/json_not_formatted.png"><br>
 이 상태에서는 읽기가 좀 어렵군요. Json Formatter 를 이용해 읽기 쉽도록 해 봅시다.
-[여기](http://jsonformatter.curiousconcept.com/)를 클릭해서 Json Formatter 웹 사이트를 열고, 
+[여기](http://jsonformatter.curiousconcept.com/)를 클릭해서 Json Formatter 웹 사이트를 열고,
 입력칸에 JSON 데이터를 넣은 다음. Process 를 누르면 아래 사진과 같이 나옵니다.
 <img src="/blogimgs/json_formatted.png"><br>
 <img src="/blogimgs/json_formatted_fullscreen.png"><br>
@@ -981,7 +981,7 @@ public class WeatherFragment extends Fragment {
                 Log.d("JSON", forecastJsonStr);
                 JSONArray JsonArray = JsonObj.getJSONArray("list"); //"list" Json Array 얻기
                 //데이터를 저장한 String[] 생성. JsonArray 의 항목 수 만큼 데이터를 넣을 수 있도록 생성
-                String[] WeatherDataArray = new String[JsonArray.length()]; 
+                String[] WeatherDataArray = new String[JsonArray.length()];
                 for (int i = 0; i < JsonArray.length(); i++) { //반복문
                     String MaxTemp = null; // 최대기온 저장할 변수
                     String MinTemp = null; // 최저기온 저장할 변수
@@ -996,7 +996,7 @@ public class WeatherFragment extends Fragment {
          ...
          }
         }
-         
+
 ```
 
 먼저 최대 기온과 최저 기온을 얻어내 봅시다.
@@ -1011,7 +1011,7 @@ public class WeatherFragment extends Fragment {
                 Log.d("JSON", forecastJsonStr);
                 JSONArray JsonArray = JsonObj.getJSONArray("list"); //"list" Json Array 얻기
                 //데이터를 저장한 String[] 생성. JsonArray 의 항목 수 만큼 데이터를 넣을 수 있도록 생성
-                String[] WeatherDataArray = new String[JsonArray.length()]; 
+                String[] WeatherDataArray = new String[JsonArray.length()];
                 for (int i = 0; i < JsonArray.length(); i++) { //반복문
                     String MaxTemp = null; // 최대기온 저장할 변수
                     String MinTemp = null; // 최저기온 저장할 변수
@@ -1030,7 +1030,7 @@ public class WeatherFragment extends Fragment {
          ...
          }
         }
-         
+
 ```
 
 그리고 이어서 날씨 상태를 얻어내 봅시다.
@@ -1046,7 +1046,7 @@ public class WeatherFragment extends Fragment {
                 Log.d("JSON", forecastJsonStr);
                 JSONArray JsonArray = JsonObj.getJSONArray("list"); //"list" Json Array 얻기
                 //데이터를 저장한 String[] 생성. JsonArray 의 항목 수 만큼 데이터를 넣을 수 있도록 생성
-                String[] WeatherDataArray = new String[JsonArray.length()]; 
+                String[] WeatherDataArray = new String[JsonArray.length()];
                 for (int i = 0; i < JsonArray.length(); i++) { //반복문
                     String MaxTemp = null; // 최대기온 저장할 변수
                     String MinTemp = null; // 최저기온 저장할 변수
@@ -1086,7 +1086,7 @@ public class WeatherFragment extends Fragment {
                 Log.d("JSON", forecastJsonStr);
                 JSONArray JsonArray = JsonObj.getJSONArray("list"); //"list" Json Array 얻기
                 //데이터를 저장한 String[] 생성. JsonArray 의 항목 수 만큼 데이터를 넣을 수 있도록 생성
-                String[] WeatherDataArray = new String[JsonArray.length()]; 
+                String[] WeatherDataArray = new String[JsonArray.length()];
                 for (int i = 0; i < JsonArray.length(); i++) { //반복문
                     String MaxTemp = null; // 최대기온 저장할 변수
                     String MinTemp = null; // 최저기온 저장할 변수
@@ -1103,7 +1103,7 @@ public class WeatherFragment extends Fragment {
                     JSONObject WeatherObj = WeatherArray.getJSONObject(0);
                     // 0번째 객체에서 날씨 상태에 해당되는 "main" 얻기
                     WeatherMain = WeatherObj.getString("main");
-                        
+
                     //하나의 문자열로 저장
                     Item = WeatherMain + " : " + " MAX=" + MaxTemp + " MIN=" + MinTemp;
                     Log.d("Item",Item);
@@ -1117,7 +1117,7 @@ public class WeatherFragment extends Fragment {
          ...
          }
         }
-         
+
 ```
 
 ## Adapter 갱신하기
@@ -1150,7 +1150,7 @@ clear 를 검색해서, 해당 메서드를 찿아보세요. 사진에서 보시
 <img src="/blogimgs/arrayadapter_clear_method.png"><br>
 add 를 검색해서, 해당 메서드를 찿아보면, 역시 내부에서 호출 해 주고 있습니다.
 <img src="/blogimgs/arrayadapter_add_method.png"><br>
-안드로이드는 오픈소스 이기 때문에, 이렇게 소스코드를 들여다 보실 수 있습니다. 
+안드로이드는 오픈소스 이기 때문에, 이렇게 소스코드를 들여다 보실 수 있습니다.
 소스코드를 들여다 보시는 것은 여러분들이 안드로이드 시스템이 어떻게 동작 하는지 알아 보실 수 있으며, 이는 앱을 개발 할 때 많은 도움이 될 겁니다.
 
 ## 앱 실행 결과.

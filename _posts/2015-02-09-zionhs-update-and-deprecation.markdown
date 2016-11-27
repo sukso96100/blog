@@ -3,7 +3,7 @@ layout: post
 title: "안드로이드용 시온고 앱 업데이트 및 앱 이전 안내"
 date: "2015-02-09"
 tags: android app update zion_high_school
-image : /blogimgs/zionhs_update_and_deprecation.jpg
+image : https://sukso96100.github.io/blogimgs/zionhs_update_and_deprecation.jpg
 ---
 
 안녕하세요. 오랜만에 앱 업데이트 소식을 들고 왔습니다. 요즘 앱 업데이트 가지고 따로 포스팅 안하는대. 이번에는 꽤 중요한 사항이라 포스팅 하게 되었습니다.

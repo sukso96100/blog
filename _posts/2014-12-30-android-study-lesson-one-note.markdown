@@ -3,7 +3,7 @@ layout: post
 title: "시온고 안드로이드 스터디 노트 - 1.Create Project Sunshine"
 date: "2014-12-30"
 tags: develop development android app study note
-image : /blogimgs/android_study_lesson_one_cover.jpg
+image : https://sukso96100.github.io/blogimgs/android_study_lesson_one_cover.jpg
 ---
 
 몇 주 전 부터 교내에서 친구 몇명 모아서 안드로이드 스터디를 하고 있습니다. 구글 코리아 측에서 스터디 그룹 프로그램을 해서 해 보게 되었는대. 2차 지필평가로 인해 진도가 많이 밀렸습니다. Udacity(udacity.com) 에 있는 Developing Android Apps코스를 기반으로 진행 중입니다. 7~8개의 레슨으로 구성 되어 있는대. 레슨 하나가 마무리 될 때마다. 이렇게 글로 정리를 해 보고자 합니다. 한참 진도가 늦습니다만... 일단 드디어 레슨 1 을 마무리 했으므로. 레슨 1 을 정리해 보고자 합니다.
@@ -79,7 +79,7 @@ cd /usr/java/
  * 다운로드한 *.tar.gz 파일을 지금 접근중인 경로로 옮기거나 복사합니다. 여기에서는 복사합니다.
 
 ```bash
-cp (*.tar.gz 파일의 상위 경로)/(해당 파일 이름).tar.gz (해당 파일 이름).tar.gz 
+cp (*.tar.gz 파일의 상위 경로)/(해당 파일 이름).tar.gz (해당 파일 이름).tar.gz
 ```
 
  * 압축을 해제합니다.
@@ -101,10 +101,10 @@ Java 로 작성된 프로그램을 실행하기 위해, JAVA_HOME 변수와, Pat
  * 변수 이름은 Path, 변수 값은 ;%JAVA_HOME%bin; 를 입력합니다. 이미 값이 다른 것이 있다면, 가장 뒤에 추가합니다.
 
 ### Linux
-먼저 프로필 파일을 텍스트 에디터로 열어주세요. 
+먼저 프로필 파일을 텍스트 에디터로 열어주세요.
 
 ```bash
-# "gedit" 은 텍스트 에디터 이름 입니다. 
+# "gedit" 은 텍스트 에디터 이름 입니다.
 # 다른 텍스트 에디터 사용시 gedit 대신 해당 에디터 이름을 입력하세요.
 
 # 사용중인 계정에 대해서만 설정 할 경우
@@ -165,7 +165,7 @@ http://developer.android.com/sdk/index.html
 ### Package Name 정하기
  * Package Name 은 각 앱의 고유한 이름으로, 다른 앱과 구별하는대 사용됩니다.
  * 보통 회사 도메인(Company domain)을 거꾸로 하여 사용합니다.
- * 다른 앱의 것과 중복 될 수 없읍니다. 
+ * 다른 앱의 것과 중복 될 수 없읍니다.
  * Package Name 예시 : Company domain 이 example.com 이고, 앱 이름이 appname 이면, Package Name 은 com.example.appname
 
 다음 화면으로 넘어가서 어떤 디바이스를 위한 앱을 개발할지 선택하고, Minimum SDK 를 지정합니다. 이 글에서는 휴대전화/태블릿 앱을 개발한다고 보고 Phone and Tablet 만 선택하고 Minimum SDK 를 선택하겠습니다.
@@ -199,7 +199,7 @@ http://developer.android.com/sdk/index.html
 ### Windows 를 사용 하십니까?
 별도로 USB 드라이버를 설치해야, Android Studio 에서 디바이스를 인식 할 수 있습니다. 설치 방법은 제조사 마다 차이가 있으므로, 여기에서는 다루지 않겠습니다. 구글링 하시면 금방 알아내실 수 있습니다.
 
-## 코드 살펴보기 
+## 코드 살펴보기
 기본적으로 생성된 코드를 한번 살펴 봅시다. 좌측 프로젝트 탐색 메뉴에서 MainActivity.java 를 열어주세요.
 <img src="/blogimgs/mainactivity.png"><br>
 
@@ -248,7 +248,7 @@ Activity 는 뭐고, Fragment 는 뭘까요?
 간단한 Fragment 레이아웃을 하나 만들어 봅시다. 좌측 프로젝트 탐색 메뉴에서 fragment_main.xml 파일을 열어주세요.
 
 <img src="/blogimgs/fragment_layout.png"><br>
-사진과 같은 화면이 보이나요? 왼쪽 팔레트에서 원하시는 뷰(View) 를 마우스로 드래그해서 배치해 보세요. 안드로이드 에서는 화면에 표시되는 각각의 구성요소(예 : 버튼, 텍스트, 이미지 등) 을 통틀어서 뷰(View) 라고 합니다. View 도 종류가 매우 다양합니다. 
+사진과 같은 화면이 보이나요? 왼쪽 팔레트에서 원하시는 뷰(View) 를 마우스로 드래그해서 배치해 보세요. 안드로이드 에서는 화면에 표시되는 각각의 구성요소(예 : 버튼, 텍스트, 이미지 등) 을 통틀어서 뷰(View) 라고 합니다. View 도 종류가 매우 다양합니다.
 
 ## 각종 View 에 대해 알아봅시다.
 View 도 상당히 그 종류가 다양합니다. 나눠보자면 대략 이렇게 나눠집니다.
@@ -257,21 +257,21 @@ View 도 상당히 그 종류가 다양합니다. 나눠보자면 대략 이렇�
 - ViewGroup
  - AdapterView(ListView, GridView ...)
  - Layout (FrameLayout, RelativeLayout, LinearLayout)
- 
-### Widget 
+
+### Widget
  딱히 자세히 설명하지 않아도 될 것 같내요. 버튼이나 텍스트, 드롭다운 박스, 텍스트 같은 조그마한 컨트롤이나 기본적인 요소 들입니다.(예 : TextView, Button, ImageVIew, Spinner ...)
- 
+
 ### ViewGroup
  하나 이상의 View 를 포함 내부에 할 수 있는 View 입니다.(예 : 각종 Layout, AdapterView)
- 
+
 ### Layout
  Layout 은 여러 뷰들을 화면상에 어떻게 배치할지 정해주는 ViewGroup 입니다. 대표적으로 FrameLayout, LinearLayout, RelativeLayout 이 있습니다.
- 
+
  - FrameLayout : 하나의 View 로 한 화면 전체를 가득 체우고자 할 때 사용합니다.
  - LinearLayout : 수평 또는 수직 방향으로 View 를 나란히 배치해 주는 Layout 입니다.
  - RelativeLayout : 다른 View 나 화면 가장자리 등을 중심으로 하여 관계적으로 배치해 주는 Layout 입니다.
  <img src="/blogimgs/layout_managers.png"><br>
- 
+
 ### AdapterView
 목록과 같이 일련의 데이터들을 표시 하고자 할때 사용합니다. 데이터들을 화면에 표시할 때, Adapter 를 이용하여 표시해서 AdapterView 라고 합니다. (예 : ListView, GridView ...)
 
@@ -450,13 +450,13 @@ findViewById 를 이용해 ListView를 id값으로 찾습니다.
 
 ## 앱 실행 결과
  <img src="/blogimgs/study_lesson1_result.png"><br>
- 
- 사진과 같이 잘 나오나요? Lesson 1 내용은 여기까지 입니다. 
- 
+
+ 사진과 같이 잘 나오나요? Lesson 1 내용은 여기까지 입니다.
+
 ## 소스코드
 Lesson 1 에 해당되는 소스코드 입니다.
 [https://github.com/sukso96100/zionhs_android_study/tree/lesson1](https://github.com/sukso96100/zionhs_android_study/tree/lesson1)
- 
+
 ## 곁들여 보면 좋은 추가자료들...
 - [Building Your First App](http://developer.android.com/training/basics/firstapp/index.html)
 - [Activities](http://developer.android.com/guide/components/activities.html)
@@ -466,4 +466,3 @@ Lesson 1 에 해당되는 소스코드 입니다.
 - [ListView](http://developer.android.com/guide/topics/ui/layout/listview.html)
 - [Dadhboards](http://developer.android.com/about/dashboards/index.html)
 - [Context](http://developer.android.com/reference/android/content/Context.html)
-

@@ -3,7 +3,7 @@ layout: post
 title: "시온고등학교 백향제 2014 앱/웹사이트를 소개합니다."
 date: "2014-12-27"
 tags: develop development android app zion_high_school
-image: /blogimgs/baekhyang14.png
+image: https://sukso96100.github.io/blogimgs/baekhyang14.png
 ---
 
 안녕하세요. 제가 이번에 교내에서 제가 운영중인 동아리인 LiCUBE 의 일부 맴버들과 함께 시온고등학교 백향제 앱과 웹사이트를 개발하여,
@@ -47,5 +47,5 @@ image: /blogimgs/baekhyang14.png
 소스코드는 GNU GPL V3 라이선스가 적용되어 공개되어 있습니다.
 각 소스코드를 열람 하려면 아래 링크를 이용해 주세요!
 
-- [백향제 웹사이트 소스코드](http://github.com/sukso96100/baekhyang14) 
-- [백향제 안드로이드 앱 소스코드](http://github.com/sukso96100/baekhyang14android) 
+- [백향제 웹사이트 소스코드](http://github.com/sukso96100/baekhyang14)
+- [백향제 안드로이드 앱 소스코드](http://github.com/sukso96100/baekhyang14android)

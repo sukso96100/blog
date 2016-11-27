@@ -11,12 +11,12 @@ tags: aws server docker ubuntu linux tip tutorial note update
 
 도커(Docker)는, 리눅스 컨테이너 기술을 기반으로, 앱을 배포할 때 필요한 모든 것을 하나의 컨테이너에 담아 OS에 상관없이 앱을 패키징하여 배포할 수 있도록 해 주는 프로그램 입니다. 기존 가상머신을 이용하여 배포를 하는 경우에는, 호스트 OS 위에 가성머신을 올리고, 각 가상머신 마다 게스트 OS와 바이너리 및 라이브러리를 넣어 그 위애 앱 하나씩 올려 배포한다면. 도커의 경우에는, 호스트 OS 위에 바로 도커 엔진이 그 위에 바로 각 앱과 바이너리 및 라이브러리가 포함된 컨테이너가 있는 구조 입니다.
 
-<img src="/blogimgs/vm-diagram.png">
+![](/blogimgs/vm-diagram.png)
 
 > VM의 구조
 > 출처 : https://www.docker.com/what-docker
 
-<img src="/blogimgs/docker-diagram.png">
+![](/blogimgs/docker-diagram.png)
 
 > Docker의 구조
 > 출처 : https://www.docker.com/what-docker
@@ -72,12 +72,12 @@ Docker 는 TCP 소켓 대신, 유닉스 소켓에 붙어 있습니다. 기본적
 
  - `sudo`를 사용가능한 사용자로 로그인 합니다. 예를 들어 `ubuntu`라는 사용자로 로그인 합니다.
  - `docker` 그룹을 만들고, 그 안에 `ubuntu`사용자를 추가 합니다.
- 
+
  ```bash
 sudo usermod -aG docker ubuntu
  ```
  - `sudo없이 `docker` 명령이 실행 되는지 확인합니다.
- 
+
  ```bash
  docker run hello-world
  ```

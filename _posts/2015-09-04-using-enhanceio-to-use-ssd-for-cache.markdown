@@ -13,12 +13,14 @@ bcache 를 이용해서도 SSD에 캐싱을 할 수 있지만, 하드디스크�
 
 ## 설치
 ### ArchLinux
-enhanceio-dkms-git 패키지를 AUR 에서 설치합니다.
+`enhanceio-dkms-git` 패키지를 AUR 에서 설치합니다.
+
 ```bash
 yaourt -S enhanceio-dkms-git
 ```
 ### Ubuntu
-ppa:enhanceio/daily PPA를 추가하고, enhanceio 패키지를 설치합니다.
+`ppa:enhanceio/daily` PPA를 추가하고, `enhanceio` 패키지를 설치합니다.
+
 ```bash
 sudo add-apt-repository ppa:enhanceio/daily
 sudo apt-get update
@@ -26,7 +28,8 @@ sudo apt-get install enhanceio
 ```
 
 ## 설정
-간단합니다. eio_cli를 이용하여, 명령줄 하나만 실행하시면 됩니다.
+간단합니다. `eio_cli`를 이용하여, 명령줄 하나만 실행하시면 됩니다.
+
 ```bash
 sudo eio_cli create -d [마운트된 하드디스크 또는 하드디스크 파티션 경로] -s [마운트된 SSD 또는 SSD 파티션 경로] -c my_first_enhanceio
 ```

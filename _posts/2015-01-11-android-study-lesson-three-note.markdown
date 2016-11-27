@@ -3,7 +3,7 @@ layout: post
 title: "시온고 안드로이드 스터디 노트 - 3.New Activities And Intents"
 date: "2015-01-11"
 tags: develop development android app study note
-image : /blogimgs/android_study_tshirts.jpg
+image : https://sukso96100.github.io/blogimgs/android_study_tshirts.jpg
 ---
 
 Lesson 2 에 이어 Lesson 3 노트를 계속 합니다. 이번에는 스터디 맴버들이 Udacity 강의와 함께 보면서 공부 할 수 있도록. 일찍 노트를 작성하게 되었습니다.
@@ -81,7 +81,7 @@ public class WeatherFragment extends Fragment {
 Activity 를 하나 더 만들어 줍시다. 이 Activity 는 더 자세한 날씨 정보를 표시하는대 사용 할 겁니다.
 아래 사진처럼, 패키지 디렉터리를 우클릭해서, 새로운 Activity 를 만들어 주세요. Blank Activity with Fragment 을 선택하여 생성합니다.
 <img src="/blogimgs/create_new_blank_activity_with_fragment.png"><br>
-이름은 DetailActivity 로 정하고, Hierarchical Parent(계층 부모)는 MainActiity 로 설정하여, 
+이름은 DetailActivity 로 정하고, Hierarchical Parent(계층 부모)는 MainActiity 로 설정하여,
 DetailActivity 의 상위(또는 부모) Activity 가 MainActivity 가 되도록 합시다.
 <img src="/blogimgs/new_blank_activity_with_fragment.png"><br>
 Activity 를 하나 새로 만들었으나. 아직 우리가 이 Activity 를 실행 하고 있지 않습니다. Intent 를 이용해서 한번 실행해 봅시다.
@@ -155,7 +155,7 @@ public class WeatherFragment extends Fragment {
                 //DetailFragment.class 대상 앱 컴포넌트 입니다.
                 Intent DetailIntent = new Intent(getActivity(), DetailActivity.class);
                 // 키값은 weather_data, 첨부된 데이터는 String 형태인 ForecastItem 로 하였습니다.
-                DetailIntent.putExtra("weather_data", ForecastItem); 
+                DetailIntent.putExtra("weather_data", ForecastItem);
                 startActivity(DetailIntent); // Activity 시작하기
             }
         });
@@ -179,7 +179,7 @@ public class WeatherFragment extends Fragment {
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.youngbin.androidstudy.DetailActivity$PlaceholderFragment">
 
-    <TextView android:text="@string/hello_world" 
+    <TextView android:text="@string/hello_world"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/weather_data"/>
@@ -231,7 +231,7 @@ SettingsActivity 를 생성 하셨으면, 우선 xml 파일 먼저 작성 하겠
     <EditTextPreference
         android:key="pref_city_id"
         android:title="@string/pref_city_id"
-        android:defaultValue="@string/pref_city_id_default_value" 
+        android:defaultValue="@string/pref_city_id_default_value"
         android:inputType="text"
         android:singleLine="true"/>
     <!--온도 단위 설정-->
@@ -254,7 +254,7 @@ SettingsActivity 를 생성 하셨으면, 우선 xml 파일 먼저 작성 하겠
     <string name="pref_city_id">City Id</string>
     <string name="pref_city_id_dialog">Type City Id</string>
     <string name="pref_city_id_default_value" translatable="false">1838716</string>
-    
+
     <string name="pref_unit">Unit</string>
     <string name="pref_unit_default_value" translatable="false">metric</string>
     <string-array name="pref_unit_entry">
@@ -284,7 +284,7 @@ public class SettingsActivity extends PreferenceActivity {
 클래스에 onPreferenceChangeListener를 구현하고, onPreferenceChangeListener에 Value 를 전달해 줄 메서드도 작성합니다.
 
 ```java
-public class SettingsActivity extends PreferenceActivity 
+public class SettingsActivity extends PreferenceActivity
     implements Preference.OnPreferenceChangeListener{
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -313,7 +313,7 @@ public class SettingsActivity extends PreferenceActivity
 onPreferenceChange메서드에 코드를 작성해서, 설정이 변경되면 선택한 내용이 설정 항목 제목 바로 아래 나타나는 Summary 로 나타나도록 해 줍시다.
 
 ```java
-public class SettingsActivity extends PreferenceActivity 
+public class SettingsActivity extends PreferenceActivity
     implements Preference.OnPreferenceChangeListener{
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -623,7 +623,7 @@ public class DetailActivity extends ActionBarActivity {
         private Intent createShareForecastIntent() {
             //액션은 ACTION_SEND 로 합니다.
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
-            //Flag 를 설정해 줍니다. 공유하기 위해 공유에 사용할 다른 앱의 하나의 Activity 만 열고, 
+            //Flag 를 설정해 줍니다. 공유하기 위해 공유에 사용할 다른 앱의 하나의 Activity 만 열고,
             //다시 돌아오면 열었던 Activity 는 꺼야 하기 때문에
             //FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET 로 해줍니다.
             shareIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);

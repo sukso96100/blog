@@ -3,7 +3,7 @@ layout: post
 title: "Fish 셸 설치하고, Oh My Fish 로 커스터마이징 하기"
 date: 2015-07-30
 tags: fish_shell oh_my_fish update tips tutorial shell linux ubuntu archlinux fedora
-image: /blogimgs/fish-shell.png
+image: https://sukso96100.github.io/blogimgs/fish-shell.png
 ---
 
 필자는 기본적으로 리눅스 배포판에 있는 bash 를 사용하다가, 전에 한번 zsh 로 갈아탔고.
@@ -41,12 +41,14 @@ sudo apt-get install fish
 
 #### Arch Linux
 pacamn을 이용해 ArchLinux 공식 저장소에서 받아 설치합니다.
+
 ```bash
 sudo pacman -S fish
 ```
 
 #### Gentoo linux
 내장된 패키지 관리자를 이용하여 설치합니다.
+
 ```bash
 su -
 emerge fish
@@ -54,6 +56,7 @@ emerge fish
 
 #### 기본 셸로 설정하기
 다음 명령을 실행합니다.
+
 ```bash
 chsh -s /usr/bin/fish
 ```
@@ -63,6 +66,7 @@ chsh -s /usr/bin/fish
 ### Oh My Fish 로 커스터마이징 하기
 
 설치는 명령줄 하나면 됩니다.
+
 ```bash
 curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/tools/install.fish | fish
 ```
@@ -70,17 +74,20 @@ curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/tools/install.fish |
 이제 테마와 플러그인을 설치해 봅시다.
 저는 'theme' 플러그인과 'agnoster' 테마를 설치할 겁니다. 그러기 위해서, 설정파일인, "~/.config/fish/config.fish"
 를 열어줍시다.<br> 평소 사용하시는 텍스트 에디터로 열어주세요. 가장 하단에 다음을 추가해 줍시다.
+
 ```bash
 Theme 'agnoster'
 Plugin 'theme'
 ```
 
 저장 후, 터미널을 열고 다음 명령을 실행합니다. 우리가 조금 전에 설정 파일에 명시한 플러그인과 테마를 설치합니다.
+
 ```bash
 omf install
 ```
 
 테마를 변경해 봅시다. 우리가 설치한, 'theme' 플러그인으로 쉽게 변경이 가능합니다.
+
 ```bash
 # 설치된 테마 목록 보기
 theme -l
@@ -88,11 +95,13 @@ theme -l
 theme agnoster
 ```
 
+> 2016.11.27 - 최근 버전에서는 별도 플러그인 설치 없이 `omf theme <테마 이름>` 만으로도 테마 변경이 가능합니다.
+
  더 많은 테마와 플러그인은 [여기](https://github.com/oh-my-fish?page=1) 에서 찾으실 수 있습니다.
- 설정 파일에 사용할 테마나 플러그인을``` Theme '테마이름' Plugin '플러그인 이름'```형식으로 정의하시면 됩니다.
+ 설정 파일에 사용할 테마나 플러그인을`Theme '테마이름' Plugin '플러그인 이름'`형식으로 정의하시면 됩니다.
 
 여기까지 작성하도록 하겠습니다. 자세한 사항은 아래 링크들을 참조하시면 좋을 것 같습니다.
-<img src="/blogimgs/awesome-fish.png"><br>
+![](/blogimgs/awesome-fish.png)   
 
 - [fish shell](http://fishshell.com/)
 - [fish shell 문서](http://fishshell.com/docs/current/)

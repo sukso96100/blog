@@ -6,12 +6,12 @@ tags: review gadget ssu soongsil_university
 image: /blogimgs/SAM_1344.JPG
 ---
 
-<img src="/blogimgs/11873429_983924731659836_6789396665988454229_n.jpg"><br>
-<img src="/blogimgs/11028023_983924754993167_2806264849500715027_n.jpg"><br>
-<img src="/blogimgs/IMG_20150824_194221.jpg"><br>
-<img src="/blogimgs/IMG_20150824_194607.jpg"><br>
-<img src="/blogimgs/Screenshot_2015-08-24-20-23-16.png"><br>
-<img src="/blogimgs/SAM_1344.JPG"><br>
+![](/blogimgs/11873429_983924731659836_6789396665988454229_n.jpg)   
+![](/blogimgs/11028023_983924754993167_2806264849500715027_n.jpg)   
+![](/blogimgs/IMG_20150824_194221.jpg)   
+![](/blogimgs/IMG_20150824_194607.jpg)   
+![](/blogimgs/Screenshot_2015-08-24-20-23-16.png)   
+![](/blogimgs/SAM_1344.JPG)   
 
 오늘 학교 수업 끝나고 폰 받아 켜보니(저희반은 폰을 걷습니다) 웬 택배가 집에 와있다고 문자가 와 있더군요.<br>
 뭔가 했더니. 저번에 숭실대학교 모의전형 후기 쓰고 이벤트 당첨되서 온 상품이였네요.ㅎㅎㅎ<br>

@@ -3,7 +3,7 @@ layout: post
 title: "ResumUtil : 첨삭하기 화면이 편집 화면과 병합되었습니다."
 date: "2015-05-25"
 tags: update resumeutil web app university_enterance introworkout
-image : /blogimgs/resumeutil_merged.png
+image : https://sukso96100.github.io/blogimgs/resumeutil_merged.png
 ---
 
 어제(2015.05.24) 자로 ResumeUtil 인터페이스가 나름(?) 많은 부분이 개선되어 업데이트 되었습니다.<br>
