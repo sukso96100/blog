@@ -135,7 +135,7 @@ rh8yuno9fwjrsnbh94kaimcan *  ip-172-31-4-253.ap-northeast-2.compute.internal   R
 CloudFormation 에서 선택 후 제거하면, Docker for AWS 실행 시 만들어진 모든 리소스가 전부 다 자동으로 사라집니다.
 
 ## 결론
-일단 간단히 한번 사용해 봤는데, 그냥 EC2 인스턴스에 직접 설치해 사용하는 것에 비해 편리한 점이 많은 것 같습니다. 특히 호스트를 스케일링 할 때, 자동으로 Swarm 에 연결/연결 해제 하는 기능이, 추후 오토 스케일링이 필요한 서비스를 Docker 를 이용해서 배포할 떄 유용할 것 같습니다.
+일단 간단히 한번 사용해 봤는데, 그냥 EC2 인스턴스에 직접 설치해 사용하는 것에 비해 편리한 점이 많은 것 같습니다. 특히 호스트를 스케일링 할 때, 자동으로 Swarm 에 연결/연결 해제 하는 기능이, 추후 오토 스케일링이 필요한 서비스를 Docker 를 이용해서 배포할 때 유용할 것 같습니다.
 
 ## 참조 & 참고자료
 - [Docker for AWS Setup - Docker for AWS](https://beta.docker.com/docs/aws/)
