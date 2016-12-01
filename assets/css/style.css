@@ -37,9 +37,9 @@ body{
   }
 }
 
-.postview-content, #searchresults{
+.postview-content, #resultitem{
   max-width: 800px;
-  padding: 16px;
+  padding: 16px 0 16px 0;
   text-align: left;
 }
 
