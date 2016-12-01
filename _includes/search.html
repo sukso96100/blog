@@ -41,7 +41,9 @@
             posts[i].tags.includes(keyword) ||
             posts[i].url.includes(keyword) ||
             posts[i].date.includes(keyword)){
-              results.innerHTML += `<paper-item class="resultitem" onclick="location.href='${posts[i].url}'">${posts[i].date} | ${posts[i].title}</paper-item>`;
+              results.innerHTML += `<paper-item class="resultitem"
+                onclick="location.href='${posts[i].url}'">
+                ${posts[i].date} | ${posts[i].title}</paper-item>`;
             }
       }
     }

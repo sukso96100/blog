@@ -37,9 +37,16 @@ body{
   }
 }
 
-.postview-content, #resultitem{
+.postview-content{
   max-width: 800px;
-  padding: 16px 0 16px 0;
+  padding: 16px;
+  text-align: left;
+}
+
+.resultitem{
+  max-width: 800px;
+  padding-left: 16px;
+  padding-right: 16px;
   text-align: left;
 }
 
