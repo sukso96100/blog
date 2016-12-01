@@ -7,7 +7,7 @@ layout: default
       {% include header.html %}
       <div>
         <div align="center" class="container">
-        <section class="postview-content" align="start">
+        <section class="postview-content" align="left">
           <h1>Tags</h1>
          {% for tag in site.tags %}
          <paper-button onclick="openCollapse('{{ tag | first }}'); location.href='#{{ tag | first }}'">#{{ tag | first }}</paper-button>

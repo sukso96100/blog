@@ -10,7 +10,7 @@ layout: default
         style="{% if page.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
         rgba(0, 0, 0, 0.4) ), url('{{ page.image }}')center / cover;{% endif %}"
         align="center">
-        <div class="postview-titlebox" align="start">
+        <div class="postview-titlebox" align="left">
           <h1>{{ page.title }}</h1>
           <p>
             {{ page.date | date: "%Y.%m.%d" }}
@@ -19,7 +19,7 @@ layout: default
       </section>
       {% include sharebtn.html %}
         <div align="center">
-          <section class="postview-content" align="start">
+          <section class="postview-content">
             {{ page.content }}
             <section>
               <hr class="hr-with-margin" />
@@ -54,7 +54,7 @@ layout: default
                   onclick="location.href='{{ site.baseurl}}/{{ page.previous.url }}'"
                   style="{% if page.previous.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
                   rgba(0, 0, 0, 0.4) ), url('{{ page.previous.image }}')center / cover;{% endif %}"
-                  align="start">
+                  align="left">
                   <paper-ripple></paper-ripple>
                   <h2>{{ page.previous.title }}</h2>
                   <p>
@@ -70,7 +70,7 @@ layout: default
                   onclick="location.href='{{ site.baseurl }}/{{ page.next.url }}'"
                   style="{% if page.next.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
                   rgba(0, 0, 0, 0.4) ), url('{{ page.next.image }}')center / cover;{% endif %}"
-                  align="start">
+                  align="left">
                   <paper-ripple></paper-ripple>
                   <h2>{{ page.next.title }}</h2>
                   <p>
