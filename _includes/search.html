@@ -2,11 +2,11 @@
     <paper-toolbar style="background:white; color:black;">
       <paper-icon-button icon="arrow-back" onclick="toggleSearch()"></paper-icon-button>
       <paper-input no-label-float label="Type to search"
-        oninput="searchPosts()" style="width:100%;" id="searchinput">
+        onchange="searchPosts()" style="width:100%;" id="searchinput">
       </paper-input>
       <paper-icon-button icon="close" onclick="clearSearchInput()"></paper-icon-button>
     </paper-toolbar>
-  <div>
+  <div align="center">
     <iron-list id="searchresults">
     </iron-list>
   </div>
