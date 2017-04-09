@@ -1,53 +1,46 @@
 ---
 layout: default
 ---
-<body>
-  <iron-pages selected="0">
-    <paper-header-panel>
-      {% include header.html %}
-      <div>
-        <div align="center" class="container">
-        <section class="postview-content" align="left">
-          <h1>Tags</h1>
-         {% for tag in site.tags %}
-         <paper-button onclick="openCollapse('{{ tag | first }}'); location.href='#{{ tag | first }}'">#{{ tag | first }}</paper-button>
-         {% endfor %}
-         {% for tag in site.tags %}
-         <iron-collapse id="{{ tag | first }}">
-           <h2>#{{ tag | first }}</h2>
-         {% for posts in tag %}
-           {% for post in posts %}
-           {% if post.title %}
-           <p>{{ post.date | date: "%Y.%m.%d" }} | <a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a>{% if post.author %} | {{ post.author }} {% endif %}</p>
-           {% endif %}
-           {% endfor %}
-         {% endfor %}
-        </iron-collapse>
-     {% endfor %}
-        </section>
-      </div>
-      {% include footer.html %}
-    </div>
-    </paper-header-panel>
-    {% include search.html %}
-  </iron-pages>
-  <script>
-  window.addEventListener('WebComponentsReady', function(e) {
-    console.log('WebComponentsReady');
-    openCollapse(location.hash.replace("#",""));
-  });
-    function openCollapse(collapseId){
-      console.log(collapseId);
-      closeAllCollapse();
-      if(collapseId.length>0){
-        document.getElementById(collapseId).opened = true;
-      }
-    }
-    function closeAllCollapse(){
-      {% for tag in site.tags %}
-      document.getElementById('{{ tag | first }}').opened = false;
+<body onscroll="setBackground()" onload="setBackground()">
+<section class="body">
+  {% include header.html %}
+  <div class="cover common">
+    <h1>{{page.title}}</h1>
+    {% for tag in site.tags %}
+      <a href="#{{ tag | first }}">#{{ tag | first }}</a>
+    {% endfor %}
+  </div>
+  <div class="main common">
+    {% for tag in site.tags %}
+      <h2 id="{{ tag | first }}">#{{ tag | first }}</h2>
+    {% for posts in tag %}
+      {% for post in posts %}
+      {% if post.title %}
+      <p>{{ post.date | date: "%Y.%m.%d" }} | <a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a>{% if post.author %} | {{ post.author }} {% endif %}</p>
+      {% endif %}
       {% endfor %}
-    }
-  </script>
-  {% include javascripts.html %}
+    {% endfor %}
+{% endfor %}
+
+
+  </div>
+
+     <script>
+       function setBackground(){
+         var bodyStyle = document.getElementsByTagName('body')[0].style;
+         var bodySectionStyle = document.getElementsByClassName('body')[0].style;
+         var headerStyle = document.getElementsByClassName('header')[0].style;
+         if(window.scrollY > (window.innerHeight * 0.6)){
+           bodyStyle.color = "black";
+           bodySectionStyle.background = "white";
+           headerStyle.background = "white";
+         }else{
+           bodyStyle.color = "white";
+           bodySectionStyle.background = "rgba(0, 0, 0, 0)";
+           headerStyle.background = "rgba(0, 0, 0, 0)";
+         }
+       }
+     </script>
+</section>
+
 </body>

@@ -1,57 +1,98 @@
 ---
 layout: default
 ---
-<body>
-  <iron-pages selected="0">
-    <paper-header-panel>
-      {% include homeheader.html %}
-      <div>
-        <div class="grid grid-pad">
-          {% for post in paginator.posts %}
-          <div class="col-1-2">
-            <paper-material class="content post-card" elevation="0"
-              onmouseover="this.elevation='2'" onmouseout="this.elevation='0'"
-              onclick="location.href='{{ site.baseurl }}/{{ post.url }}'"
-              style="{% if post.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
-              rgba(0, 0, 0, 0.4) ), url('{{ post.image }}')center / cover;{% endif %}">
-                <paper-ripple></paper-ripple>
-                <h2>{{ post.title }}</h2>
-                <p>
-                  {{ post.date | date: "%Y.%m.%d" }}
-                </p>
-                <p>
-                  {{ post.content | strip_html | truncatewords:60 }}
-                  <section>
-                    {% for tag in post.tags %}
-                    <b>#{{ tag }}</b>
-                    {% endfor %}
-                  </section>
-                </p>
-              </paper-material>
-          </div>
-          {% endfor %}
-        </div>
-        <table align="center" style="margin-bottom:64px; margin-top:32px;">
-          <tr>
-            <td style="padding-right:16px;">
-                <paper-button {% if paginator.next_page %} onclick="location.href='{{ site.baseurl }}/{{ paginator.next_page_path }}'"{% else %}{% endif %}>
-                  <iron-icon icon="arrow-back"></iron-icon>
-                  Older
-                </paper-button>
-              </td>
-              <td>{{ paginator.page }} / {{ paginator.total_pages }}</td>
-              <td style="padding-left:16px;">
-                  <paper-button {% if paginator.previous_page %} onclick="location.href='{{ site.baseurl }}/{{ paginator.previous_page_path }}'"{% else %}{% endif %}>
-                 Newer
-                 <iron-icon icon="arrow-forward"></iron-icon>
-               </paper-button>
-             </td>
-           </tr>
-         </table>
-         {% include footer.html %}
+<body onscroll="setBackground()" onload="setBackground()">
+<section class="body">
+  {% include header.html %}
+  <div class="cover common">
+    {% for post in paginator.posts %}
+    {% if forloop.index == 1 %}
+    <script>
+      var bgImgUrl = "{{post.image}}";
+    </script>
+    <h1>{{post.title}}</h1>
+    <p>
+      {{ post.date | date: "%Y.%m.%d" }}
+    </p>
+    <p>
+      {{ post.content | strip_html | truncatewords:50 }}
+      <section>
+        {% for tag in post.tags %}
+        <b>#{{ tag }}</b>
+        {% endfor %}
+      </section>
+    </p>
+    <a href="{{ site.baseurl }}/{{ post.url }}" class="button-black">Read this post</a>
+    {% endif %}
+    {% endfor %}
+    <p><b>
+        Scroll down to see more posts
+    </b></p>
+  </div>
+  <div class="main common">
+    {% for post in paginator.posts %}
+    {% if forloop.index > 1 %}
+    <div class="post-item">
+    <h1>{{post.title}}</h1>
+    <p>
+      {{ post.date | date: "%Y.%m.%d" }}
+    </p>
+    <p>
+      {{ post.content | strip_html | truncatewords:50 }}
+      <section>
+        {% for tag in post.tags %}
+        <b>#{{ tag }}</b>
+        {% endfor %}
+      </section>
+    </p>
+    <a href="{{ site.baseurl }}/{{ post.url }}" class="button-white">Read this post</a>
       </div>
-    </paper-header-panel>
-    {% include search.html %}
-  </iron-pages>
-  {% include javascripts.html %}
+      {% endif %}
+      {% endfor %}
+      <div style="padding:32px;" align="center">
+        <a class="button-white" {% if paginator.next_page %} href="{{ site.baseurl }}/{{ paginator.next_page_path }}"{% else %}{% endif %}>
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>Older
+        </a>
+        <b style="padding: 8px;">
+          {{ paginator.page }} / {{ paginator.total_pages }}
+        </b>
+        <a class="button-white" {% if paginator.previous_page %} href="{{ site.baseurl }}/{{ paginator.previous_page_path }}"{% else %}{% endif %}>
+          Newer<i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+  </div>
+
+  <!-- <table align="center" style="margin-top:32px; padding-bottom: 64px;">
+    <tr>
+      <td style="padding:16px;">
+
+        </td>
+        <td>{{ paginator.page }} / {{ paginator.total_pages }}</td>
+        <td style="padding:16px;">
+
+       </td>
+     </tr>
+   </table> -->
+
+     <script>
+       function setBackground(){
+         var bodyStyle = document.getElementsByTagName('body')[0].style;
+         var bodySectionStyle = document.getElementsByClassName('body')[0].style;
+         var headerStyle = document.getElementsByClassName('header')[0].style;
+         bodyStyle.background = "linear-gradient( rgba(0, 0, 0, 0.4), \
+         rgba(0, 0, 0, 0.4) ), url("+bgImgUrl+")center / cover";
+         if(window.scrollY > (window.innerHeight * 0.6)){
+           bodyStyle.color = "black";
+           bodySectionStyle.background = "white";
+           headerStyle.background = "white";
+         }else{
+           bodyStyle.color = "white";
+           bodySectionStyle.background = "rgba(0, 0, 0, 0)";
+           headerStyle.background = "rgba(0, 0, 0, 0)";
+         }
+       }
+     </script>
+</section>
+
 </body>

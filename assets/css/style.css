@@ -87,3 +87,78 @@ blockquote{
   border-left: solid grey 8px;
   padding: 0px 8px 0px 8px;
 }
+
+
+/**/
+body{
+  margin: 0;
+  color: white;
+  background: black;
+}
+.body{
+  transition: background 0.5s linear;
+}
+.header{
+  padding-top: 8px;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+.header > ul > li{
+  float: left;
+  list-style: none;
+  padding: 8px;
+}
+.cover{
+  height: 100vh;
+  padding-top: 30vh;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.cover > h1{
+  font-size: 3em;
+}
+
+.main{
+  min-height: 70vh;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.common{
+  max-width: 1000px;
+  margin: auto;
+}
+
+.button-white{
+  padding: 8px;
+  border: thin solid black;
+  background-color: white;
+  color: black;
+}
+
+.button-black{
+  padding: 8px;
+  border: thin solid white;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+.button-white:hover{
+  padding: 8px;
+  border: thin solid black;
+  background-color: black;
+  color: white;
+}
+
+.button-black:hover{
+  padding: 8px;
+  border: thin solid white;
+  background-color: white;
+  color: black;
+}
+
+.post-item{
+  padding-top: 16px;
+  padding-bottom: 32px;
+}

@@ -1,91 +1,80 @@
 ---
 layout: default
 ---
-<body>
-  <iron-pages selected="0">
-    <paper-header-panel>
-    {% include header.html %}
-    <div>
-      <section class="postview-header" elevation="0"
-        style="{% if page.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.4) ), url('{{ page.image }}')center / cover;{% endif %}"
-        align="center">
-        <div class="postview-titlebox" align="left">
-          <h1>{{ page.title }}</h1>
+<body onscroll="setBackground()" onload="setBackground()">
+<section class="body">
+  {% include header.html %}
+  <div class="cover common">
+    <script>
+      var bgImgUrl = "{{page.image}}";
+    </script>
+    <h1>{{page.title}}</h1>
+    <p>
+      {{ page.date | date: "%Y.%m.%d" }}
+    </p>
+    <p><b>
+        Scroll down to read this post
+    </b></p>
+  </div>
+  <div class="main common">
+    {{page.content}}
+    <table class="social-btns">
+      <tbody>
+        <tr>
+          <td>
+            <!-- 구글플러스 +1 버튼 -->
+            <g:plusone></g:plusone>
+          </td>
+          <td>
+            <!-- Facebook 좋아요 버튼 -->
+            <div class="fb-like" data-href="{{ site.baseurl }}/{{ page.url }}"
+             data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    {% include adsense.html %}
+    {% include disqus.html %}
+    {% if page.previous.url %}
+    <hr />
+      <div class="post-item">
+          <h2>{{ page.previous.title }}</h2>
           <p>
-            {{ page.date | date: "%Y.%m.%d" }}
+            {{ page.previous.date | date: "%Y.%m.%d" }}
           </p>
-        </div>
-      </section>
-      {% include sharebtn.html %}
-        <div align="center">
-          <section class="postview-content">
-            {{ page.content }}
-            <section>
-              <hr class="hr-with-margin" />
-              {% for tag in page.tags %}
-              <paper-button onclick="location.href='{{ site.baseurl }}/tags#{{ tag }}'">#{{ tag }}</paper-button>
-              {% endfor %}
-              <table class="social-btns">
-                <tbody>
-                  <tr>
-                    <td>
-                      <!-- 구글플러스 +1 버튼 -->
-                      <g:plusone></g:plusone>
-                    </td>
-                    <td>
-                      <!-- Facebook 좋아요 버튼 -->
-                      <div class="fb-like" data-href="{{ site.baseurl }}/{{ page.url }}"
-                       data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
-            {% include adsense.html %}
-            {% include disqus.html %}
-          </section>
-
-          <!-- Show Previous and Next Post Link -->
-          <div class="grid grid-pad">
-            {% if page.previous.url %}
-              <div class="col-1-2">
-                <paper-material class="post-card-small" elevation="0"
-                  onmouseover="this.elevation='2'" onmouseout="this.elevation='0'"
-                  onclick="location.href='{{ site.baseurl}}/{{ page.previous.url }}'"
-                  style="{% if page.previous.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
-                  rgba(0, 0, 0, 0.4) ), url('{{ page.previous.image }}')center / cover;{% endif %}"
-                  align="left">
-                  <paper-ripple></paper-ripple>
-                  <h2>{{ page.previous.title }}</h2>
-                  <p>
-                    {{ page.previous.date | date: "%Y.%m.%d" }}
-                  </p>
-                </paper-material>
-              </div>
-            {% else %}{% endif %}
-            {% if page.next.url %}
-              <div class="col-1-2">
-                <paper-material class="post-card-small" elevation="0"
-                  onmouseover="this.elevation='2'" onmouseout="this.elevation='0'"
-                  onclick="location.href='{{ site.baseurl }}/{{ page.next.url }}'"
-                  style="{% if page.next.image %}background: linear-gradient( rgba(0, 0, 0, 0.4),
-                  rgba(0, 0, 0, 0.4) ), url('{{ page.next.image }}')center / cover;{% endif %}"
-                  align="left">
-                  <paper-ripple></paper-ripple>
-                  <h2>{{ page.next.title }}</h2>
-                  <p>
-                    {{ page.next.date | date: "%Y.%m.%d" }}
-                  </p>
-                </paper-material>
-              </div>
-            {% else %}{% endif %}
-          </div>
-        </div>
-        {% include footer.html %}
+          <a class="button-white" href="{{ site.baseurl }}/{{ page.previous.url }}">Read this post</a>
       </div>
-    </paper-header-panel>
-    {% include search.html %}
-  </iron-pages>
-  {% include javascripts.html %}
+    {% else %}{% endif %}
+    {% if page.next.url %}
+    <hr />
+      <div class="post-item">
+          <h2>{{ page.next.title }}</h2>
+          <p>
+            {{ page.next.date | date: "%Y.%m.%d" }}
+          </p>
+          <a class="button-white" href="{{ site.baseurl }}/{{ page.next.url }}">Read this post</a>
+      </div>
+    {% else %}{% endif %}
+  </div>
+
+     <script>
+       function setBackground(){
+         var bodyStyle = document.getElementsByTagName('body')[0].style;
+         var bodySectionStyle = document.getElementsByClassName('body')[0].style;
+         var headerStyle = document.getElementsByClassName('header')[0].style;
+         bodyStyle.background = "linear-gradient( rgba(0, 0, 0, 0.4), \
+         rgba(0, 0, 0, 0.4) ), url("+bgImgUrl+")center / cover";
+         if(window.scrollY > (window.innerHeight * 0.6)){
+           bodyStyle.color = "black";
+           bodySectionStyle.background = "white";
+           headerStyle.background = "white";
+         }else{
+           bodyStyle.color = "white";
+           bodySectionStyle.background = "rgba(0, 0, 0, 0)";
+           headerStyle.background = "rgba(0, 0, 0, 0)";
+         }
+       }
+     </script>
+</section>
+
 </body>

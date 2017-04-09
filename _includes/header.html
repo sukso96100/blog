@@ -1,9 +1,14 @@
-<paper-toolbar style='{% if page.color %}background: {{ page.color }};{% endif %}'>
-  <paper-icon-button icon="arrow-back" onclick="location.href='{{ site.baseurl }}/'"></paper-icon-button>
-  <div class="title">
-    {{ site.title }}
-  </div>
-  <paper-icon-button icon="archive" onclick="location.href='{{ site.baseurl }}/archive'"></paper-icon-button>
-  <paper-icon-button icon="label" onclick="location.href='{{ site.baseurl }}/tags'"></paper-icon-button>
-  <paper-icon-button icon="search" onclick="toggleSearch()"></paper-icon-button>
-</paper-toolbar>
+<div class="header">
+  <ul class="common">
+    <li onclick="location.href='{{ site.baseurl }}/'">{{site.title}}</li>
+    <li onclick="location.href='{{ site.baseurl }}/archive'">
+      <i class="fa fa-archive" aria-hidden="true"></i>
+    </li>
+    <li onclick="location.href='{{ site.baseurl }}/tags'">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+    </li>
+    <li>
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </li>
+  </ul>
+</div>
