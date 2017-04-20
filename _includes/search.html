@@ -1,19 +1,18 @@
-  <paper-header-panel>
-    <paper-toolbar style="background:white; color:black;">
-      <paper-icon-button icon="arrow-back" onclick="toggleSearch()"></paper-icon-button>
-      <paper-input no-label-float label="Type to search"
-        onchange="searchPosts()" style="width:100%;" id="searchinput">
-      </paper-input>
-      <paper-icon-button icon="close" onclick="clearSearchInput()"></paper-icon-button>
-    </paper-toolbar>
-  <div align="center">
-    <iron-list id="searchresults" style="margin-top: 8px;">
-    </iron-list>
+<div id="searchSection" hidden="true">
+  <div>
+    <div class="searchBar">
+      <button onclick="toggleSearch()" class="button-white-noborder"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+      <input class="input-white" type="text" id="searchInput" placeholder="Search..." onchange="searchPosts()"/>
+      <button onclick="clearSearchInput()" class="button-white-noborder"><i class="fa fa-times" aria-hidden="true"></i></button>
+    </div>
+    <div id="searchResults">
+    </div>
   </div>
-  <script>
+</div>
+<script>
     var posts;
     function searchPosts(){
-      var searchkeyword = document.getElementById('searchinput').value;
+      var searchkeyword = document.getElementById('searchInput').value;
       results = new Array;
       if(posts==undefined){
         fetch('{{ site.baseurl }}/search.json')
@@ -28,7 +27,7 @@
       }
     }
     function filterResults(keyword){
-      var results = document.getElementById('searchresults');
+      var results = document.getElementById('searchResults');
       results.innerHTML = "";
       if(keyword==""||keyword==undefined){
         return;
@@ -41,14 +40,18 @@
             posts[i].tags.includes(keyword) ||
             posts[i].url.includes(keyword) ||
             posts[i].date.includes(keyword)){
-              results.innerHTML += `<paper-item class="resultitem"
-                onclick="location.href='${posts[i].url}'">
-                ${posts[i].date} | ${posts[i].title}</paper-item>`;
+              results.innerHTML += `<p>${posts[i].date} |
+              <a href="${posts[i].url}">${posts[i].title}</a></p>`;
             }
       }
     }
     function clearSearchInput(){
-      document.getElementById('searchinput').value = "";
+      document.getElementById('searchInput').value = "";
+    }
+    function toggleSearch(){
+      var searchSection = document.getElementById('searchSection');
+      var bodySection = document.getElementById('body');
+      searchSection.hidden = !searchSection.hidden;
+      bodySection.hidden = !bodySection.hidden;
     }
   </script>
-  </paper-header-panel>

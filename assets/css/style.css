@@ -96,9 +96,17 @@ blockquote{
   margin: auto;
 }
 
-.button-white{
+.button-white,
+.input-white{
   padding: 8px;
   border: thin solid black;
+  background-color: white;
+  color: black;
+}
+
+.button-white-noborder{
+  padding: 8px;
+  border: none;
   background-color: white;
   color: black;
 }
@@ -110,9 +118,17 @@ blockquote{
   color: white;
 }
 
-.button-white:hover{
+.button-white:hover,
+.input-white:focus{
   padding: 8px;
   border: thin solid black;
+  background-color: black;
+  color: white;
+}
+
+.button-white-noborder:hover{
+  padding: 8px;
+  border: none;
   background-color: black;
   color: white;
 }
@@ -124,7 +140,46 @@ blockquote{
   color: black;
 }
 
+.input-white:hover{
+  padding: 8px;
+  border: thin solid black;
+  background-color: grey;
+  color: white;
+}
+
 .post-item{
   padding-top: 16px;
   padding-bottom: 32px;
+}
+
+#searchSection{
+  padding: 32px;
+  min-height: 100vh;
+  background: white;
+}
+
+#searchSection > div{
+  margin: auto;
+  max-width: 1000px;
+}
+
+#searchSection > div > .searchBar{
+  display: flex;
+}
+
+#searchSection > div > .searchBar > button,
+#searchSection > div > .searchBar > input{
+  font-size: 2em;
+}
+
+#searchSection > div > .searchBar > button{
+  flex: 1;
+}
+
+#searchSection > div > .searchBar > input{
+  flex: 4;
+}
+
+#searchSection > div > #searchResults{
+  color: black;
 }
