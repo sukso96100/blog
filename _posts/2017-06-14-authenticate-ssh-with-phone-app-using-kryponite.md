@@ -29,7 +29,7 @@ curl https://krypt.co/kr | sh
 그리고, 데스크탑/노트북 을 휴대전화와 페어링 합니다. 아래와 같은 명령어를 입력해서 나오는 QR 코드를 휴대전화 앱에서 스캔 하면 됩니다.
 
 ```bash
-kr Pair
+kr pair
 ```
 
 ![Pair with Phone](https://sukso96100.github.io/blogimgs/IMG_20170615_173530.jpg)
@@ -53,3 +53,19 @@ kr copy
 ![Auth with phone](https://sukso96100.github.io/blogimgs/스크린샷%202017-06-15%20오후%206.15.01.png)
 
 이제 매번 비공개 키를 새로 만들거나 기존 것을 복사해서 새 컴퓨터에 넣을 필요 없이 컴퓨터와 폰을 앱으로 페어링 하면, 공개키를 업로드 해 둔 곳에 ssh 로 접속하거나 인증을 쉽게 할 수 있습니다. 폰에서 승인을 추가로 해야 하기 때문에 좀 더 안전해 지기도 합니다.
+
+페어링을 해제 하려면, `unpair` 합니다.
+
+```bash
+kr unpair
+```
+
+업그레이드 하려면 `upgrade`, 컴퓨터에서 프로그램을 제거하려면 `unistall` 하면 됩니다.
+
+```bash
+# Upgrade kr
+kr upgrade
+
+# Uninstall kr
+kr uninstall
+```
