@@ -2,7 +2,7 @@
 layout: post
 title: "라즈베리파이에 Node.js 설치하기"
 date: 2015-07-16
-tags: raspberry-pi linux tutorial tips nodejs
+tags: raspberry-pi linux tutorial tip nodejs
 image: https://sukso96100.github.io/blogimgs/node_arm.png
 ---
 

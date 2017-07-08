@@ -3,7 +3,7 @@ layout: post
 date: 2017-05-18
 image: https://sukso96100.github.io/blogimgs/gen-income-tax2.png
 title: "종합소득세 신고하기"
-tags: freelance tax tip tips note
+tags: freelance tax tip tip note
 ---
 보통 가끔씩 외주를 받아서 하고, 약속된 금액을 받게 되면 총 금액에서 3.3% 는 원천징수 되고, 나머지 96.7% 를 수령하게 된다.
 외주로 돈을 벌면 그에 대해 소득세 3% 와 지방소득세 0.3% 를 신고하고 내야 하는데, 이를 발주자 또는 발주사가 대신 원천징수를 해서 납부해 주는 것이다.

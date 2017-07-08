@@ -2,7 +2,7 @@
 layout: post
 date: 2015-12-13
 title: "AUR 에 아치리눅스 패키지 올리기"
-tags: archlinux aur packaging linux note update tip tips
+tags: archlinux aur packaging linux note update tip tip
 ---
 
 아치리눅스에서 패키지를 설치하다 보면, 공식 저장소나 공식 미러가 아닌, 

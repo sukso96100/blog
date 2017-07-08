@@ -2,7 +2,7 @@
 layout: post
 title: "라즈베리파이 모델B+ 에 아치리눅스ARM 설치하기."
 date: 2015-07-11
-tags: raspberry-pi linux tutorial tips archlinux
+tags: raspberry-pi linux tutorial tip archlinux
 ---
 
 필자는 원래 라즈베라파이에 모델 B+에 Raspbian (라즈베리파이를 위해 만들어진 버전의 Debian GNU/Linux)를 설치하여 사용해 왔습니다. 

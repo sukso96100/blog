@@ -3,7 +3,7 @@ layout: post
 date: 2016-03-25
 title: "Let's Encrypt 를 이용해 Dokku 앱 HTTPS 연결 지원하기"
 image: https://sukso96100.github.io/blogimgs/LE_stacked1_L.png
-tags: linux note update tip tips docker dokku letsencrypt
+tags: linux note update tip tip docker dokku letsencrypt
 ---
 
 웹사이트들을 이용하다 보면, 보안을 위해 HTTPS 연결 지원을 하는 경우를 어렵지 않게 볼 수 있습니다.

@@ -3,7 +3,7 @@ layout: post
 date: 2016-03-25
 title: "Dokku 설치 및 설정하기"
 image: https://sukso96100.github.io/blogimgs/dokku_logo.png
-tags: linux note update tip tips docker dokku
+tags: linux note update tip tip docker dokku
 ---
 
 개인적으로 AWS EC2 인스턴스에 Dokku 라는 것을 설치해서 사용하는 중인데요.

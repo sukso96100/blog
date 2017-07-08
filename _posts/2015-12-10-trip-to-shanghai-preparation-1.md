@@ -2,7 +2,7 @@
 layout: post
 date: 2015-12-12
 title: "상하이 여행 - 준비(1)"
-tags: trip shanghai china update tip tips
+tags: trip shanghai china update tip tip
 ---
 
 요즘 친구들과 상하이 자유여행을 준비하고 있습니다. 여행 준비하고 여행 가는김에 포스팅으로 과정을 대략 요약(?) 해서 남기려 합니다. 

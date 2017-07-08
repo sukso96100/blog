@@ -2,7 +2,7 @@
 layout: post
 date: 2015-12-22
 title: "아치리눅스에서 SSD TRIM 사용하기"
-tags: archlinux ssd trim linux note update tip tips
+tags: archlinux ssd trim linux note update tip tip
 ---
 
 하드디스크에서 파일을 지우면, 디스크에서 완전히 파일을 지우지 않고 

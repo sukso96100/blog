@@ -2,7 +2,7 @@
 layout: post
 title: "Fish 셸 설치하고, Oh My Fish 로 커스터마이징 하기"
 date: 2015-07-30
-tags: fish_shell oh_my_fish update tips tutorial shell linux ubuntu archlinux fedora
+tags: fish_shell oh_my_fish update tip tutorial shell linux ubuntu archlinux fedora
 image: https://sukso96100.github.io/blogimgs/fish-shell.png
 ---
 
