@@ -2,7 +2,7 @@
 layout: post
 date: 2017-10-27
 image: https://sukso96100.github.io/blogimgs/opensuse_asia_2017_tokyo_cover.jpg
-title: "Report for openSUSE.Asia Summit 2017 Tokyo (English)(Translating...)"
+title: "Report for openSUSE.Asia Summit 2017 Tokyo (English)"
 tags: review trip linux opensuse libreoffice tokyo
 ---
 
