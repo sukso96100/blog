@@ -6,7 +6,7 @@ title: "openSUSE.Asia Summit 2017 Tokyo 参加报告（简体中文）（正在�
 tags: review trip linux opensuse libreoffice tokyo
 ---
 
-每次我听到海外国际活动信息时，总有一天我想参加。上次西天，我听到了根据GNOME.Asia重庆的信息。
+每次我听到海外国际活动信息时，总有一天我想参加。上次夏天，我听到了根据GNOME.Asia重庆的信息。
 因为我想参加GNOME.Asia，我订了参加计划。但是，因为我大学中间考试，我不可以参加。
 多亏Nogata Jun，我得到了对openSUSE.Asia东京的日程信息。因openSUSE.Asia我大学中间考试后开始，我决定参加。
 首先我买了飞机票，然后因为东京的酒店价格对我太贵，我定了AirBnB住宿。
@@ -30,7 +30,7 @@ tags: review trip linux opensuse libreoffice tokyo
 下天，openSUSE.Asia活动在电气通信大学开始。到达和报名后，我等了Keynote。等Keynote时，我可以看多样的展台和参加者来自多样的国家。
 以为大多数的人可以听懂和说英语，我可以和他们谈话，也可以听到有趣的故事。
 
-## 오프닝과 키노트
+## 开幕式和基础演讲
 ![Opening](https://sukso96100.github.io/blogimgs/opensuseasia_d2_0.jpg)
 
 首先，Fuminobu Takeyama谁是这次openSUSE.Asia的委员会主席，介绍这次活动。
@@ -41,13 +41,10 @@ tags: review trip linux opensuse libreoffice tokyo
 他吸引观众的兴趣的演讲很棒。
 
 他先简绍openSUSE工程，然后介绍别的openSUSE关联的工程。
-
-먼저 오픈수세 프로젝트에 대해서 간단히 알려주시고, 오픈수세 배포판 프로젝트 말고 또 어떤 프로젝트가 있는지 소개해 주셨습니다.
-운영체제 테스트 자동화 시스템인 openQA, 오픈수세 패키지와 다른 배포판 패키지도 빌드 하여 배포할 수 있는 도구를 제공하는 Open Build Service 에 대해서 소개해 주셨습니다.
-
-오픈수세가 현재 두 가지 버전인 Tumbleweed, Leap 으로 제공이 되고 있는데. 두 버전으로 나누어 제공하게 된 계기와 각 버전에 대한 소개도 있었습니다.
-리눅스 배포판 사용자 중에서는 새로운 것을 빠르게 사용해 보고 싶은 사람들도 있고, 반면 안정적인 것을 유지하길 원하는 사람들도 있는데요,
-이러한 두 부류를 모두 만족하기 위해 롤링 릴리즈(별로도 OS 버전을 나누어 관리하지 않고 패키지 업데이트만 자주 하는)로 배포하는 Tumbleweed, 전통적인 방식으로 주기적으로 새 버전이 나오는 Leap으로 나누게 되었다고 합니다. Tumbleweed 의 경우, 다른 롤링 릴리즈 방식의 배포판인 Arch 와 Gentoo 와도 간단히 비교해 주셨습니다.
+他介绍关于openQA是测试自动化系统，和Open Build Service是不但组建openSUSE包，而可以组建别的Linux Distribution的包。
+以后，他说明为什么openSUSE有两种版：Tumbleweed和Leap。有人想要用最新的软件，但是别的有人想要用稳定的软件。
+为了满意这两种组，openSUSE工程的会员决定分开到两种版：只有软件更新的Tumbleweed和传统方式的Leap。
+他也比较Tumbleweed和别的Rolling release Linux Distribution。例如，Arch和Gentoo。
 
 ![Keynote](https://sukso96100.github.io/blogimgs/opensuseasia_d2_1.jpg)
 
