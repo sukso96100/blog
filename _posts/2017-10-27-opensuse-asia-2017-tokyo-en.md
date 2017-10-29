@@ -221,3 +221,6 @@ It would be great if activities in Korea also spread from Seoul into other regio
 # Conclusion
 
 It was the first conferences that i attended overseas. And it was great. Volunteers of the event was very kind, and I didn't say hello to many attendees when i'm attending conferences in Korea. But this time, I talked with various attendees from various regions. Because of that, i could make some friends at the event. Finally, Thanks to Nogata Jun who shared information about this event. and Fuminobu Takeyama and Volunteers for welcoming me who hosted this event. :)
+
+# Read this post in other languages
+- [한국어(Korean) - Original]({{ site.baseurl }}{% post_url 2017-10-23-opensuse-asia-2017-tokyo %})
