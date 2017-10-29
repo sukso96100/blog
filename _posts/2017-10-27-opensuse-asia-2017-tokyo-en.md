@@ -158,7 +158,7 @@ After that, Hillwood Yang presented his proposal for hosting openSUSE.Asia in Ch
 
 
 ## Dinner
-For the day of dinner, I joined a small group of Japanese attendees. I had a dinner at the gyudon restaurant near Chofu station with them. and it's taste was great and the price was acceptable. After the meal, I visited Don Quijote duty free shop near Akihabara station to buy some souvenirs for my family and friends.
+For the day of dinner, I joined a small group of Japanese attendees. I had a dinner at the gyudon restaurant near Chofu station with them. and it's taste was great and the price was acceptable. After the meal, I visited Don Quijote duty free shop & AKB48 Theater near JR East Akihabara station to buy some souvenirs for my family and friends.
 
 ![Dinner](https://sukso96100.github.io/blogimgs/opensuseasia_d3_6.jpg)
 
