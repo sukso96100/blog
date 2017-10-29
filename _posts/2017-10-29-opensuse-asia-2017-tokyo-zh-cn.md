@@ -6,7 +6,7 @@ title: "openSUSE.Asia Summit 2017 Tokyo 参加报告（简体中文）（正在�
 tags: review trip linux opensuse libreoffice tokyo
 ---
 
-每次我听到海外国际活动信息，总有一天我想参加。上次西天，我听到了根据GNOME.Asia重庆的信息。
+每次我听到海外国际活动信息时，总有一天我想参加。上次西天，我听到了根据GNOME.Asia重庆的信息。
 因为我想参加GNOME.Asia，我订了参加计划。但是，因为我大学中间考试，我不可以参加。
 多亏Nogata Jun，我得到了对openSUSE.Asia东京的日程信息。因openSUSE.Asia我大学中间考试后开始，我决定参加。
 首先我买了飞机票，然后因为东京的酒店价格对我太贵，我定了AirBnB住宿。
@@ -27,21 +27,20 @@ tags: review trip linux opensuse libreoffice tokyo
 
 # 第二天
 
-下天，openSUSE.Asia活动在电气通信大学开始。
-바로 그 다음날 부터 openSUSE.Asia 행사가 시작 되었습니다. 조후역 근처에 있는 전기통신대학에서 열렸습니다.
-도착해서 리셉션에서 체크인을 먼저 하고 키노트 까지 잠시 기다렸습니다. 기다리면서 부스도 있고, 여러 테이블마다 사람들이 조금씩 모여 있었습니다.
-한국인 참가자는 저 혼자였고, 가만히 있기도 좀 그래서, 어디서 많이 본 것 같은 분(?)께도 말을 걸어보고, 다른 분들께도 말을 걸었습니다.
-영어로 대화를 했는데, 다들 영어를 조금은 할 줄 아셔서 영어로 편하게 대화를 할 수 있었고, 흥미로운 이야기도 들을 수 있었습니다.
+下天，openSUSE.Asia活动在电气通信大学开始。到达和报名后，我等了Keynote。等Keynote时，我可以看多样的展台和参加者来自多样的国家。
+以为大多数的人可以听懂和说英语，我可以和他们谈话，也可以听到有趣的故事。
 
 ## 오프닝과 키노트
 ![Opening](https://sukso96100.github.io/blogimgs/opensuseasia_d2_0.jpg)
 
-먼저 이번 openSUSE.Asia 위원장을 맡은 Fuminobu Takeyama 님께서 이번 행사에 대해서 소개를 하는 시간을 가졌습니다.
-이번에 행사를 열계 된 계기와, 행사 주최를 통해 이루고자 하는 목적, 행사 일정 소개와 마지막으로 당일 저녁에 있는 서밋 파티에 대해서 안내해 주셨습니다.
+首先，Fuminobu Takeyama谁是这次openSUSE.Asia的委员会主席，介绍这次活动。
+他介绍观众这次活动的举行理由，目标，两天的活动日程，和这天晚上的Summit Party。
 
-바로 이어서 openSUSE Board 의장인, Richard Brown 님께서 openSUSE 프로젝트에 대해 대략적으로 설명하는 시간을 가졌습니다.
-openSUSE 행사라고 꼭 openSUSE 를 사용하는 사람만 오는 것이 아니고, 다른 리눅스 배포판을 쓰는 사람, 리눅스를 처음 접하는 사람도
-참석할 수 있기 때문에, openSUSE 프로젝트를 소개하는 시간을 통해 참가자의 관심을 끌어내는 좋은 발표 였습니다.
+然后，Richard Brown谁是openSUSE Board主席，介绍大家openSUSE工程。
+因为参加者中一部分不是openSUSE用户，而是别的Linux Distribution用户或者非Linux用户，
+他吸引观众的兴趣的演讲很棒。
+
+他先简绍openSUSE工程，然后介绍别的openSUSE关联的工程。
 
 먼저 오픈수세 프로젝트에 대해서 간단히 알려주시고, 오픈수세 배포판 프로젝트 말고 또 어떤 프로젝트가 있는지 소개해 주셨습니다.
 운영체제 테스트 자동화 시스템인 openQA, 오픈수세 패키지와 다른 배포판 패키지도 빌드 하여 배포할 수 있는 도구를 제공하는 Open Build Service 에 대해서 소개해 주셨습니다.
