@@ -41,7 +41,7 @@ tags: review trip linux opensuse libreoffice tokyo
 他吸引观众的兴趣的演讲很棒。
 
 他先简绍openSUSE工程，然后介绍别的openSUSE关联的工程。
-他介绍关于openQA是测试自动化系统，和Open Build Service是不但组建openSUSE包，而可以组建别的Linux Distribution的包。
+他介绍关于openQA是OS测试自动化系统，和Open Build Service是不但组建openSUSE包，而可以组建别的Linux Distribution的包。
 以后，他说明为什么openSUSE有两种版：Tumbleweed和Leap。有人想要用最新的软件，但是别的有人想要用稳定的软件。
 为了满意这两种组，openSUSE工程的会员决定分开到两种版：只有软件更新的Tumbleweed和传统方式的Leap。
 他也比较Tumbleweed和别的Rolling release Linux Distribution。例如，Arch和Gentoo。
@@ -52,7 +52,7 @@ tags: review trip linux opensuse libreoffice tokyo
 
 
 
-## 몇기지 기억에 남는 발표
+## 难忘的演讲
 
 ### YaST, NFS and Raspberry Pi
 ![YaST](https://sukso96100.github.io/blogimgs/opensuseasia_d2_3.jpg)
