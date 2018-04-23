@@ -18,8 +18,8 @@ description: "Logs of Youngbin han's Laboratory"
 email: sukso96100@gmail.com
 name: "Youngbin Han"
 
-url: "http://sukso96100.github.io/" # the base hostname & protocol for your site
-baseurl: "/blog"
+url: "http://blog.youngbin.xyz/" # the base hostname & protocol for your site
+baseurl: "/"
 
 facebook: hanyoungbin
 googleplus: +한영빈96
