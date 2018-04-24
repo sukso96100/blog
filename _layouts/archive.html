@@ -1,32 +1,22 @@
 ---
-layout: default
+layout: page
 ---
-<body onscroll="setBackground()" onload="setBackground()">
-<section class="body" id="body">
-  <div class="cover common">
-    <h1>{{page.title}}</h1>
     {% for post in site.posts  %}
-
        {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
        {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
-
        {% if forloop.first %}
-
-       <a href="#{{ this_year }}-ref">{{this_year}}</a>
+       <a class="button is-rounded is-dark is-outlined"
+        href="#{{ this_year }}-ref">{{this_year}}</a>
        <!-- <ul> -->
        {% endif %}
-
        {% if forloop.last %}
        {% else %}
            {% if this_year != next_year %}
-
-           <a href="#{{ next_year }}-ref">{{next_year}}</a>
+           <a class="button is-rounded is-dark is-outlined"
+            href="#{{ next_year }}-ref">{{next_year}}</a>
            {% endif %}
        {% endif %}
-
     {% endfor %}
-  </div>
-  <div class="main common">
     {% for post in site.posts  %}
 
        {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
@@ -34,42 +24,16 @@ layout: default
 
        {% if forloop.first %}
 
-       <h2 id="{{ this_year }}-ref">{{this_year}}</h2><br>
-       <!-- <ul> -->
+       <h2 id="{{ this_year }}-ref">{{this_year}}</h2>
+       <ul>
        {% endif %}
-
-            <p>{{ post.date | date: "%Y.%m.%d" }} | <a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a>{% if post.author %} | {{ post.author }} {% endif %}</p>
-
-
+            <li>{{ post.date | date: "%Y.%m.%d" }} | <a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a>{% if post.author %} | {{ post.author }} {% endif %}</li>
        {% if forloop.last %}
+
        {% else %}
            {% if this_year != next_year %}
-
+           </ul>
            <h2 id="{{ next_year }}-ref">{{next_year}}</h2>
            {% endif %}
        {% endif %}
-
     {% endfor %}
-    {% include footer.html %}
-  </div>
-
-     <script>
-       function setBackground(){
-         var bodyStyle = document.getElementsByTagName('body')[0].style;
-         var bodySectionStyle = document.getElementsByClassName('body')[0].style;
-         var headerStyle = document.getElementsByClassName('header')[0].style;
-         if(window.scrollY > (window.innerHeight * 0.6)){
-           bodyStyle.color = "black";
-           bodySectionStyle.background = "white";
-           headerStyle.background = "white";
-         }else{
-           bodyStyle.color = "white";
-           bodySectionStyle.background = "rgba(0, 0, 0, 0)";
-           headerStyle.background = "rgba(0, 0, 0, 0)";
-         }
-       }
-     </script>
-</section>
-{% include search.html %}
-{% include javascripts.html %}
-</body>

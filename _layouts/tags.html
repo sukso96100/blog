@@ -1,46 +1,20 @@
 ---
-layout: default
+layout: page
 ---
-<body onscroll="setBackground()" onload="setBackground()">
-<section class="body" id="body">
-  <div class="cover common">
-    <h1>{{page.title}}</h1>
+
     {% for tag in site.tags %}
-      <a href="#{{ tag | first }}">#{{ tag | first }}</a>
+      <a class="button is-rounded is-dark is-outlined" href="#{{ tag | first }}">#{{ tag | first }}</a>
     {% endfor %}
-  </div>
-  <div class="main common">
+
     {% for tag in site.tags %}
       <h2 id="{{ tag | first }}">#{{ tag | first }}</h2>
+      <ul>
     {% for posts in tag %}
       {% for post in posts %}
       {% if post.title %}
-      <p>{{ post.date | date: "%Y.%m.%d" }} | <a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a>{% if post.author %} | {{ post.author }} {% endif %}</p>
+      <li>{{ post.date | date: "%Y.%m.%d" }} | <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>{% if post.author %} | {{ post.author }} {% endif %}</li>
       {% endif %}
       {% endfor %}
     {% endfor %}
+  </ul>
 {% endfor %}
-
-{% include footer.html %}
-  </div>
-
-     <script>
-       function setBackground(){
-         var bodyStyle = document.getElementsByTagName('body')[0].style;
-         var bodySectionStyle = document.getElementsByClassName('body')[0].style;
-         var headerStyle = document.getElementsByClassName('header')[0].style;
-         if(window.scrollY > (window.innerHeight * 0.6)){
-           bodyStyle.color = "black";
-           bodySectionStyle.background = "white";
-           headerStyle.background = "white";
-         }else{
-           bodyStyle.color = "white";
-           bodySectionStyle.background = "rgba(0, 0, 0, 0)";
-           headerStyle.background = "rgba(0, 0, 0, 0)";
-         }
-       }
-     </script>
-</section>
-{% include search.html %}
-{% include javascripts.html %}
-</body>

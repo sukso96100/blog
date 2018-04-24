@@ -2,17 +2,13 @@
   margin-bottom: 32px;
 }
 
-.main.box.tile{
+.main.box.hero{
   padding-top: 64px;
   padding-bottom: 64px;
   height: 80vh;
 }
 
-.main.tile.is-parent{
+.main.tile.is-parent,
+.post.main.box{
   margin-bottom: 32px;
-}
-
-.main.box.tile > h1{
-  font-size: 3em;
-  font-style: bold;
 }

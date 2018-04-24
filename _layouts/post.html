@@ -1,37 +1,22 @@
 ---
 layout: default
 ---
-<body onscroll="setBackground()" onload="setBackground()">
-<section class="body" id="body">
-  <div class="cover common">
-    <script>
-      var bgImgUrl = "{{page.image}}";
-    </script>
-    <h1>{{page.title}}</h1>
-    <p>
-      {{ page.date | date: "%Y.%m.%d" }}
-    </p>
-    <p><b>
-        Scroll down to read this post
-    </b></p>
+<article
+  {% if page.image %}
+  style="background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('{{page.image}}') center / cover;"
+  {% endif %}
+  class="post box main hero is-dark is-bold">
+  <div class="hero-body">
+    <section>
+      <h1 class="title is-size-1">{{ page.title }}</h1>
+      <p class="subtitle">{{ page.date | date: "%Y.%m.%d" }}</p>
+      {% include sharebtn.html color="light" id="0" %}
+    </section>
   </div>
-  <div class="main common">
+</article>
+  <div class="content">
     {{page.content}}
-    <table class="social-btns">
-      <tbody>
-        <tr>
-          <td>
-            <!-- 구글플러스 +1 버튼 -->
-            <g:plusone></g:plusone>
-          </td>
-          <td>
-            <!-- Facebook 좋아요 버튼 -->
-            <div class="fb-like" data-href="{{ site.baseurl }}/{{ page.url }}"
-             data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    {% include sharebtn.html color="dark" id="1" %}
     {% include adsense.html %}
     {% include disqus.html %}
     {% if page.previous.url %}
@@ -54,28 +39,4 @@ layout: default
           <a class="button-white" href="{{ site.baseurl }}/{{ page.next.url }}">Read this post</a>
       </div>
     {% else %}{% endif %}
-    {% include footer.html %}
   </div>
-
-     <script>
-       function setBackground(){
-         var bodyStyle = document.getElementsByTagName('body')[0].style;
-         var bodySectionStyle = document.getElementsByClassName('body')[0].style;
-         var headerStyle = document.getElementsByClassName('header')[0].style;
-         bodyStyle.background = "linear-gradient( rgba(0, 0, 0, 0.4), \
-         rgba(0, 0, 0, 0.4) ), url("+bgImgUrl+")center / cover";
-         if(window.scrollY > (window.innerHeight * 0.6)){
-           bodyStyle.color = "black";
-           bodySectionStyle.background = "white";
-           headerStyle.background = "white";
-         }else{
-           bodyStyle.color = "white";
-           bodySectionStyle.background = "rgba(0, 0, 0, 0)";
-           headerStyle.background = "rgba(0, 0, 0, 0)";
-         }
-       }
-     </script>
-</section>
-{% include search.html %}
-{% include javascripts.html %}
-</body>
