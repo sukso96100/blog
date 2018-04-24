@@ -1,0 +1,142 @@
+---
+layout: default
+---
+<body>
+  <section class="hero is-light is-bold is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      {% include menu.html %}
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-12">
+          <div class="tile is-parent main">
+            <article class="tile is-child box main hero is-dark is-bold">
+              <div class="hero-body">
+                <section>
+              <h1 class="title">{{ paginator.posts[0].title }}</h1>
+              <p class="subtitle">{{ paginator.posts[0].date | date: "%Y.%m.%d" }}</p>
+              <div class="content">
+                {{ paginator.posts[0].content | strip_html | truncate:100 }}
+              </div>
+              <a class="button is-light is-outlined"
+              href="{{site.baseurl}}{{paginator.posts[0].url}}">Read more</a>
+            </section>
+          </div>
+            </article>
+          </div>
+          {% for post in paginator.posts %}
+            {% assign div = forloop.index | minus: 1 | divided_by: 3 %}
+            {% assign mod = forloop.index | minus: 1 | modulo: 3 %}
+            {% if mod == 0 and div < 3%}
+              {% if div == 1 %}
+                {% assign idx = forloop.index %}
+                {% assign idx1 = forloop.index | plus: 1 %}
+                {% assign idx2 = forloop.index | plus: 2 %}
+                <div class="tile">
+                  <div class="tile is-parent">
+                    <article class="tile is-child box hero is-dark is-bold">
+                      <div class="hero-body">
+                        <section>
+                          <p class="title">{{ paginator.posts[idx].title }}</p>
+                          <p class="subtitle">{{ paginator.posts[idx].date | date: "%Y.%m.%d" }}</p>
+                          <div class="content">
+                            {{ paginator.posts[idx].content | strip_html | truncate:100 }}
+                          </div>
+                          <a class="button is-light is-outlined"
+                          href="{{site.baseurl}}{{paginator.posts[idx].url}}">Read more</a>
+                        </section>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="tile is-parent is-vertical">
+                    <article class="tile is-child box">
+                      <p class="title">{{ paginator.posts[idx1].title }}</p>
+                      <p class="subtitle">{{ paginator.posts[idx1].date | date: "%Y.%m.%d" }}</p>
+                      <div class="content">
+                        {{ paginator.posts[idx1].content | strip_html | truncate:100 }}
+                      </div>
+                      <a class="button is-dark is-outlined"
+                      href="{{site.baseurl}}{{paginator.posts[idx1].url}}">Read more</a>
+                    </article>
+                    <article class="tile is-child box">
+                      <p class="title">{{ paginator.posts[idx2].title }}</p>
+                      <p class="subtitle">{{ paginator.posts[idx2].date | date: "%Y.%m.%d" }}</p>
+                      <div class="content">
+                        {{ paginator.posts[idx2].content | strip_html | truncate:100 }}
+                      </div>
+                      <a class="button is-dark is-outlined"
+                      href="{{site.baseurl}}{{paginator.posts[idx2].url}}">Read more</a>
+                    </article>
+                  </div>
+                </div>
+                {% else %}
+                {% assign idx = forloop.index %}
+                {% assign idx1 = forloop.index | plus: 1 %}
+                {% assign idx2 = forloop.index | plus: 2 %}
+                <div class="tile">
+                  <div class="tile is-parent is-vertical">
+                    <article class="tile is-child box">
+                      <p class="title">{{ paginator.posts[idx].title }}</p>
+                      <p class="subtitle">{{ paginator.posts[idx].date | date: "%Y.%m.%d" }}</p>
+                      <div class="content">
+                        {{ paginator.posts[idx].content | strip_html | truncate:100 }}
+                      </div>
+                      <a class="button is-dark is-outlined"
+                      href="{{site.baseurl}}{{paginator.posts[idx].url}}">Read more</a>
+                    </article>
+                    <article class="tile is-child box">
+                      <p class="title">{{ paginator.posts[idx1].title }}</p>
+                      <p class="subtitle">{{ paginator.posts[idx1].date | date: "%Y.%m.%d" }}</p>
+                      <div class="content">
+                        {{ paginator.posts[idx1].content | strip_html | truncate:100 }}
+                      </div>
+                      <a class="button is-dark is-outlined"
+                      href="{{site.baseurl}}{{paginator.posts[idx1].url}}">Read more</a>
+                    </article>
+                  </div>
+                  <div class="tile is-parent">
+                    <article class="tile is-child box hero is-dark is-bold">
+                      <div class="hero-body">
+                        <section>
+                          <p class="title">{{ paginator.posts[idx2].title }}</p>
+                          <p class="subtitle">{{ paginator.posts[idx2].date | date: "%Y.%m.%d" }}</p>
+                          <div class="content">
+                            {{ paginator.posts[idx2].content | strip_html | truncate:100 }}
+                          </div>
+                          <a class="button is-light is-outlined"
+                          href="{{site.baseurl}}{{paginator.posts[idx2].url}}">Read more</a>
+                        </section>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      <nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
+        <a class="pagination-previous" {% if paginator.previous_page %} href="{{ site.baseurl }}{{ paginator.previous_page_path }}"{% else %}{% endif %}>Previous</a>
+        <a class="pagination-next" {% if paginator.next_page %} href="{{ site.baseurl }}{{ paginator.next_page_path }}"{% else %}{% endif %}>Next</a>
+        <ul class="pagination-list">
+          <li><a class="pagination-link" aria-label="Page {{ paginator.page }}">{{ paginator.page }}</a></li>
+          <li><span class="pagination-ellipsis">&hellip;</span></li>
+          <li><a class="pagination-link" aria-label="Total {{ paginator.total_pages }} Pages">{{ paginator.total_pages }}</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</section>
+<style>
+{% if paginator.posts[0].image %}
+.main.tile.box{
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),
+    url('{{paginator.posts[0].image}}') center / cover;
+}
+.main.tile.box > h1,
+.main.tile.box > .subtitle,
+.main.tile.box > .content{
+  color: white;
+}
+{% endif %}
+</style>
+</body>

@@ -1,154 +1,18 @@
-@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
-
-body{
-  height: 100%;
-  margin: 0;
-  color: white;
-  background: black;
-  font-family: 'Noto Sans KR', sans-serif;
+#menu{
+  margin-bottom: 32px;
 }
 
-img{
-  width: 100%;
-  padding: 8px;
+.main.box.tile{
+  padding-top: 64px;
+  padding-bottom: 64px;
+  height: 80vh;
 }
 
-.footer{
-  padding: 32px;
-  text-align: center;
+.main.tile.is-parent{
+  margin-bottom: 32px;
 }
 
-.footer button{
-  font-size: 1em;
-}
-
-blockquote{
-  border-left: solid grey 8px;
-  padding: 0px 8px 0px 8px;
-}
-
-
-/**/
-
-.body{
-  transition: background 0.5s linear;
-}
-.header{
-  padding-top: 8px;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-}
-.header > ul > li{
-  float: left;
-  list-style: none;
-  padding: 8px;
-}
-.cover{
-  height: 100vh;
-  padding-top: 30vh;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
-.cover > h1{
+.main.box.tile > h1{
   font-size: 3em;
-}
-
-.main{
-  min-height: 70vh;
-  padding-left: 40px;
-  padding-right: 40px;
-}
-.common{
-  max-width: 1000px;
-  margin: auto;
-}
-
-.button-white,
-.input-white{
-  padding: 8px;
-  border: thin solid black;
-  background-color: white;
-  color: black;
-}
-
-.button-white-noborder{
-  padding: 8px;
-  border: none;
-  background-color: white;
-  color: black;
-}
-
-.button-black{
-  padding: 8px;
-  border: thin solid white;
-  background-color: rgba(0, 0, 0, 0);
-  color: white;
-}
-
-.button-white:hover,
-.input-white:focus{
-  padding: 8px;
-  border: thin solid black;
-  background-color: black;
-  color: white;
-}
-
-.button-white-noborder:hover{
-  padding: 8px;
-  border: none;
-  background-color: black;
-  color: white;
-}
-
-.button-black:hover{
-  padding: 8px;
-  border: thin solid white;
-  background-color: white;
-  color: black;
-}
-
-.input-white:hover{
-  padding: 8px;
-  border: thin solid black;
-  background-color: grey;
-  color: white;
-}
-
-.post-item{
-  padding-top: 16px;
-  padding-bottom: 32px;
-}
-
-#searchSection{
-  padding: 32px;
-  min-height: 100vh;
-  background: white;
-}
-
-#searchSection > div{
-  margin: auto;
-  max-width: 1000px;
-}
-
-#searchSection > div > .searchBar{
-  display: flex;
-}
-
-#searchSection > div > .searchBar > button,
-#searchSection > div > .searchBar > input{
-  font-size: 1em;
-}
-
-#searchSection > div > .searchBar > button{
-  flex: 1;
-}
-
-#searchSection > div > .searchBar > input{
-  flex: 4;
-}
-
-#searchSection > div > #searchResults{
-  color: black;
+  font-style: bold;
 }

@@ -3,7 +3,6 @@ layout: default
 ---
 <body onscroll="setBackground()" onload="setBackground()">
 <section class="body" id="body">
-  {% include header.html %}
   <div class="cover common">
     {% for post in paginator.posts %}
     {% if forloop.index == 1 %}
@@ -63,24 +62,6 @@ layout: default
       {% include footer.html %}
   </div>
 
-     <script>
-       function setBackground(){
-         var bodyStyle = document.getElementsByTagName('body')[0].style;
-         var bodySectionStyle = document.getElementsByClassName('body')[0].style;
-         var headerStyle = document.getElementsByClassName('header')[0].style;
-         bodyStyle.background = "linear-gradient( rgba(0, 0, 0, 0.4), \
-         rgba(0, 0, 0, 0.4) ), url("+bgImgUrl+")center / cover";
-         if(window.scrollY > (window.innerHeight * 0.6)){
-           bodyStyle.color = "black";
-           bodySectionStyle.background = "white";
-           headerStyle.background = "white";
-         }else{
-           bodyStyle.color = "white";
-           bodySectionStyle.background = "rgba(0, 0, 0, 0)";
-           headerStyle.background = "rgba(0, 0, 0, 0)";
-         }
-       }
-     </script>
 </section>
 {% include search.html %}
 {% include javascripts.html %}

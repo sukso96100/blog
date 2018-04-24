@@ -1,0 +1,28 @@
+<div class="dropdown is-hoverable" id="menu">
+  <div class="dropdown-trigger">
+    <button class="button is-dark is-outlined"
+    aria-haspopup="true" aria-controls="dropdown-menu4">
+      <span>{{ site.title }}</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+    <div class="dropdown-content">
+      {% for item in site.menu.main %}
+      <a href="{{ site.baseurl }}{{ item.path }}" class="dropdown-item">
+        <span class="icon is-small"><i class="{{ item.icon }}"></i></span>
+        {{ item.title }}
+      </a>
+      {% endfor %}
+      <hr class="dropdown-divider">
+      {% for item in site.menu.links %}
+      <a href="{{ item.url }}" class="dropdown-item">
+        <span class="icon is-small"><i class="{{ item.icon }}"></i></span>
+        {{ item.title }}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>

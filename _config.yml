@@ -19,12 +19,8 @@ email: sukso96100@gmail.com
 name: "Youngbin Han"
 
 url: "http://blog.youngbin.xyz/" # the base hostname & protocol for your site
-baseurl: "/"
+baseurl: ""
 
-facebook: hanyoungbin
-googleplus: +한영빈96
-twitter: sukso96100
-github:  sukso96100
 disqus: youngbinhan
 
 google_analytics: UA-46663268-3
@@ -40,6 +36,33 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+menu:
+  main:
+    - title: Home
+      path: /
+      icon: fas fa-home
+    - title: Tags
+      path: /tags
+      icon: fas fa-tags
+    - title: Archive
+      path: /archive
+      icon: fas fa-archive
+  links:
+    - title: youngbin.xyz
+      url: https://youngbin.xyz
+      icon: fas fa-globe
+    - title: GitHub
+      url: https://github.com/sukso96100
+      icon: fab fa-github
+    - title: Facebook
+      url: https://fb.com/hanyoungbin
+      icon: fab fa-facebook
+    - title: Twitter
+      url: https://twitter.com/sukso96100
+      icon: fab fa-twitter
+    - title: Google Plus
+      url: google.com/+한영빈96
+      icon: fab fa-google-plus
 gems:
   - jekyll-feed
   - jekyll-paginate
