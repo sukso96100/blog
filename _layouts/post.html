@@ -19,24 +19,45 @@ layout: default
     {% include sharebtn.html color="dark" id="1" %}
     {% include disqus.html %}
     {% include adsense.html %}
-    {% if page.previous.url %}
-    <hr />
-      <div class="post-item">
-          <h2>{{ page.previous.title }}</h2>
-          <p>
-            {{ page.previous.date | date: "%Y.%m.%d" }}
-          </p>
-          <a class="button-white" href="{{ site.baseurl }}/{{ page.previous.url }}">Read this post</a>
-      </div>
-    {% else %}{% endif %}
-    {% if page.next.url %}
-    <hr />
-      <div class="post-item">
-          <h2>{{ page.next.title }}</h2>
-          <p>
-            {{ page.next.date | date: "%Y.%m.%d" }}
-          </p>
-          <a class="button-white" href="{{ site.baseurl }}/{{ page.next.url }}">Read this post</a>
-      </div>
-    {% else %}{% endif %}
+
+    <div class="tile is-ancestor">
+        {% if page.previous.url %}
+        <div class="tile post-pagination">
+          <!-- Add content or other tiles -->
+          <article
+          {% if page.previous.image %}
+          style="background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('{{page.previous.image}}') center / cover;"
+          {% endif %}
+          class="tile is-child box hero is-dark is-bold">
+          <div class="hero-body">
+            <section>
+              <p class="subtitle">Previous</p>
+              <p class="title">{{ page.previous.title }}</p>
+              <p class="subtitle">{{ page.previous.date | date: "%Y.%m.%d" }}</p>
+              <a class="button is-light is-outlined" href="{{site.baseurl}}{{page.previous.url}}">Read more</a>
+            </section>
+          </div>
+        </article>
+        </div>
+        {% else %}{% endif %}
+        {% if page.next.url %}
+        <div class="tile post-pagination">
+          <!-- Add content or other tiles -->
+          <article
+          {% if page.previous.image %}
+          style="background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('{{page.next.image}}') center / cover;"
+          {% endif %}
+          class="tile is-child box hero is-dark is-bold">
+          <div class="hero-body">
+            <section>
+              <p class="subtitle">Next</p>
+              <p class="title">{{ page.next.title }}</p>
+              <p class="subtitle">{{ page.next.date | date: "%Y.%m.%d" }}</p>
+              <a class="button is-light is-outlined" href="{{site.baseurl}}{{page.next.url}}">Read more</a>
+            </section>
+          </div>
+        </article>
+        </div>
+        {% else %}{% endif %}
+      </div>    
   </div>

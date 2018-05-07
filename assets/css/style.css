@@ -12,3 +12,7 @@
 .post.main.box{
   margin-bottom: 32px;
 }
+
+.post-pagination{
+  padding: 16px;
+}
