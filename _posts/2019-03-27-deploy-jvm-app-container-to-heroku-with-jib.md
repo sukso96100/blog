@@ -48,6 +48,16 @@ docker login
 
 Docker 가 설치되어 있지 않아도, 빌드 및 업로드 하는데 문제가 없습니다. 이 경우, [Docker Credential Helper 등의 방법을 이용하면 됩니다.](https://github.com/GoogleContainerTools/jib/tree/master/jib-gradle-plugin#authentication-methods)
 
+필요한 경우, `build.gradle` 의 `jib{...}` 안의 `container{...}` 에 `mainClass`를 설정하여 메인 클래스를 지정해 줍니다.  `build.gradle` 의 최상위에 정의된 `mainClassName`과 별개로 `jib{...}`쪽에도 설정해 주어야 나중에 컨테이너가 제대로 작동합니다. 아래는 예시 입니다.
+
+```groovy
+jib {
+  container {
+    mainClass = 'io.ktor.server.netty.EngineMain'
+  }
+}
+```
+
 ## Heroku 배포 준비
 
 
@@ -124,6 +134,19 @@ heroku container:release <process-type> -a <app>
 
 이렇게 JVM기반 앱을 Heroku에 컨테이너로 배포하는 것을 완료 하였습니다. Jib 덕분에 Docker설치와 Dockerfile작성 없이도, JVM 앱을 쉽게 컨테이너로 배포할 수 있습니다.
 Jib 플러그인과 Heroku 에 컨테이너로 배포하는 방법을 좀 더 자세히 알고 싶다면, 아래 링크를 참고해 보세요.
+
+## 번외편
+Heroku 의 컨테이너 레지스트리에 올라가는 이미지들은 `CMD` Instruction 이 있어야 합니다. 없으면 오류가 나면서 업로드가 중단 되는데요, Jib 으로 생성된 이미지에는 기본적으로 `ENTRYPOINT`만 있고, `CMD` 는 없습니다. 이 경우, `build.gradle` 에서 `jib{ ... }`안의 `container{...}` 에 `args`를 넣어주면 됩니다. `ENTRYPOINT` 에는 기본값으로 `java` 명령과 같이 실행할 인자들이 들어가기 때문에, `args` 에 `java`에 대한 인자를 하나 더 넣어주면 됩니다. 그러면 실제 컨테이너가 실행될 때, `ENTRYPOINT` 뒤에 `CMD` 가 붙여진 명령이 실행됩니다.
+
+```groovy
+...
+jib {
+  container {
+    args = ['--verbose:gc']
+  }
+}
+...
+```
 
 ### 참고자료
 - [Deploying with Docker - Heroku Dev Center](https://devcenter.heroku.com/categories/deploying-with-docker)
