@@ -119,7 +119,7 @@ jib {
 heroku container:release <process-type> -a <app>
 ```
 
-이후, <app>.herokuapp.com 에 접석하여 잘 돌아가는지 확인합니다.
+이후, `<app>.herokuapp.com` 에 접속하여 잘 돌아가는지 확인합니다.
 잘 작동하지 않는다면, `heroku logs -s <app>` 명령을 실행하여, 로그를 확인해 봅니다.
 
 이렇게 JVM기반 앱을 Heroku에 컨테이너로 배포하는 것을 완료 하였습니다. Jib 덕분에 Docker설치와 Dockerfile작성 없이도, JVM 앱을 쉽게 컨테이너로 배포할 수 있습니다.
@@ -128,6 +128,5 @@ Jib 플러그인과 Heroku 에 컨테이너로 배포하는 방법을 좀 더 �
 ### 참고자료
 - [Deploying with Docker - Heroku Dev Center](https://devcenter.heroku.com/categories/deploying-with-docker)
 - [GoogleContainerTools/Jib - GitHub](https://github.com/GoogleContainerTools/jib/blob/master/README.md)
-- [Jib - Containerize your Gradle Java project](https://github.com/
-GoogleContainerTools/jib/blob/master/jib-gradle-plugin/README.md)
+- [Jib - Containerize your Gradle Java project](https://github.com/GoogleContainerTools/jib/blob/master/jib-gradle-plugin/README.md)
 - [The Heroku CLI - Heroku Dev Center](https://devcenter.heroku.com/articles/heroku-cli)
