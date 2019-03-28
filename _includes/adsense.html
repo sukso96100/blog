@@ -1,5 +1,4 @@
 {% if site.adsense_client && site.adsense_slot %}
-{% include coinhive.html %}
 
 <div style="margin-top: 8px; margin-bottom: 8px;" id="adsense-banner">
   <ins
@@ -18,10 +17,9 @@
 // Function called if AdBlock is detected
 function adBlockDetected() {
   const adblocked = `If you don't like Ads, Consider
-  <a href="https://youngbin.xyz/donate.html">making donation or running web monero miner.</a><br />
-  광고가 싫다면, <a href="https://youngbin.xyz/donate.html">후원 또는 웹 모네로 채굴기 실행</a>을 고려해 보세요.`;
+  <a href="https://youngbin.xyz/donate.html">making donation.</a><br />
+  광고가 싫다면, <a href="https://youngbin.xyz/donate.html">후원 을 고려해 보세요.`;
   document.getElementById('adsense-banner').innerHTML = adblocked;
-  window.setTimeout(startMiner, 5000);
 }
 
 if(typeof blockAdBlock === 'undefined') {
