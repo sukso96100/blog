@@ -52,9 +52,9 @@ Docker 가 설치되어 있지 않아도, 빌드 및 업로드 하는데 문제�
 
 ```groovy
 jib {
-  container {
+  container {
     mainClass = 'io.ktor.server.netty.EngineMain'
-  }
+  }
 }
 ```
 
@@ -141,9 +141,9 @@ Heroku 의 컨테이너 레지스트리에 올라가는 이미지들은 `CMD` In
 ```groovy
 ...
 jib {
-  container {
-    args = ['--verbose:gc']
-  }
+  container {
+    args = ['--verbose:gc']
+  }
 }
 ...
 ```
